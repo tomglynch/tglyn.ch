@@ -4,12 +4,18 @@
     <link rel="stylesheet" href="/css/default.css">
   </head>
   <body>
-  	
-  	{% include header %}
+    
+    {% include header %}
+    
+    {% if title == "home" %}
+    <div class='reactivename'>
+      <h1 class='reactivenameh'><i>TOM LYNCH</i></h1>
+    </div>
+    {% endif %}
 
-
-    {{ content }}
-
+    <div class = "about">
+      {{ content }}
+    </div>
 
     {% include footer %}
 
