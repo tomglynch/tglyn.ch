@@ -1,0 +1,129 @@
+article > * {
+    min-width: 0;
+}
+
+article > h1 {
+    font-family: Lucida Grande;
+}
+
+article > p {    
+    --x-height-multiplier: 0.375;
+    --baseline-multiplier: 0.17;
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    color: rgba(0,0,0,.84);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+article > .aside {
+    font-family: Lucida Grande;
+    margin: 30px 20px;
+    color: #666;
+    font-size: 0.8em;
+}
+
+img {
+    width: 100%;
+}
+
+.line-numbers a {
+    text-decoration: none;
+    color: #000;
+    padding-right: 1em;
+}
+
+code {
+    background: #eee;
+    padding: 2px 5px;
+}
+
+pre {
+    background: #eee;
+    padding: 10px 15px;
+    overflow: auto;
+}
+
+pre > code {
+    padding: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+figure figcaption {
+    color: #666;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+
+
+.menu{
+  background-color:#fbcd1b;
+}
+
+
+body{
+  background-color:#121d5a;
+  font-family: 'Avenir', sans-serif;
+  /*font-size: 0;*/
+}
+
+.about{
+  margin: 2vw 10vw 10vw 7.77vw;
+  padding-left:2.23vw;
+  padding-top: 2vw;
+  color:white;
+  font-size: 30px;
+  /*text-align: justify;*/
+  text-justify: inter-word;
+  max-width: 80vw;
+}
+
+.inner{
+  padding-left:6vw;
+}
+
+.about a{
+  color:white;
+}
+
+a:hover{
+  color: #fbcd1b;
+}
+
+h1 {
+  color: #FFFFFF;
+  text-shadow: 1px 1px #121d5a, 2px 2px #121d5a, 3px 3px #121d5a, 4px 4px #121d5a, 5px 5px #121d5a, 6px 6px #121d5a, 7px 7px #121d5a, 8px 8px #121d5a, 9px 9px #121d5a, 10px 10px #121d5a, 11px 11px #121d5a, 12px 12px #121d5a, 13px 13px #121d5a;
+  font-weight: 900;
+  font-size: 4em;
+  -webkit-text-stroke: 1.5px #121d5a;
+}
+
+.reactivename {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.reactivename:hover {
+  background-color: #fbcd1b;
+}
+
+@media only screen and (max-width: 320px) {
+  .reactivename {
+    background-color: #fbcd1b;
+  }
+}
+
+h1.reactivenameh {
+  text-align: center;
+  font-size: 100pt;
+}
+
