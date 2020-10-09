@@ -1,34 +1,27 @@
 ---
 layout: default.liquid
 title: home
-namet: tom
 tags: ['menu']
 ---
 
 # Hello world!
-This is my index page
+## This is my index page
 
-{{layout}}
+layout is: {{layout}}
 
-{{namet}}
+blog_index is: {{blog_index}}
 
-{{blog_index}}
-
-{{about_index}}
+about_index is: {{about_index}}
 
 
+all menu items: 
 {% for item in collections.menu %}
-
 - [{{item.data.title}}]({{item.url}})
-
 {% endfor %}
 
 
 
-Other pages
-
+Other pages:
 {% for item in collections.not_a_menu_page %}
-
 - [{{item.data.title}}]({{item.url}})
-
 {% endfor %}

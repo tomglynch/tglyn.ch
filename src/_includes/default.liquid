@@ -2,7 +2,7 @@
   <head>
     <title>{{title}} - {{site.my_name}}</title>
     <link rel="stylesheet" href="/css/basic.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <!-- <link rel="stylesheet" href="/css/index.css"> -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
@@ -20,15 +20,13 @@
     {% include header %}
     
     {% if title == "home" %}
-    <div class='reactivename'>
-      <h1 class='reactivenameh'><i>TOM LYNCH</i></h1>
-    </div>
+      <div class='reactivename'>
+        <h1 class='reactivename_text'><i>TOM LYNCH</i></h1>
+      </div>
     {% endif %}
     
     <article>
-      <div class = "about">
         {{ content }}
-      </div>
     </article>
 
     {% include footer %}
