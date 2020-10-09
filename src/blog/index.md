@@ -9,6 +9,8 @@ tags: ['menu']
 #### yep
 ##### yep
 ###### yep
+tags: {{tags}}
+
 
 ## Latest blog posts
 

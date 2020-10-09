@@ -1,7 +1,7 @@
 ---
-layout: default.liquid
 title: home
 tags: ['menu']
+layout: default.liquid
 ---
 
 # Hello world!
@@ -21,7 +21,7 @@ all menu items:
 
 
 
-Other pages:
-{% for item in collections.not_a_menu_page %}
+All pages:
+{% for item in collections.all  %}
 - [{{item.data.title}}]({{item.url}})
 {% endfor %}
