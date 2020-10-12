@@ -1,6 +1,6 @@
 <div class="footer">
 	Footer:
-	{% for item in collections.menu %}
+	{% for item in collections.all %}
 		<a href="{{item.url}}">{{item.data.title | capitalize }}</a>
 	{% endfor %}
 </div>
