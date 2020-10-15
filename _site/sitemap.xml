@@ -66,5 +66,38 @@
       
     </url>
   
+    <url>
+      <loc>https://tglyn.ch/blog/spintel_hack/</loc>
+      
+        <lastmod>Mon Oct 12 2020 11:22:50 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+      
+
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://tglyn.ch/contact/</loc>
+      
+        <lastmod>Mon Oct 12 2020 19:44:50 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+      
+
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://tglyn.ch/subscribe/</loc>
+      
+        <lastmod>Mon Oct 12 2020 19:44:53 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+      
+
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
 
 </urlset>

@@ -1,7 +1,7 @@
 ---
 title: home
 tags: ['menu']
-layout: default.liquid
+layout: index.liquid
 ---
 
 # Hello world!
