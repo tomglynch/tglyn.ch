@@ -1,7 +1,7 @@
 ---
 title: home
 tags: ['menu']
-layout: pages/page.liquid
+layout: page.liquid
 ---
 
 {% include components/reactive_name %}

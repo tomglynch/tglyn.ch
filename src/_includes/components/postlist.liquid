@@ -1,0 +1,7 @@
+~~POSTLIST
+
+{% for item in collections.blog  %}
+- [{{item.data.title}}]({{item.url}}) - {{item.date}} - {{item.data.blurb}} - {{item.data.image_url}}
+{% endfor %}
+
+~~\POSTLIST

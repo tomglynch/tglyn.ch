@@ -1,6 +1,7 @@
 ---
+layout: pages/page.liquid
 title: subscribe
 tags: ['menu']
 ---
 
-{% include assets/subscribe_form %}
+{% include components/subscribe_form %}

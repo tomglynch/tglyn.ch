@@ -1,0 +1,9 @@
+~~MENU
+<div class="menu">
+	<ul>
+		{% for item in collections.menu %}
+			<li><a href="{{item.url}}">{{item.data.title | capitalize }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+~~\MENU

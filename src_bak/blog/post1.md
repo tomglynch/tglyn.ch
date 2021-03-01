@@ -1,8 +1,12 @@
 ---
-title: Post 1
+title: Title is Post 1
+date: 2016-01-01
+image_url: cat.png
 blurb: "this is a short post to show usage of a blurb in this post. nothing more nothing less nothing more nothing less nothing more nothing less nothing more nothing less."
-author: Tom Lynch
-date: 2016-08-08
-
 ---
-This is the content of post 1
+
+# post1
+title: {{title}}
+tags: {{tags}}
+this: {{this}}
+

@@ -1,5 +1,6 @@
 ---
 title: How to get free internet from your provider.
+date: 2016-01-01
 ---
 
 ## Step 1 - Hack them

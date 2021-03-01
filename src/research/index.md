@@ -1,7 +1,6 @@
 ---
 layout: pages/page.liquid
-title: blog
+title: research
 tags: ['menu']
 ---
 
-{% include components/postlist %}

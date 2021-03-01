@@ -1,8 +1,13 @@
 ---
+layout: pages/page.liquid
 title: about
 tags: ['menu']
 ---
 
-# About me
+{% assign spiel = "this is spiel" %}
+{% assign piccy = "./images/photo_of_me_tom_lynch.jpg" %}
 
-this is the about me page
+{% spiel_and_piccy spiel, piccy %}
+{% social_link "https://twitter.com/lynchyeatspizza", "twitter" %}
+
+{% include components/socials_list %}

@@ -1,6 +1,7 @@
 ---
+layout: pages/page.liquid
 title: contact
 tags: ['menu']
 ---
 
-{% include assets/contact_form %}
+{% include components/contact_form %}
