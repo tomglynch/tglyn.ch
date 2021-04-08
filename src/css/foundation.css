@@ -1,0 +1,76 @@
+
+html {
+    /* background-color:red; */
+    
+}
+
+/* GENERAL STYLING */
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.58;
+    
+    background-color:#F7F7F7;
+    font-family: 'Avenir', sans-serif;
+    font-size: 21px;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+a {
+    /* color:white; */
+}
+
+a:hover {
+    color: #D93D66;
+}
+
+/* MENU STUFF */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #D93D66;
+}
+  
+.menu li {
+    float: left;
+}
+  
+.menu li a {
+    /* display: block; */
+    color: #F7F7F7;
+    padding: 6px 16px;
+    text-decoration: none;
+}
+  
+.menu li a:hover {
+    background-color: #118C8C;
+    color: #F7F7F7;   
+}
+
+/* REACTIVE NAME */
+.reactivename {
+    padding-top: 10px;
+    padding-bottom: 38px;
+    background-color:#162447;
+}
+
+.reactivename:hover{
+    background-color: #D93D66;
+}
+
+.reactivename:hover h1.reactivename_text{
+    /* color: #F29966; */
+}
+
+  
+h1.reactivename_text {
+    color: #118C8C;
+    text-shadow: 1px 1px #162447, 2px 2px #162447, 3px 3px #162447, 4px 4px #162447, 5px 5px #162447, 6px 6px #162447, 7px 7px #162447, 8px 8px #162447, 9px 9px #162447, 10px 10px #162447, 11px 11px #162447, 12px 12px #162447, 13px 13px #162447;
+    font-weight: 900;
+    -webkit-text-stroke: 1.5px #162447;
+    text-align: center;
+    font-size: 3em;
+}
