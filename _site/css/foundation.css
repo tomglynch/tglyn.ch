@@ -8,15 +8,31 @@ html {
 body {
     margin: 0;
     padding: 0;
-    line-height: 1.58;
+    line-height: 1.48;
     color: #162447;
     background-color:#F7F7F7;
     font-family: 'Avenir', sans-serif;
     font-size: 21px;
-    max-width: 700px;
+    max-width: 680px;
     margin: auto;
   }
-  
+
+article {
+    max-width: 680px;
+    margin:0px 72px 0px 72px;
+}
+
+@media screen and (max-width: 680px) {
+    article {
+        margin:0px 24px 0px 24px;
+        font-size: 17px;
+        background-color: red;
+    }
+}
+
+
+
+
 a {
     color: #D93D66;
 }

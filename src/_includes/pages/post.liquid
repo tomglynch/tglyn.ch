@@ -2,6 +2,7 @@
 layout: body.liquid
 ---
 <!-- Post has structured content -->
+<article>
 <h1>{{title}}</h1>
 <author>
     <a href="{{site.about_me_url}}">{{site.my_name}}</a>
@@ -10,4 +11,4 @@ layout: body.liquid
     <time>{{page.date | postDate}}</time>
 </div>
 {{content}}
-
+</article>
