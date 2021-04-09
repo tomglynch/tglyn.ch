@@ -1,6 +1,7 @@
 const path = require("path");
 const inputDir = "src";
 
+const { DateTime } = require("luxon");
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget("./src/components.js");
@@ -19,6 +20,10 @@ module.exports = (eleventyConfig) => {
     return `<div class="socials">
         <a href="${url}"><img src=../icons/${social_network}.png alt="${social_network}"></a>
         </div>`
+  });
+
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
 
   return {

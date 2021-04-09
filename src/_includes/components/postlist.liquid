@@ -1,7 +1,15 @@
-~~POSTLIST
-
+<ul class="postlist">
 {% for item in collections.blog  %}
-- [{{item.data.title}}]({{item.url}}) - {{item.date}} - {{item.data.blurb}} - {{item.data.image_url}}
+<li class="postlist">
+    <h2 class="postlist">
+        <a href="{{item.url}}">{{item.data.title | capitalize }}</a>
+    </h2>
+    <div class="date">
+        <time>{{item.date | postDate}}</time>
+    </div>
+    <article>
+        {{item.data.blurb}}
+    </article>
+</li>
 {% endfor %}
-
-~~\POSTLIST
+</ul>

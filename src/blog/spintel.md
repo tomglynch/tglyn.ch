@@ -1,5 +1,5 @@
 ---
-title: Post 1
+title: How to get free internet from your provider.
 blurb: "this is a short post to show usage of a blurb in this post. nothing more nothing less nothing more nothing less nothing more nothing less nothing more nothing less."
 
 ---

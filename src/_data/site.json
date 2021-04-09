@@ -1,4 +1,6 @@
 {
 	"my_name": "Tom Lynch",
-	"url": "https://tglyn.ch"
+	"author": "Tom Lynch",
+	"url": "https://tglyn.ch",
+	"about_me_url": "/about"
 }

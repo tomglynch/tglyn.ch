@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.58;
-    
+    color: #162447;
     background-color:#F7F7F7;
     font-family: 'Avenir', sans-serif;
     font-size: 21px;
@@ -18,11 +18,12 @@ body {
   }
   
 a {
-    /* color:white; */
+    color: #D93D66;
 }
 
 a:hover {
-    color: #D93D66;
+    color: #F7F7F7;
+    background-color: #D93D66;
 }
 
 /* MENU STUFF */
@@ -49,6 +50,51 @@ a:hover {
     background-color: #118C8C;
     color: #F7F7F7;   
 }
+
+/* POSTLIST STUFF */
+ul.postlist{
+    list-style-type: none;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+}
+
+h2.postlist {
+    margin:0
+}
+
+li.postlist {
+    margin-bottom:1em
+}
+.date {
+    font-size: 0.75em;
+    color: #118C8C;
+    font-weight: 700;
+    /* background-color: blue; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* REACTIVE NAME */
 .reactivename {
