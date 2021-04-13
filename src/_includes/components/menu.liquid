@@ -1,6 +1,7 @@
 <div class="menu">
 	<ul>
-		{% for item in collections.menu %}
+		{% assign menuitems = collections.menu | sortByOrder %}
+		{% for item in menuitems %}
 			<li><a href="{{item.url}}">{{item.data.title | capitalize }}</a></li>
 		{% endfor %}
 	</ul>

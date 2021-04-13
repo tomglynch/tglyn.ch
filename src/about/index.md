@@ -2,6 +2,7 @@
 layout: pages/page.liquid
 title: about
 tags: ['menu']
+order: 2
 ---
 
 {% assign spiel = "this is spiel" %}

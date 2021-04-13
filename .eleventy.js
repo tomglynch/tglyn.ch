@@ -3,6 +3,13 @@ const inputDir = "src";
 
 const { DateTime } = require("luxon");
 
+
+function sortByOrder(values) {
+    let vals = [...values];     // this *seems* to prevent collection mutation...
+    console.log(vals)
+    return vals.sort((a, b) => Math.sign(a.data.order - b.data.order));
+}
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget("./src/components.js");
   eleventyConfig.setTemplateFormats(["md", "js", "liquid", "css", "jpg", "png"]); // include css and js to watch and reload on save
@@ -25,6 +32,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
+
+  eleventyConfig.addFilter("sortByOrder", sortByOrder);
 
   return {
     dir: {
