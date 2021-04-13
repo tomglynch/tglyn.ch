@@ -26,7 +26,6 @@ article {
     article {
         margin:0px 24px 0px 24px;
         font-size: 17px;
-        background-color: red;
     }
 }
 
@@ -35,7 +34,7 @@ article {
     article {
         margin:0px 24px 0px 24px;
         font-size: 17px;
-        background-color: blue;
+        /* background-color: blue; */
     }
 }
 
@@ -140,8 +139,18 @@ pre, code {
 }
 
 .reactivename:hover{
-    background-color: #D93D66;
+    animation: varybgcoloropposite 5s 1;
 }
+
+
+/* smartphones, touchscreens */
+@media (hover: none) and (pointer: coarse) {
+    .reactivename{
+        animation: varybgcolor 20s 1;
+        
+    }
+}
+
 
 .reactivename:hover h1.reactivename_text{
     /* color: #F29966; */
@@ -155,4 +164,19 @@ h1.reactivename_text {
     -webkit-text-stroke: 1.5px #162447;
     text-align: center;
     font-size: 3em;
+}
+
+
+
+@keyframes varybgcolor
+{
+    0%     {background-color: #162447}
+    100%      {background-color: #D93D66;}
+    
+}
+
+@keyframes varybgcoloropposite
+{
+    0%     {background-color: #D93D66}
+    100%      {background-color: #162447;}
 }
