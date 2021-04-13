@@ -12,7 +12,6 @@ body {
     background-color:#F7F7F7;
     font-family: 'Avenir', sans-serif;
     font-size: 21px;
-    max-width: 824px;
     margin: auto;
   }
 
@@ -40,6 +39,12 @@ article {
     }
 }
 
+/* mouse, touch pad */
+@media (hover: hover) and (pointer: fine) {
+    body {
+        max-width: 824px;
+      }
+}
 
 a {
     color: #D93D66;
