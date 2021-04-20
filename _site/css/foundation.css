@@ -65,6 +65,17 @@ a:hover {
     color: #F7F7F7;   
 }
 
+@media screen and (max-width: 600px) {
+    .menu {
+        font-size: 3vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    .menu li a {
+        padding: 2vw 3vw;
+    }
+}
+
 /* POSTLIST STUFF */
 ul.postlist{
     list-style-type: none;
