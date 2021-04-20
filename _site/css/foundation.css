@@ -13,6 +13,7 @@ body {
     font-family: 'Avenir', sans-serif;
     font-size: 21px;
     margin: auto;
+    max-width: 824px;
   }
 
 article {
@@ -41,6 +42,7 @@ a:hover {
 }
 
 /* MENU STUFF */
+
 .menu ul {
     list-style-type: none;
     margin: 0;
@@ -72,9 +74,15 @@ a:hover {
 }
 @media screen and (max-width: 600px) {
     .menu li a {
-        padding: 2vw 3vw;
+        padding: 3vw;
     }
 }
+@media screen and (max-width: 600px) {
+    .menu ul {
+        padding: 1vw;
+    }
+}
+
 
 /* POSTLIST STUFF */
 ul.postlist{
