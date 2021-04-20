@@ -26,24 +26,10 @@ article {
     article {
         margin:0px 24px 0px 24px;
         font-size: 17px;
-    }
-}
-
-/* smartphones, touchscreens */
-@media (hover: none) and (pointer: coarse) {
-    article {
-        margin:0px 24px 0px 24px;
-        font-size: 17px;
         /* background-color: blue; */
     }
 }
 
-/* mouse, touch pad */
-@media (hover: hover) and (pointer: fine) {
-    body {
-        max-width: 824px;
-      }
-}
 
 a {
     color: #D93D66;
