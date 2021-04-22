@@ -1,7 +1,5 @@
 
 html {
-    /* background-color:red; */
-    
 }
 
 /* GENERAL STYLING */
@@ -17,29 +15,116 @@ body {
   }
 
 article {
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto; */
     margin:0px 72px 0px 72px;
+    font-family: 'Avenir', sans-serif;
 }
 
 @media screen and (max-width: 824px) {
     article {
         margin:0px 24px 0px 24px;
         font-size: 17px;
-        /* background-color: blue; */
     }
 }
 
 
-a {
+article a {
     color: #D93D66;
 }
 
-a:hover {
+article a:hover {
     color: #F7F7F7;
     background-color: #D93D66;
 }
+
+
+/* FEATURES IN ARTICLES */
+th, td {
+    padding: 0.3em 1.2em;
+    text-align: left;
+}
+
+
+article img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+.spiel_and_piccy_r__piccy {
+    padding: 3%;
+    float: right;
+  }
+.spiel_and_piccy_l__piccy {
+    padding: 3%;
+    float: left;
+  }
+.spiel_and_piccy__spiel {
+    display: inline;
+  }
+
+
+
+
+
+
+
+
+
+
+/* FORMS */
+form{
+	max-width: 500px;
+	padding: 10px 20px;
+	margin: 10px auto;
+	padding: 20px;
+}
+label {
+	display: block;
+	margin-bottom: 8px;
+}
+input[type],
+textarea,
+select {
+	border: none;
+	border-radius: 4px;
+	padding: 0.8em;
+	width: 100%;
+	background-color: #e6e6e6;
+	margin-bottom: 0.5em;
+    font-family: 'Avenir', sans-serif;
+}
+input[type]:focus,
+textarea:focus,
+select:focus{
+	background: #FFFFFF;
+}
+
+input[type="submit"],
+input[type="button"]
+{
+    float: right;
+	color: #FFFFFF;
+	margin: 0 auto;
+	background: #118C8C;
+	max-width: 33%;
+	border: 1px solid rgb(10, 129, 105);
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover
+{
+	background: #162447;
+    border: 1px solid #090f1f;
+    border-width: 1px 1px 3px;
+}
+
+
+
+
+
+  
 
 /* MENU STUFF */
 
@@ -84,6 +169,9 @@ a:hover {
 }
 
 
+
+
+
 /* POSTLIST STUFF */
 ul.postlist{
     list-style-type: none;
@@ -112,9 +200,21 @@ h1.posttitle {
 }
 
 
+/* SOCIALS */
+.social_link {
+    height: 50px;
+    width: auto;
+}
+.social_link:hover{
+    opacity: 0.7;
+ }
 
+.socials_list{
+    margin: 50px 0px;
+    text-align:center;
+}
 
-
+/* BLOCK QUOTES IN ARTICLES */
 
 blockquote {
     border-left: 5px solid #F29966;
@@ -184,4 +284,40 @@ h1.reactivename_text {
 {
     0%     {background-color: #D93D66}
     100%      {background-color: #162447;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+coloursIcanUse
+{
+    background: #162447;
+    background: #D93D66;
+    background: #F29966;
+    background: #118C8C;
 }

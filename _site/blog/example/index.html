@@ -1,10 +1,13 @@
 <html lang="en">
   <head>
-    <title>example - Tom Lynch</title>
+    <title>Example - Tom Lynch</title>
     <link rel="stylesheet" href="/css/foundation.css">
-
+    <link rel="stylesheet" href="/css/fa_icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
+    
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -36,7 +39,7 @@
 	</ul>
 </div>
 
-<!-- Post has structured content -->
+
 <article>
 <h1 class="posttitle">example</h1>
 <author>
@@ -133,12 +136,9 @@ line 3 of code
 <pre><code>Sample text here...
 </code></pre>
 <p>Syntax highlighting</p>
-<pre><code class="language-js">var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-</code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">bar</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token keyword">return</span> bar<span class="token operator">++</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Syntax highlighting</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Brute force with a try-except block (Python 3+)</span><br><span class="token keyword">try</span><span class="token punctuation">:</span> <br>    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'/path/to/file'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fh<span class="token punctuation">:</span><br>        <span class="token keyword">pass</span><br><span class="token keyword">except</span> FileNotFoundError<span class="token punctuation">:</span> <br>    <span class="token keyword">pass</span><br><span class="token comment"># Leverage the OS package (possible race condition)</span><br><span class="token keyword">import</span> os <br>exists <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span><span class="token string">'/path/to/file'</span><span class="token punctuation">)</span><br><span class="token comment"># Wrap the path in an object for enhanced functionality</span><br><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path<br>config <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'/path/to/file'</span><span class="token punctuation">)</span> <br><span class="token keyword">if</span> config<span class="token punctuation">.</span>is_file<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <br>    <span class="token keyword">pass</span></code></pre>
 <h2>Tables</h2>
 <table>
 <thead>
@@ -249,10 +249,6 @@ Third paragraph of definition 2.
 :::</p>
 
 </article>
-
-<!-- ~~FOOTER
-Tom Lynch 2021
-~~\FOOTER -->
   </body>
 </html>
 
