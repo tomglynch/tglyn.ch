@@ -27,11 +27,11 @@ article {
 }
 
 
-article a {
+a {
     color: #D93D66;
 }
 
-article a:hover {
+a:hover {
     color: #F7F7F7;
     background-color: #D93D66;
 }

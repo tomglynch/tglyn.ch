@@ -1,7 +1,7 @@
 ---
 title: home
 tags: ['menu']
-layout: pages/page.liquid
+layout: pages/homepage.liquid
 order: 1
 ---
 
