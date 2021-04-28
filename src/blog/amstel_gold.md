@@ -17,13 +17,13 @@ Did the race organiser receive the winner piccy via mms? And what about the othe
 
 ![GIF showing race organiser surprised at the camera](https://i.imgur.com/T0GcEgS.gif "GIF showing race organiser surprised at the camera")
 
-All in all, the whole debacle left a funny taste in my mouth so I wanted to look more into it. Looking at the slow-mo shots it looked like Pidcock might have won it:
-
-![Side on photo of the finish line](../images/amstel_side_shot.png "Side on photo of the finish line")
-
-But the warped photo of the photo-finish showed a close win for van Aert:
+The unofficial announcement, the 'provisional' results, the long wait and the warped photo-finish photo all gave the win to van Aert...
 
 ![Warped photo of the photo-finish](../images/amstel_warped_photo_finish.jpg "Warped photo of the photo-finish")
+
+But looking at the slow-mo shots it looked like Pidcock might have won it:
+
+![Side on photo of the finish line](../images/amstel_side_shot.png "Side on photo of the finish line")
 
 Is there something more going on here?
 
