@@ -62,7 +62,7 @@ But it took this tweet from Inoes followed by [Tom Pidcock's reply](https://twit
 
 ![Tom Pidcock tweeting 'But where is the finish line?'](../images/amstel_pidcock_where_is_the_line.png "Tom Pidcock tweeting 'But where is the finish line?'")
 
-# Let's find the finish line for Tom
+# Let's find the finish line for Pidcock
 
 So I replied with what I knew and was quickly corrected by [@LaFlammeRouge16](https://twitter.com/laflammerouge16)
 
