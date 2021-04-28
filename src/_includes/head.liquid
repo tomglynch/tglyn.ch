@@ -13,6 +13,13 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
     
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="{{blurb}}" />
+    <meta property="og:image" content="{{site.url}}{{image}}" />
+    <meta property="og:url" content="{{ post.url | url }}" />
+    
+    
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}

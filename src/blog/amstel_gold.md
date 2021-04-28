@@ -1,6 +1,7 @@
 ---
-title: Who won the Amstel Gold Race? Human error in photo-finishes
+title: "Who won the Amstel Gold Race? Human error in photo-finishes"
 blurb: "Investigating the photo-finish of last Sunday's Amstel Gold Race. With millimeters separating the two riders does the photo-finish camera tell the truth?"
+image: "/blog/images/amstel_side_shot.png"
 date: 2021-04-28
 ---
 
