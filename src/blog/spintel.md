@@ -1,10 +1,12 @@
 ---
 title: Using Chrome Devtools to poke around an internet providers portal
 blurb: "Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... there's bound to be a security hole here."
-
+date: 2019-02-01
 ---
 
-Most of my experiences dealing with internet providers have been negative - you're only in contact with them when they're over-charging or under-delivering. However usually the portal is a seamless task, I mean I'm only trying to check how much of my 250GB I have remaining for the month (the perils of not being able to get a wired internet connection to our rental house, meaning we're on the 4G plan with the highest data). But logging in to Australian internet provider Spintel's online portal sent my ~~spidey~~ security senses tingling... there's bound to be a security hole here.
+Most of my experiences dealing with internet providers have been negative - you're only in contact with them when they're over-charging or under-delivering. However usually the portal is a seamless task, I mean I'm only trying to check how much of my 250GB I have remaining for the month (the perils of not being able to get a wired internet connection to our rental house, meaning we're on the 4G plan with the highest data). But signing up to Australian internet provider Spintel's online portal sent my ~~spidey~~ security senses tingling, it wouldn't accept the password I'd generated. So I tried changing it a bit, and realised by removing the inverted commas it allowed me to set my password. Interesting. This made me think there may be an SQL injection vulnerability but after playing around there all seemed okay. I think instead they were stripping out the inverted commas and subsequent characters. But still, a sign of perhaps not the strongest dev team, so I decided to explore further.
+
+![Image showing the Spintel Login page](../images/spintel_login.png "Spintel Login page")
 
 ### So where do we begin?
 

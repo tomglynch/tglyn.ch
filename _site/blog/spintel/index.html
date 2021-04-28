@@ -1,10 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="theme-color" content="#162447">
     <title>Using Chrome Devtools to poke around an internet providers portal - Tom Lynch</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="/css/foundation.css">
     <link rel="stylesheet" href="/css/fa_icons.css">
+    <link rel="stylesheet" href="/css/prism-okaidia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
     
@@ -15,7 +20,7 @@
 
       gtag('config', 'UA-179723365-1');
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    
 
   </head>
   <body>
@@ -46,9 +51,10 @@
     <a href="/about">Tom Lynch</a>
 </author>
 <div class="date">
-    <time>9 Apr 2021</time>
+    <time>1 Feb 2019</time>
 </div>
-<p>Most of my experiences dealing with internet providers have been negative - you're only in contact with them when they're over-charging or under-delivering. However usually the portal is a seamless task, I mean I'm only trying to check how much of my 250GB I have remaining for the month (the perils of not being able to get a wired internet connection to our rental house, meaning we're on the 4G plan with the highest data). But logging in to Australian internet provider Spintel's online portal sent my <s>spidey</s> security senses tingling... there's bound to be a security hole here.</p>
+<p>Most of my experiences dealing with internet providers have been negative - you're only in contact with them when they're over-charging or under-delivering. However usually the portal is a seamless task, I mean I'm only trying to check how much of my 250GB I have remaining for the month (the perils of not being able to get a wired internet connection to our rental house, meaning we're on the 4G plan with the highest data). But signing up to Australian internet provider Spintel's online portal sent my <s>spidey</s> security senses tingling, it wouldn't accept the password I'd generated. So I tried changing it a bit, and realised by removing the inverted commas it allowed me to set my password. Interesting. This made me think there may be an SQL injection vulnerability but after playing around there all seemed okay. I think instead they were stripping out the inverted commas and subsequent characters. But still, a sign of perhaps not the strongest dev team, so I decided to explore further.</p>
+<p><img src="../images/spintel_login.png" alt="Image showing the Spintel Login page" title="Spintel Login page"></p>
 <h3>So where do we begin?</h3>
 <p>So what do we do? Open up Chrome's Devtools, open the network tab, tick preserve log and get browsing of course! In the network tab, each request sent and recieved is logged, with their request, response and query string parameters. Here we are able to view all the data being sent and received from this website's server to your computer. Something I notice in these requests is the number 0000XXX812 (this is changed to protect the innocent btw) appears quite a bit. Using the find (the cmd + F thing) feature I'm able to spot in a request that the number is a user ID, which must be related to me!</p>
 <pre class="language-js"><code class="language-js"><span class="token punctuation">{</span><br>    <span class="token string">"x_value"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>    <span class="token string">"is_return"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>    <span class="token string">"session_only"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token string">"user_id"</span><span class="token operator">:</span> <span class="token string">"0000XXX812"</span><br><span class="token punctuation">}</span></code></pre>
@@ -93,6 +99,3 @@
 </article>
   </body>
 </html>
-
-
-
