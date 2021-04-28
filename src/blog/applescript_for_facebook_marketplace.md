@@ -1,7 +1,7 @@
 ---
 title: Automating Facebook Marketplace - searching different locations
 blurb: "Logging in to Australian internet provider Spintels online portal sent my security senses tingling... theres bound to be a security hole here."
-date: 2021-03-22
+date: 2021-02-22
 ---
 
 Hey all, this is a script to use in Apple Script Editor (it's a program installed on every mac). Open that by typing 'Script Editor' into spotlight (Command+Space). Then copy the code below and paste it in. Save it and hit the Run button, and it'll guide you through a few questions before opening all the results! 
