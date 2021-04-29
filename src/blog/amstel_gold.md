@@ -73,6 +73,7 @@ and from there La Flamme Rouge and I began working together to solve this.
 After searching through many pictures we found this shot which included a better picture of the banner:
 
 ![Better picture of the finishing barrier](../images/amstel_barrier_bike_throw.png "Better picture of the finishing barrier")
+
 ![Closer picture of the finishing barrier](../images/amstel_barrier_closer.png "Closer picture of the finishing barrier")
 
 Which allowed us to work out which letters could possibly form the two green lines through the white section. Looking up Amstel Bier Radler we can find their little slogan, **Met trots voor u gebrouwen - Geen 18, geen alcohol**. Below the green lemon leaves are the words **geen alcohol** and within these words, the only letters that can be cut with two intersections are the letters **c** and **o**.
@@ -135,9 +136,9 @@ So perhaps with these better resolution photos we could try to determine if Tom 
 1. Measure the width of the wheel in pixels, see if Tom's is shorter than Wout's which means he has more speed.
     - This may result in incorrect conclusions due to the bike throw for the line which results in a speed increase of the bike compared to the rider. Potentially the first half of the wheel may be faster than the second half, resulting in the measurements being off. 
 
-2. Look a the pattern of the spokes to try to determine the distance traveled since the finish line. In the close-up image, you can see the spokes of both riders. The curve of the spokes should mean we can determine the distance the rider has traveled after the phot-finish camera.
+2. Look at the pattern of the spokes to try to determine the distance traveled since the finish line. The curve is an artefact of the photo-finish line not capturing a moment in time, but a location for a period of time. In the close-up image, you can see the spokes of both riders. The curve of the spokes should mean we can determine the distance the rider has traveled after the photo-finish camera.
 
-3. Both Wout van Aert and Tom Pidcock were likely runnings 25mm tyres on their 700c wheels resulting in a diameter of around 672mm, or 67.2cm. So 26.86/67.2 = 0.3997 ≈ 0.4, so the photo-finish was approximately 40% of a wheel length too early - So measure when each rider's wheel reaches 40% of the way through. At 40% of the way across a circle, the length of the chord is 96% of the diameter (so just 2% difference at the bottom and 2% difference at the top). 
+3. Both Wout van Aert and Tom Pidcock were likely running 25mm tyres on their 700c wheels resulting in a diameter of around 672mm, or 67.2cm. So 26.86/67.2 = 0.3997 ≈ 0.4, so the photo-finish was approximately 40% of a wheel length too early - So measure when each rider's wheel reaches 40% of the way through. At 40% of the way across a circle, the length of the chord is 96% of the diameter (so just 2% difference at the bottom and 2% difference at the top). 
     - I think this would allow us to work out the actual winner if it was possible to determine accurately where this 40% occurs (please check my maths and confirm 40% first).
 
 ![Secant of a bike wheel](../images/amstel_secant.png "Secant of a bike wheel")
@@ -147,7 +148,7 @@ So perhaps with these better resolution photos we could try to determine if Tom 
 # Recommendations
 
 ### To race organisers
-- Ensure the company you use to do timing sets up the camera in the right spot (lol that this needs to be stated)
+- Ensure the company responsible for the timing sets the camera in the right spot (lol that this needs to be stated)
 - Ensure you have a way to distribute the photo-finish photo. Horse racing requires photo finishes to be provided to the broadcaster within 60 seconds. Cycling should be the same
 
 ### To the UCI
@@ -174,7 +175,7 @@ Yet there was only **one camera** which took just **2000** photos per second.
 
 - Thanks to La Flamme Rouge and all the other twitter users who chipped in
 - I'll keep an eye out on twitter if anyone else wants to get involved
-- I'm looking for a software engineering job, lemme know if you're building something fun
+- I'm looking for a software engineering job, let me know if you're building something fun
 - Oh and hit up my socials or subscribe down below if you wanna stay up to date on it 😊 
 
 
