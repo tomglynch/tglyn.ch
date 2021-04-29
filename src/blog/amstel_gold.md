@@ -157,6 +157,10 @@ So perhaps with these better resolution photos we could try to determine if Tom 
 
 Yet there was only **one camera** which took just **2000** photos per second.
 
+- Change the requirements of the paint of the finish line to ensure that photo-finish camera operators have a set line to aim at. Suggestion would be to follow Athletics' example, by painting 2cm wide black spots along the edge of the white band, and aiming for that with the camera - ensuring the photo-finish is within 2cm's of the actual finish. Here's how it works in Athletics - see the black marks across the finish line:
+
+![Athletics photo-finish set up](../images/amstel_athletics.jpg "Athletics photo-finish set up")
+
 
 ### And to finish
 - If you’re going to employ tech with a resolution of <span style="color:#969696">1/3500 =</span> 0.0002857s, don’t set it up 0.016s off the mark - **that's 56 times the resolution**
