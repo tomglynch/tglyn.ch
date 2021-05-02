@@ -1,6 +1,6 @@
 ---
-title: Finding all users home addresses
-blurb: "Using Chrome Devtools to poke around my internet providers portal sent my security senses tingling... there's bound to be a security hole here."
+title: "Hacking my ISP to get every customer's personal details"
+blurb: "Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... theres bound to be a security hole here."
 date: 2019-02-01
 ---
 

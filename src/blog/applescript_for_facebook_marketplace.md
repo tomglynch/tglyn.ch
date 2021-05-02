@@ -1,6 +1,6 @@
 ---
-title: Automating Facebook Marketplace - searching different locations
-blurb: "Logging in to Australian internet provider Spintels online portal sent my security senses tingling... theres bound to be a security hole here."
+title: "Automating Facebook Marketplace - searching multiple locations"
+blurb: "A quick script to use on Macs that searches multiple different locations for your search terms"
 date: 2021-02-22
 ---
 
