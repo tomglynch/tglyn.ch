@@ -3,6 +3,7 @@ const inputDir = "src";
 
 const { DateTime } = require("luxon");
 
+const { JSDOM } = require('jsdom')
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 function sortByOrder(values) {
@@ -91,6 +92,28 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("sortByOrder", sortByOrder);
 
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  eleventyConfig.addTransform(
+      'lazy-load-images',
+      (content, outputPath) => {
+          if (outputPath.endsWith('.html')) {
+              const dom = new JSDOM(content)
+              const document = dom.window.document
+
+              const [...images] = document.getElementsByTagName(
+                  'img'
+              )
+
+              images.forEach((image) => {
+                  image.setAttribute('loading', 'lazy')
+              })
+
+              return document.documentElement.outerHTML
+          } else {
+              return content
+          }
+      })
+
 
   return {
     dir: {

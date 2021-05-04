@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta name="theme-color" content="#162447">
     <title>Hacking my ISP to get every customer's personal details - Tom Lynch</title>
     <link rel="icon" href="/favicon.png" type="image/png">
@@ -11,19 +9,19 @@
     <link rel="stylesheet" href="/css/prism-okaidia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
     
    
-    <meta property="og:title" content="Hacking my ISP to get every customer's personal details" />
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... theres bound to be a security hole here." />
-    <meta property="og:image" content="https://tglyn.ch" />
-    <meta property="og:url" content="https://tglyn.ch/blog/spintel/" />
+    <meta property="og:title" content="Hacking my ISP to get every customer's personal details">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... there's bound to be a security hole here.">
+    <meta property="og:image" content="https://tglyn.ch">
+    <meta property="og:url" content="https://tglyn.ch/blog/spintel/">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@lynchyeatspizza">
     <meta name="twitter:title" content="Hacking my ISP to get every customer's personal details">
-    <meta name="twitter:description" content="Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... theres bound to be a security hole here.">
+    <meta name="twitter:description" content="Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... there's bound to be a security hole here.">
     <meta name="twitter:image" content="https://tglyn.ch">
     
     <script>
@@ -67,7 +65,7 @@
     <time>1 Feb 2019</time>
 </div>
 <p>Most of my experiences dealing with internet providers have been negative - you're only in contact with them when they're over-charging or under-delivering. However usually the portal is a seamless task, I mean I'm only trying to check how much of my 250GB I have remaining for the month (the perils of not being able to get a wired internet connection to our rental house, meaning we're on the 4G plan with the highest data). But signing up to Australian internet provider Spintel's online portal sent my <s>spidey</s> security senses tingling, it wouldn't accept the password I'd generated. So I tried changing it a bit, and realised by removing the inverted commas it allowed me to set my password. Interesting. This made me think there may be an SQL injection vulnerability but after playing around there all seemed okay. I think instead they were stripping out the inverted commas and subsequent characters. But still, a sign of perhaps not the strongest dev team, so I decided to explore further.</p>
-<p><img src="../images/spintel_login.png" alt="Image showing the Spintel Login page" title="Spintel Login page"></p>
+<p><img src="../images/spintel_login.png" alt="Image showing the Spintel Login page" title="Spintel Login page" loading="lazy"></p>
 <h3>So where do we begin?</h3>
 <p>So what do we do? Open up Chrome's Devtools, open the network tab, tick preserve log and get browsing of course! In the network tab, each request sent and recieved is logged, with their request, response and query string parameters. Here we are able to view all the data being sent and received from this website's server to your computer. Something I notice in these requests is the number 0000XXX812 (this is changed to protect the innocent btw) appears quite a bit. Using the find (the cmd + F thing) feature I'm able to spot in a request that the number is a user ID, which must be related to me!</p>
 <pre class="language-js"><code class="language-js"><span class="token punctuation">{</span><br>    <span class="token string">"x_value"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>    <span class="token string">"is_return"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>    <span class="token string">"session_only"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token string">"user_id"</span><span class="token operator">:</span> <span class="token string">"0000XXX812"</span><br><span class="token punctuation">}</span></code></pre>
@@ -101,9 +99,9 @@
 <p>Spintel got back to me pretty quickly, and closed off the issue within five days which I was surprised by. And they also offered me four months of free internet! What a treat.</p>
 <p>Enjoy that? Pop your email in here cause over the next few weeks I'm working on a few more blog posts in a similar vein.</p>
 <form name="subscribe" method="POST" data-netlify="true"> 
-    <input name="email" type="email" class="form-input" placeholder="Email" required/>
-    <input type="submit" value="Subscribe"/>
+    <input name="email" type="email" class="form-input" placeholder="Email" required="">
+    <input type="submit" value="Subscribe">
 </form>
 </article>
-  </body>
-</html>
+  
+</body></html>
