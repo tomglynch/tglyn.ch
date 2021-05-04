@@ -1,6 +1,7 @@
 ---
 title: "Automating Facebook Marketplace - searching multiple locations"
 blurb: "A quick script to use on Macs that searches multiple different locations for your search terms"
+image: "/blog/images/MarketplaceSearch.png"
 date: 2021-02-22
 ---
 

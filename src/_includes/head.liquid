@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/css/fa_icons.css">
     <link rel="stylesheet" href="/css/prism-okaidia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
     
    
     <meta property="og:title" content="{{title}}" />
@@ -26,6 +24,10 @@
     <meta name="twitter:description" content="{{blurb}}">
     <meta name="twitter:image" content="{{site.url}}{{image}}">
     
+    {% if env.isProd %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
+    
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -33,7 +35,7 @@
 
       gtag('config', 'UA-179723365-1');
     </script>
-    
+    {% endif %}
 
   </head>
   <body>

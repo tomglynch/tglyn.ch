@@ -1,6 +1,7 @@
 ---
 title: "Hacking my ISP to get every customer's personal details"
 blurb: "Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... there's bound to be a security hole here."
+image: "/blog/images/spintel_login.png"
 date: 2019-02-01
 ---
 
