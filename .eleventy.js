@@ -8,9 +8,20 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 function sortByOrder(values) {
     let vals = [...values];     // this *seems* to prevent collection mutation...
+    // console.log(vals.sort((a, b) => Math.sign(a.data.order - b.data.order)))
     return vals.sort((a, b) => Math.sign(a.data.order - b.data.order));
 }
 
+
+function removeUnpublished(values) {
+  let vals = [...values];
+  for (i in values) {
+    if(values[i].data.published == false){
+      vals.pop(i)
+    }
+  }
+  return vals
+}
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget("./src/components.js");
@@ -90,6 +101,8 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addFilter("sortByOrder", sortByOrder);
+  eleventyConfig.addFilter("removeUnpublished", removeUnpublished);
+
 
   eleventyConfig.addPlugin(syntaxHighlight);
 

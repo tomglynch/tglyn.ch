@@ -3,6 +3,7 @@ title: "Automating Facebook Marketplace - searching multiple locations"
 blurb: "A quick script to use on Macs that searches multiple different locations for your search terms"
 image: "/blog/images/MarketplaceSearch.png"
 date: 2021-02-22
+published: true
 ---
 
 Hey all, this is a script to use in Apple Script Editor (it's a program installed on every mac). Open that by typing 'Script Editor' into spotlight (Command+Space). Then copy the code below and paste it in. Save it and hit the Run button, and it'll guide you through a few questions before opening all the results! 
@@ -10,7 +11,7 @@ Hey all, this is a script to use in Apple Script Editor (it's a program installe
 
 ![Image showing how to hit the run button on Apple's ScriptEditor](../images/MarketplaceSearch.png "How to hit the run button on Apple's ScriptEditor")
 
-There's also a few settings you can edit at the start of the script. These are the **preset search terms** (make sure you follow the same format), the **broswer** to use (comment out the browser you don't want, by default I'm using Firefox but Chrome is there if you prefer it) and also the **default number of days since the item was listed** that you'd like to search. If you're not in Australia or would like to search more locations you'll need to edit the **city_search_urls**, by going to [Facebook Marketplace](https://www.facebook.com/marketplace) and changing your location to the city you want to search in and copying that url into the city_search_urls list (again make sure to follow the same format).
+There's also a few settings you can edit at the start of the script. These are the **preset search terms** (make sure you follow the same format), the **browser** to use (comment out the browser you don't want, by default I'm using Firefox but Chrome is there if you prefer it) and also the **default number of days since the item was listed** that you'd like to search. If you're not in Australia or would like to search more locations you'll need to edit the **city_search_urls**, by going to [Facebook Marketplace](https://www.facebook.com/marketplace) and changing your location to the city you want to search in and copying that url into the city_search_urls list (again make sure to follow the same format).
 
 ### Quick Tips to using
 - Have the browser already opened (otherwise it gets confused and opens new windows not tabs)
@@ -21,6 +22,8 @@ There's also a few settings you can edit at the start of the script. These are t
 So usually I'd explain the code but I won't bother here because in my honest opinion, AppleScript is pretty average. I realised when I was getting quite close to finishing that on one of the docs that you can also write scripts for Apple products in JavaScript, which probably would be a lot easier if you were starting from scratch! Doh.
 
 However if you're after something pretty similar to this, it's a good start.
+
+The code is also available from [GitHub](https://github.com/tomglynch/fb_marketplace_applescripts/blob/main/AutoFacebookMarketplaceSearchBasic.applescript).
 
 
 

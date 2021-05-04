@@ -1,5 +1,11 @@
 <ul class="postlist">
-{% for item in collections.blog reversed  %}
+
+{% assign blogposts = collections.blog %}
+{% if env.isProd %}
+{% assign blogposts = collections.blog | removeUnpublished %}
+{% endif %}
+
+{% for item in blogposts reversed  %}
 <li class="postlist">
     <h2 class="postlist">
         <a href="{{item.url}}">{{item.data.title | capitalize }}</a>
@@ -13,3 +19,4 @@
 </li>
 {% endfor %}
 </ul>
+
