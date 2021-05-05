@@ -181,6 +181,7 @@ Yet there was only **one camera** which took just **2000** photos per second.
 - I'm looking for a software engineering job, let me know if you're building something fun
 - Oh and hit up my socials or subscribe down below if you wanna stay up to date on it 😊 
 
+EDIT: I now have a follow up post [here](/blog/photo-finish_paint_problem/)
 
 {% include components/socials_list %}
 
