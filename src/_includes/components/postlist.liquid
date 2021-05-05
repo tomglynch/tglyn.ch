@@ -1,5 +1,3 @@
-<ul class="postlist">
-
 {% if page.fileSlug == "research" %}
 {% assign blogposts = collections.research %}
 {% else %}
@@ -10,13 +8,13 @@
 {% assign blogposts = blogposts | removeUnpublished %}
 {% endif %}
 
-
+<ul class="postlist">
 {% for item in blogposts reversed  %}
 <li class="postlist">
     <h2 class="postlist">
         {% if item.data.published %}
-        <a href="{{item.url}}">{{item.data.title | capitalize }}</a>
-        {%else %}
+        <a href="{{item.url}}">{{item.data.title | capitalize }}</a>{% if item.data.popularity == 5 %} <img src="../files/flame.png" style="max-height: 2ex;" alt="This article is HOT" title="This article is HOT">{% endif %}
+        {% else %}
         <a href="{{item.url}}" style="color:rgb(145, 145, 145);">{{item.data.title | capitalize }} (draft)</a>
         {% endif %}
     </h2>

@@ -4,7 +4,8 @@ blurb: "Investigating the photo-finish of last Sunday's Amstel Gold Race. With m
 image: "/blog/images/amstel_side_shot.png"
 date: 2021-04-28
 published: true
-"tags": ["research"]
+tags: ["research"]
+popularity: 5
 ---
 
 Watching the Amstel Gold Race unfold here in Australia was an effort, as the clock ticked past 1am with still 13km to go. However, when it came to the final kilometers, staying awake was easy, the finale was thrilling and oh-so-close. A breakaway of three, Wout van Aert (in yellow), Tom Pidcock (black) and Max Schachmann (white) started playing cat and mouse to be in the best position before the final sprint as the peloton closed in behind them. Catch the last kilometer here:

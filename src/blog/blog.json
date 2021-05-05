@@ -4,5 +4,6 @@
     "blurb": "default",
     "image": "/files/tomlynch.png",
     "published": false,
-    "tags": ["blog"]
+    "tags": ["blog"],
+    "popularity": 3
   }
