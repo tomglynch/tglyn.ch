@@ -24,6 +24,8 @@
     
     
 
+    
+
   </head>
   <body>
     
@@ -55,7 +57,7 @@
 <div class="date">
     <time>4 May 2021</time>
 </div>
-<p>I've built <a href="https://github.com/tomglynch/tglyn.ch">this site</a> with <a href="https://www.11ty.dev/">11ty</a>, a static site generator that has been a pleasure to work with. By running 11ty in the background and following their folder structure, the website is instantly generated upon any change you make. And when I push my code to GitHub, Netlify is watching and instantly deploys. All in all, it really lowers the friction of making changes.</p>
+<p>I've built this site with <a href="https://www.11ty.dev/">11ty</a>, a static site generator that has been a pleasure to work with. By running 11ty in the background and following their folder structure, the website is instantly generated upon any change you make. And when I push my code to my <a href="https://github.com/tomglynch/tglyn.ch">GitHub repo</a>, Netlify is watching and instantly deploys. All in all, it really lowers the friction of making changes.</p>
 <p>After a blog post of mine blew up on <a href="https://twitter.com/Tompid/status/1387461964708855813">the</a> <a href="https://news.ycombinator.com/item?id=26970854">internet</a>, I was quickly heading towards Netlify's bandwidth limits. Lazy Loading images is an easy solution to decrease your bandwidth usage.</p>
 <p>While there are many ways to implement Lazy Loading, the simplest is adding the attribute <code>"loading"="lazy"</code> to your image tags. But I struggled to easily find a way to do this in 11ty, so I'm writing this post to pass what I figured out on. BTW, this is now supported by nearly all modern browsers.</p>
 <h1>How 11ty works</h1>

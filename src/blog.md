@@ -1,5 +1,5 @@
 ---
-layout: pages/page.liquid
+layout: pages/listpage.liquid
 title: blog
 tags: ['menu']
 order: 3

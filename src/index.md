@@ -1,7 +1,7 @@
 ---
 title: home
 tags: ['menu']
-layout: pages/homepage.liquid
+layout: pages/listpage.liquid
 order: 1
 image: "/files/tomlynch.png"
 ---

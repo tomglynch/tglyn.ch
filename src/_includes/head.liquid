@@ -24,6 +24,10 @@
     <meta name="twitter:description" content="{{blurb}}">
     <meta name="twitter:image" content="{{site.url}}{{image}}">
     
+    {% if published==false %}
+    <meta name="robots" content="noindex, follow">
+    {% endif %}
+
     {% if env.isProd %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
