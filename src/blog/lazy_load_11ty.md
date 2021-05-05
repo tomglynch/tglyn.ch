@@ -7,7 +7,7 @@ published: true
 ---
 
 
-I've built this site with [11ty](https://www.11ty.dev/), a static site generator that has been a pleasure to work with. By running 11ty in the background and following their folder structure, the website is instantly generated upon any change you make. And when I push my code to GitHub, Netlify is watching and instantly deploys. All in all, it really lowers the friction of making changes. 
+I've built [this site](https://github.com/tomglynch/tglyn.ch) with [11ty](https://www.11ty.dev/), a static site generator that has been a pleasure to work with. By running 11ty in the background and following their folder structure, the website is instantly generated upon any change you make. And when I push my code to GitHub, Netlify is watching and instantly deploys. All in all, it really lowers the friction of making changes. 
 
 After a blog post of mine blew up on [the](https://twitter.com/Tompid/status/1387461964708855813) [internet](https://news.ycombinator.com/item?id=26970854), I was quickly heading towards Netlify's bandwidth limits. Lazy Loading images is an easy solution to decrease your bandwidth usage.
 
@@ -55,8 +55,6 @@ module.exports = function(eleventyConfig) {
       })
 };
 ```
-
-# How this works
 
 Jsdom is a tool which allows you to emulate the use of a web browser in node.js, so you can perform actions similar to a user in the browser. So using this, we pop the content into jsdom to give us the html document that we can iterate through. Then we get all images using getElementsByTagName, and set an attribute (```"loading": "lazy"```) on each, before returning what we have changed.
 

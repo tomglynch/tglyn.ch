@@ -1,4 +1,8 @@
 {
     "layout": "pages/post.liquid",
+    "title": "default",
+    "blurb": "default",
+    "image": "/files/tomlynch.png",
+    "published": false,
     "tags": ["blog"]
   }

@@ -2,9 +2,13 @@ const path = require("path");
 const inputDir = "src";
 
 const { DateTime } = require("luxon");
+const dotenv = require('dotenv').config();
 
-const { JSDOM } = require('jsdom')
+const { JSDOM } = require('jsdom');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+const layout = require('./src/_includes/shortcodes/layout');
+const embed = require('./src/_includes/shortcodes/embed');
 
 function sortByOrder(values) {
     let vals = [...values];     // this *seems* to prevent collection mutation...
@@ -24,72 +28,37 @@ function removeUnpublished(values) {
 }
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addWatchTarget("./src/components.js");
+
+  let markdownIt = require("markdown-it");
+  let options = {
+    html: true,
+  };
+  let markdownLib = markdownIt(options).disable('code');
+  eleventyConfig.setLibrary("md", markdownLib);
+  
+
   eleventyConfig.setTemplateFormats(["md", "js", "liquid", "css", "jpg", "png", "svg", "pdf"]); // include css and js to watch and reload on save
-  // eleventyConfig.addPassthroughCopy(path.join(inputDir, "css"));
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addShortcode("spiel_and_piccy", function(spiel, piccy, width_percent) {
-    return `<div>
-      <img class="spiel_and_piccy_r__piccy" src=${piccy} style="width:${width_percent}% !important;">
-      <div class="spiel_and_piccy__spiel">
-        <p>${spiel}</p>
-      </div>
-    </div>`
+  eleventyConfig.addPairedShortcode("include_js", function(content) {
+    return `<script>window.addEventListener('load', function () { ${content}})</script>`;
   });
 
-  eleventyConfig.addShortcode("piccy_and_spiel", function(spiel, piccy, width_percent) {
-    return `<div>
-      <img class="spiel_and_piccy_l__piccy" src=${piccy} style="width:${width_percent}% !important;">
-      <div class="spiel_and_piccy__spiel">
-        <p>${spiel}</p>
-      </div>
-    </div>`
+  eleventyConfig.addPairedShortcode("include_css", function(content) {
+    return `<style>${content}</style>`;
   });
 
-  eleventyConfig.addPairedShortcode("myShortcode", function(content, summary) {
-    // Method A: ✅ This works fine
-    return `<details open><summary>${summary}</summary>${content}</details>`;
+  eleventyConfig.addPairedShortcode("include_html", function(content) {
+    return `${content}`;
   });
 
-  // future edition, have sections that fold up
+  eleventyConfig.addShortcode("spiel_and_piccy", layout.spiel_and_piccy);
+  eleventyConfig.addShortcode("piccy_and_spiel", layout.piccy_and_spiel);
+  eleventyConfig.addPairedShortcode("detail_summary_drop_down", layout.detail_summary_drop_down);
 
-  // eleventyConfig.addShortcode("sd_start_summary_details", function(y_id){
-  //     return `<details open><summary>`
-  // });
-  // eleventyConfig.addShortcode("sd_start_summary_details_close", function(y_id){
-  //     return `<details close><summary>`
-  // });
-  // eleventyConfig.addShortcode("sd_end_summary_details", function(y_id){
-  //     return `</summary>`
-  // });
-  // eleventyConfig.addShortcode("sd_end_details", function(y_id){
-  //     return `</details>`
-  // });
+  eleventyConfig.addShortcode("youtube", embed.youtube);
+  eleventyConfig.addShortcode("streamable", embed.streamable);
 
-
-  eleventyConfig.addShortcode("youtube", function(y_id){
-      return `<div style="position: relative;
-              width: 100%;
-              height: 0;
-              padding-bottom: 56.25%; margin-bottom: 1rem;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/${y_id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;" allowfullscreen></iframe>
-              </div>`
-  });
-
-  eleventyConfig.addShortcode("streamable", function(s_id) {
-      return `<div style="height: 0px; position: relative; padding-bottom: 56.250%;">
-                <iframe src="https://streamable.com/e/${s_id}" frameborder="0" allowfullscreen style="
-                height: 100%; 
-                width: 100%;
-                position: absolute;"></iframe>
-              </div>`
-  });
 
   eleventyConfig.addShortcode("social_link", function(url, social_network) {
     return `<a href="${url}" target="_blank" class="fa fa-${social_network}"></a>`

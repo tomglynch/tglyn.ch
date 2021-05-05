@@ -1,14 +1,24 @@
 <ul class="postlist">
 
+{% if page.fileSlug == "research" %}
+{% assign blogposts = collections.research %}
+{% else %}
 {% assign blogposts = collections.blog %}
-{% if env.isProd %}
-{% assign blogposts = collections.blog | removeUnpublished %}
 {% endif %}
+
+{% if env.isProd %}
+{% assign blogposts = blogposts | removeUnpublished %}
+{% endif %}
+
 
 {% for item in blogposts reversed  %}
 <li class="postlist">
     <h2 class="postlist">
+        {% if item.data.published %}
         <a href="{{item.url}}">{{item.data.title | capitalize }}</a>
+        {%else %}
+        <a href="{{item.url}}" style="color:rgb(145, 145, 145);">{{item.data.title | capitalize }} (draft)</a>
+        {% endif %}
     </h2>
     <div class="date">
         <time>{{item.date | postDate}}</time>

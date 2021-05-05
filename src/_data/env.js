@@ -8,7 +8,11 @@ const baseUrl = environment === PROD_ENV ? prodUrl : devUrl;
 const isProd = environment === PROD_ENV;
 
 
-module.exports = {
-  environment,
-  isProd,
+module.exports = function() {
+  return { 
+    prodUrl: prodUrl,
+    environment: environment,
+    isProd: isProd,
+  }
 };
+
