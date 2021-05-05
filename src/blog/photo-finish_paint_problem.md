@@ -3,7 +3,7 @@ title: "It's not the photo-finish operators, it's how the line was painted"
 blurb: "In light of my Amstel Gold blog post which generated lots of discussion regarding the measurements involved in photo-finishes, I decided to take a closer look at other recent photo-finishes and make some suggestions to the UCI to solve these problems."
 image: "/blog/images/followup_suggested_finish_specs.png"
 date: 2021-05-05
-published: false
+published: true
 ---
 
 In light of my [previous blog post](/blog/amstel_gold/) which generated lots of discussion regarding the measurements involved in photo-finishes, I decided to take a closer look at other recent photo-finishes to see if any others were set up in a way that meant they could not give a definitive result. The most recent of these was the women's **De Brabantse Pijl**.
