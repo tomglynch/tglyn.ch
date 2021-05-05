@@ -1,7 +1,7 @@
 ---
 title: "It's not the photo-finish operators, it's how the line was painted"
 blurb: "In light of my Amstel Gold blog post which generated lots of discussion regarding the measurements involved in photo-finishes, I decided to take a closer look at other recent photo-finishes and make some suggestions to the UCI to solve these problems."
-image: "/blog/images/followup_suggested_finish_specs.png"
+image: "/blog/images/followup_photo-finish_markers_after.png"
 date: 2021-05-05
 published: true
 ---
@@ -77,3 +77,5 @@ As ex-pro Leon van Bom said:
 > "It's so weird the find out the finish is not the finish".
 
 Well this should not be the case and I'm calling on the UCI to get this sorted.
+
+An extra little note for the UCI: In horse racing, the timing partner is contracted to provide the broadcaster with a photo-finish photo within one minute of the end of the race. Maybe you should look into something like this too 😊
