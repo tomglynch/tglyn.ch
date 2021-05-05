@@ -78,4 +78,4 @@ As ex-pro Leon van Bom said:
 
 Well this should not be the case and I'm calling on the UCI to get this sorted.
 
-An extra little note for the UCI: In horse racing, the timing partner is contracted to provide the broadcaster with a photo-finish photo within one minute of the end of the race. Maybe you should look into something like this too 😊
+An extra little note for the UCI: In horse racing, the timing partner is contracted to provide the broadcaster with a photo-finish photo within one minute of the end of the race. I think this would also be a nice requirement to have as waiting around post race is stressful 😊
