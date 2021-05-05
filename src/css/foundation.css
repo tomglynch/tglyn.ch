@@ -198,7 +198,9 @@ li.postlist {
     /* background-color: blue; */
 }
 
-
+h2.postlist p {
+    margin: 0;
+}
 
 h1.posttitle {
     font-size: 2em;
