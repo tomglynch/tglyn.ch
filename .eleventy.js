@@ -9,6 +9,8 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const layout = require('./src/_includes/shortcodes/layout');
 const embed = require('./src/_includes/shortcodes/embed');
+const filtering = require('./src/_includes/js/filtering');
+
 
 function sortByOrder(values) {
     let vals = [...values];     // this *seems* to prevent collection mutation...
@@ -16,69 +18,6 @@ function sortByOrder(values) {
     return vals.sort((a, b) => Math.sign(a.data.order - b.data.order));
 }
 
-var stopwords = ['i','me','my','myself','we','our','ours','ourselves','you','your','yours','yourself','yourselves','he','him','his','himself','she','her','hers','herself','it','its','itself','they','them','their','theirs','themselves','what','which','who','whom','this','that','these','those','am','is','are','was','were','be','been','being','have','has','had','having','do','does','did','doing','a','an','the','and','but','if','or','because','as','until','while','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','to','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','s','t','can','will','just','don','should','now']
-function remove_stopwords(str) {
-    res = []
-    words = str.split(' ')
-    for(i=0;i<words.length;i++) {
-       word_clean = words[i].split(".").join("")
-       if(!stopwords.includes(word_clean)) {
-           res.push(word_clean)
-       }
-    }
-    return(res.join(' '))
-}  
-
-
-
-function dice_coefficient(l, r) {
-  if (l.length < 2 || r.length < 2) return 0;
-
-  let lBigrams = new Map();
-  for (let i = 0; i < l.length - 1; i++) {
-    const bigram = l.substr(i, 2);
-    const count = lBigrams.has(bigram)
-      ? lBigrams.get(bigram) + 1
-      : 1;
-
-    lBigrams.set(bigram, count);
-  };
-
-  let intersectionSize = 0;
-  for (let i = 0; i < r.length - 1; i++) {
-    const bigram = r.substr(i, 2);
-    const count = lBigrams.has(bigram)
-      ? lBigrams.get(bigram)
-      : 0;
-
-    if (count > 0) {
-      lBigrams.set(bigram, count - 1);
-      intersectionSize++;
-    }
-  }
-
-  return (2.0 * intersectionSize) / (l.length + r.length - 2);
-}
-
-
-
-function mostRelated(values, basedOn) {
-  let vals = [...values];
-  for (i in vals) {
-    var dc = dice_coefficient(basedOn,vals[i].data.content)
-    vals[i]['dc'] = dc 
-  }
-  vals.sort((a, b) => (a.dc < b.dc) ? 1 : -1)
-  vals.shift()
-  // remove itself
-  console.log("HEKEFKELFJ")
-  for (i in vals){
-    console.log(vals[i].data.title, vals[i].dc)
-  }
-  
-
-  return vals
-}
 
 
 
@@ -136,7 +75,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addFilter("sortByOrder", sortByOrder);
   eleventyConfig.addFilter("removeUnpublished", removeUnpublished);
-  eleventyConfig.addFilter("mostRelated", mostRelated);
+  eleventyConfig.addFilter("mostRelated", filtering.mostRelated);
   
   eleventyConfig.addPlugin(syntaxHighlight);
 
