@@ -4,9 +4,12 @@
 {% assign blogposts = collections.blog %}
 {% endif %}
 
+
 {% if env.isProd %}
 {% assign blogposts = blogposts | removeUnpublished %}
 {% endif %}
+
+
 
 <ul class="postlist">
 {% for item in blogposts reversed  %}

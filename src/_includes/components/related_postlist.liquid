@@ -1,0 +1,31 @@
+{% assign blogposts = collections.blog | mostRelated:content |  slice: 0, 3 %}
+
+{% if env.isProd %}
+{% assign blogposts = blogposts | removeUnpublished  %}
+{% endif %}
+
+
+<ul class="postlist">
+{% for item in blogposts  %}
+<li class="postlist">
+    <h2 class="postlist">
+        {% if item.data.published %}
+        {% if item.data.popularity == 5 %}<img src="../../files/flame.png" style="max-height: 2ex;" alt="This article is HOT" title="This article is HOT"> {% endif %}<a href="{{item.url}}">{{item.data.title | capitalize }}</a>
+        {% else %}
+        <a href="{{item.url}}" style="color:rgb(145, 145, 145);">{{item.data.title | capitalize }} (draft)</a>
+        {% endif %}
+    </h2>
+    <div class="date">
+        <time>{{item.date | postDate}}</time>
+    </div>
+
+    <div>
+        {{item.data.blurb}}
+    </div>
+    <div>
+        ^ related rating: <b>{{item.dc | round: 5 }}</b>
+    </div>
+</li>
+{% endfor %}
+</ul>
+
