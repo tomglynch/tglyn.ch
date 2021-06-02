@@ -59,6 +59,3 @@ Spintel got back to me pretty quickly, and closed off the issue within five days
 
 
 
-Enjoy that? Pop your email in here cause over the next few weeks I'm working on a few more blog posts in a similar vein.
-
-{% include components/subscribe_form %}

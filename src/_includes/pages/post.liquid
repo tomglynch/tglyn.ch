@@ -11,8 +11,11 @@ layout: body.liquid
     <time>{{page.date | postDate}}</time>
 </div>
 {{content}}
-</article>
 
+{% include components/socials_list %}
+
+{% include components/subscribe_form %}
+</article>
 
 <h2>Related blogs</h1>
 {% include components/related_postlist %}

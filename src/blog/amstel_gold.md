@@ -183,6 +183,4 @@ Yet there was only **one camera** which took just **2000** photos per second.
 
 EDIT: I now have a follow up post [here](/blog/photo-finish_paint_problem/)
 
-{% include components/socials_list %}
 
-{% include components/subscribe_form %}
