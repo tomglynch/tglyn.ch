@@ -1,4 +1,6 @@
-{% assign blogposts = collections.blog | mostRelated:content |  slice: 0, 3 %}
+{% assign string_to_compare = page.fileSlug | append: " " | append: title | append: " " | append: blurb | append: " " | append: image %}
+{% assign blogposts = collections.blog | mostRelated:string_to_compare |  slice: 0, 3 %}
+
 
 {% if env.isProd %}
 {% assign blogposts = blogposts | removeUnpublished  %}

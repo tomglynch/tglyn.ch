@@ -48,13 +48,19 @@ var dice_coefficient = function(l, r) {
 var mostRelated = function(values, basedOn) {
   let vals = [...values];
   for (i in vals) {
-    var dc = dice_coefficient(basedOn,vals[i].data.content)
+    let string_to_compare = vals[i].fileSlug + ' ' + vals[i].data.title + ' ' + vals[i].data.blurb + ' ' + vals[i].data.image
+    var dc = dice_coefficient(basedOn,string_to_compare)
     vals[i]['dc'] = dc 
   }
   vals.sort((a, b) => (a.dc < b.dc) ? 1 : -1)
-  
+    
   // remove itself
   vals.shift()  
+
+  // log similarity ratings
+  // for (i in vals){
+  //   console.log(vals[i].data.title, vals[i].dc)
+  // }
 
   return vals
 }
