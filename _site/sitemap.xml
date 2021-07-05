@@ -45,17 +45,6 @@
     </url>
   
     <url>
-      <loc>https://tglyn.ch/subscribe/</loc>
-      
-        <lastmod>Wed Feb 17 2021 16:54:23 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
-      
-
-      
-        <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
       <loc>https://tglyn.ch/research/</loc>
       
         <lastmod>Wed Feb 17 2021 17:11:24 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
@@ -125,6 +114,17 @@
       <loc>https://tglyn.ch/blog/testing_features/</loc>
       
         <lastmod>Wed May 05 2021 10:00:00 GMT+1000 (Australian Eastern Standard Time)</lastmod>
+      
+
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://tglyn.ch/subscribe/</loc>
+      
+        <lastmod>Mon Jul 05 2021 18:42:54 GMT+1000 (Australian Eastern Standard Time)</lastmod>
       
 
       
