@@ -8,9 +8,9 @@ tags: ["research"]
 popularity: 5
 ---
 
-Watching the Amstel Gold Race unfold here in Australia was an effort, as the clock ticked past 1am with still 13km to go. However, when it came to the final kilometers, staying awake was easy, the finale was thrilling and oh-so-close. A breakaway of three, Wout van Aert (in yellow), Tom Pidcock (black) and Max Schachmann (white) started playing cat and mouse to be in the best position before the final sprint as the peloton closed in behind them. Catch the last kilometer here:
+Watching the Amstel Gold Race unfold here in Australia was an effort, as the clock ticked past 1am with still 13km to go. However, when it came to the final kilometers, staying awake was easy, the finale was thrilling and oh-so-close. A breakaway of three, Wout van Aert (in yellow), Tom Pidcock (black) and Max Schachmann (white) started playing cat and mouse to be in the best position before the final sprint as the peloton closed in behind them. Catch the last couple of kilometers here:
 
-{% streamable "wpant9" %}
+{% youtube "me9bDGCXjWE" %}
 
 Following the end of the race, the broadcasters spent minutes trying to determine the winner and it wasn't until 8 and a half minutes after the race ended they showed the following (quite unprofessional amirite):
 
@@ -43,7 +43,7 @@ This is also the cause for the blurred looking background (like in the next imag
 ![Photo finish blurred background](../images/amstel_blurred_photo.png "Photo finish blurred background")
 
 
-If you're still a bit confused, take a look at this video: {% youtube "MW1YKwu_2b0" %}
+If you're still a bit confused, take a look at this video: {% youtube "Ut0nKdLCAEo" %}
 
 # And why did I need to learn that?
 
