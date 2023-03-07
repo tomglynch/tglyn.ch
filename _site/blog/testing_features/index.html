@@ -23,8 +23,6 @@
     <meta name="twitter:image" content="https://tglyn.ch/files/tomlynch.png">
     
     
-    <meta name="robots" content="noindex, follow">
-    
 
     
 
@@ -60,6 +58,15 @@
     <time>5 May 2021</time>
 </div>
 <p><span role="img" aria-label="Snowman">😍</span></p>
+<script>window.addEventListener('load', function () { 
+var leftgear = document.getElementById("leftgear"),
+rightgear = document.getElementById("rightgear");
+    
+window.addEventListener("scroll", function() {
+    leftgear.style.transform = "rotate("+window.pageYOffset+"deg)";
+    rightgear.style.transform = "rotate(-"+window.pageYOffset+"deg)";
+});
+})</script>
 <style> 
 #gearbox {
     display: flex;

@@ -2,12 +2,22 @@
 title: "testing"
 blurb: "testing"
 date: 2021-05-05
-published: false
+published: true
 ---
 {% include_html %}<span role="img" aria-label="Snowman">😍</span>{% endinclude_html %}
 
 
 
+
+{% include_js %}
+var leftgear = document.getElementById("leftgear"),
+rightgear = document.getElementById("rightgear");
+    
+window.addEventListener("scroll", function() {
+    leftgear.style.transform = "rotate("+window.pageYOffset+"deg)";
+    rightgear.style.transform = "rotate(-"+window.pageYOffset+"deg)";
+});
+{% endinclude_js %}
 
 {% include_css %} 
 #gearbox {
