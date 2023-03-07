@@ -1,0 +1,159 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="theme-color" content="#162447">
+    <title>Automating Facebook Marketplace - searching multiple locations - Tom Lynch</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/fa_icons.css">
+    <link rel="stylesheet" href="/css/prism-okaidia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+   
+    <meta property="og:title" content="Automating Facebook Marketplace - searching multiple locations">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="A quick script to use on Macs that searches multiple different locations for your search terms">
+    <meta property="og:image" content="https://tglyn.ch/blog/images/MarketplaceSearch.png">
+    <meta property="og:url" content="https://tglyn.ch/blog/applescript_for_facebook_marketplace/">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@lynchyeatspizza">
+    <meta name="twitter:title" content="Automating Facebook Marketplace - searching multiple locations">
+    <meta name="twitter:description" content="A quick script to use on Macs that searches multiple different locations for your search terms">
+    <meta name="twitter:image" content="https://tglyn.ch/blog/images/MarketplaceSearch.png">
+    
+    
+
+    
+
+  </head>
+  <body>
+    
+<div class="menu">
+	<ul>
+		
+		
+			<li><a href="/">Home</a></li>
+		
+			<li><a href="/about/">About</a></li>
+		
+			<li><a href="/blog/">Blog</a></li>
+		
+			<li><a href="/research/">Research</a></li>
+		
+			<li><a href="/subscribe/">Subscribe</a></li>
+		
+			<li><a href="/contact/">Contact</a></li>
+		
+	</ul>
+</div>
+
+
+<article>
+<h1 class="posttitle">Automating Facebook Marketplace - searching multiple locations</h1>
+<author>
+    <a href="/about">Tom Lynch</a>
+</author>
+<div class="date">
+    <time>22 Feb 2021</time>
+</div>
+<p>Hey all, this is a script to use in Apple Script Editor (it's a program installed on every mac). Open that by typing 'Script Editor' into spotlight (Command+Space). Then copy the code below and paste it in. Save it and hit the Run button, and it'll guide you through a few questions before opening all the results!</p>
+<p><img src="../images/MarketplaceSearch.png" alt="Image showing how to hit the run button on Apple's ScriptEditor" title="How to hit the run button on Apple's ScriptEditor" loading="lazy"></p>
+<p>There's also a few settings you can edit at the start of the script. These are the <strong>preset search terms</strong> (make sure you follow the same format), the <strong>browser</strong> to use (comment out the browser you don't want, by default I'm using Firefox but Chrome is there if you prefer it) and also the <strong>default number of days since the item was listed</strong> that you'd like to search. If you're not in Australia or would like to search more locations you'll need to edit the <strong>city_search_urls</strong>, by going to <a href="https://www.facebook.com/marketplace">Facebook Marketplace</a> and changing your location to the city you want to search in and copying that url into the city_search_urls list (again make sure to follow the same format).</p>
+<h3>Quick Tips to using</h3>
+<ul>
+<li>Have the browser already opened (otherwise it gets confused and opens new windows not tabs)</li>
+<li>Do a Marketplace search beforehand and set your radius to 500km, so that subsequent searches are also for as big of a region as possible</li>
+<li>Sometimes it times out, not sure why. Just start again if it does and let me know if you figure out why</li>
+</ul>
+<p>So usually I'd explain the code but I won't bother here because in my honest opinion, AppleScript is pretty average. I realised when I was getting quite close to finishing that on one of the docs that you can also write scripts for Apple products in JavaScript, which probably would be a lot easier if you were starting from scratch! Doh.</p>
+<p>However if you're after something pretty similar to this, it's a good start.</p>
+<p>The code is also available from <a href="https://github.com/tomglynch/fb_marketplace_applescripts/blob/main/AutoFacebookMarketplaceSearchBasic.applescript">GitHub</a>.</p>
+<pre class="language-apl"><code class="language-apl"><span class="token comment"># --------------------------------------------------------------------------</span><br><span class="token comment"># ---------------------------------- SETTINGS ------------------------------</span><br><span class="token comment"># --------------------------------------------------------------------------</span><br><br>set preset_search_terms to "cyclocross<span class="token function">,</span> cx bike<span class="token function">,</span> gravel bike<span class="token function">,</span> adidas <span class="token number">10</span><span class="token function">,</span> reebok <span class="token number">10</span>"<br><br>set browser to "Firefox"<br><span class="token comment"># set browser to "Google Chrome"</span><br><br>set default_days to ""<br>set default_max_price to ""<br><br>set city_search_urls to <span class="token dfn builtin">{</span>"https<span class="token dfn builtin">:</span><span class="token monadic-operator operator">/</span><span class="token monadic-operator operator">/</span>www<span class="token dyadic-operator operator">.</span>facebook<span class="token dyadic-operator operator">.</span>com<span class="token monadic-operator operator">/</span>marketplace<span class="token monadic-operator operator">/</span>adelaide<span class="token monadic-operator operator">/</span>search"<span class="token function">,</span> "https<span class="token dfn builtin">:</span><span class="token monadic-operator operator">/</span><span class="token monadic-operator operator">/</span>www<span class="token dyadic-operator operator">.</span>facebook<span class="token dyadic-operator operator">.</span>com<span class="token monadic-operator operator">/</span>marketplace<span class="token monadic-operator operator">/</span>perth<span class="token monadic-operator operator">/</span>search"<span class="token function">,</span> "https<span class="token dfn builtin">:</span><span class="token monadic-operator operator">/</span><span class="token monadic-operator operator">/</span>www<span class="token dyadic-operator operator">.</span>facebook<span class="token dyadic-operator operator">.</span>com<span class="token monadic-operator operator">/</span>marketplace<span class="token monadic-operator operator">/</span><span class="token number">109177059102294</span><span class="token monadic-operator operator">/</span>search"<span class="token function">,</span> "https<span class="token dfn builtin">:</span><span class="token monadic-operator operator">/</span><span class="token monadic-operator operator">/</span>www<span class="token dyadic-operator operator">.</span>facebook<span class="token dyadic-operator operator">.</span>com<span class="token monadic-operator operator">/</span>marketplace<span class="token monadic-operator operator">/</span>brisbane<span class="token monadic-operator operator">/</span>search"<span class="token function">,</span> "https<span class="token dfn builtin">:</span><span class="token monadic-operator operator">/</span><span class="token monadic-operator operator">/</span>www<span class="token dyadic-operator operator">.</span>facebook<span class="token dyadic-operator operator">.</span>com<span class="token monadic-operator operator">/</span>marketplace<span class="token monadic-operator operator">/</span>sydney<span class="token monadic-operator operator">/</span>search"<span class="token function">,</span> "https<span class="token dfn builtin">:</span><span class="token monadic-operator operator">/</span><span class="token monadic-operator operator">/</span>www<span class="token dyadic-operator operator">.</span>facebook<span class="token dyadic-operator operator">.</span>com<span class="token monadic-operator operator">/</span>marketplace<span class="token monadic-operator operator">/</span>melbourne<span class="token monadic-operator operator">/</span>search"<span class="token dfn builtin">}</span><br><br><span class="token comment"># --------------------------------------------------------------------------</span><br><span class="token comment"># -------------------------- CODE THAT RUNS THE THING ----------------------</span><br><span class="token comment"># --------------------------------------------------------------------------</span><br><br>on replace_chars<span class="token punctuation">(</span>this_text<span class="token function">,</span> search_string<span class="token function">,</span> replacement_string<span class="token punctuation">)</span><br>	set AppleScript's text item delimiters to the search_string<br>	set the item_list to every text item of this_text<br>	set AppleScript's text item delimiters to the replacement_string<br>	set this_text to the item_list as string<br>	set AppleScript's text item delimiters to ""<br>	return this_text<br>end replace_chars<br><br><br>set search_terms_input_string to display dialog "What do you want to search for<span class="token function">?</span>" default answer preset_search_terms<br>set search_terms_string to text returned of search_terms_input_string<br><br>set AppleScript's text item delimiters to "<span class="token function">,</span> "<br>set the search_terms_list to every text item of the search_terms_string<br>set AppleScript's text item delimiters to ""<br><br><br>set params to "<span class="token function">?</span>"<br><br>set max_price_input to display dialog "Whats the max price to search for <span class="token punctuation">(</span>blank for no max<span class="token punctuation">)</span><span class="token function">?</span>" default answer default_max_price<br>set max_price to text returned of max_price_input<br><br>if <span class="token punctuation">(</span>max_price<span class="token punctuation">)</span> <span class="token function">≠</span> "" then set params to params <span class="token monadic-operator operator">&amp;</span> "maxPrice<span class="token function">=</span>" <span class="token monadic-operator operator">&amp;</span> max_price <span class="token monadic-operator operator">&amp;</span> "<span class="token monadic-operator operator">&amp;</span>"<br><br>set num_days_input to display dialog "How many days since posted do you want to check <span class="token punctuation">(</span>blank for all dates<span class="token punctuation">)</span><span class="token function">?</span>" default answer default_days<br>set num_days to text returned of num_days_input<br><br>if <span class="token punctuation">(</span>num_days<span class="token punctuation">)</span> <span class="token function">≠</span> "" then set params to params <span class="token monadic-operator operator">&amp;</span> "daysSinceListed<span class="token function">=</span>" <span class="token monadic-operator operator">&amp;</span> num_days <span class="token monadic-operator operator">&amp;</span> "<span class="token monadic-operator operator">&amp;</span>"<br><br><br>with timeout of <span class="token number">3600</span> seconds<br>	repeat with search_term in search_terms_list<br>		set theDialogText to "Click Continue to proceed to the search for <span class="token string">'" &amp; search_term &amp; "'</span>"<br>		with timeout of <span class="token number">3600</span> seconds<br>			display dialog theDialogText buttons <span class="token dfn builtin">{</span>"End"<span class="token function">,</span> "Skip"<span class="token function">,</span> "Continue"<span class="token dfn builtin">}</span> default button "Continue" cancel button "End"<br>		end timeout<br>		repeat <span class="token number">1</span> times<br>			if the button returned of the result is "Skip" then exit repeat<br>			repeat with location_url in city_search_urls<br>				set this_url to replace_chars<span class="token punctuation">(</span>location_url <span class="token monadic-operator operator">&amp;</span> params <span class="token monadic-operator operator">&amp;</span> "query<span class="token function">=</span>" <span class="token monadic-operator operator">&amp;</span> search_term<span class="token function">,</span> " "<span class="token function">,</span> "%<span class="token number">20</span>"<span class="token punctuation">)</span><br>				tell application browser<br>					activate<br>					open location this_url<br>				end tell<br>				delay <span class="token number">0.1</span><br>			end repeat<br>		end repeat<br>	end repeat<br>end timeout<br>with timeout of <span class="token number">3600</span> seconds<br>	display alert "Searches complete"<br>end timeout</code></pre>
+<p>Hope that helps your Facebook Marketplace search needs! Also once Facebook blocked me from seeing search results as I ran too many searches too quickly, so use with care!</p>
+
+
+<div class="socials_list">
+<a href="https://github.com/tomglynch" target="_blank" class="fa fa-github"></a>
+<a href="https://twitter.com/lynchyeatspizza" target="_blank" class="fa fa-twitter"></a>
+<a href="https://www.linkedin.com/in/tomglynch/" target="_blank" class="fa fa-linkedin"></a>
+<a href="https://news.ycombinator.com/user?id=tomglynch" target="_blank" class="fa fa-y-combinator"></a>
+<a href="/files/TomLynchResumeSinglePage.pdf" target="_blank" class="fa fa-file"></a>
+<a href="/files/TomLynchResumeTwoPage.pdf" target="_blank" class="fa fa-file-text"></a>
+</div>
+
+<form name="subscribe" method="POST" data-netlify="true"> 
+    <input name="email" type="email" class="form-input" placeholder="Email" required="">
+    <input type="submit" value="Subscribe">
+</form>
+</article>
+
+<h2>Related blogs</h2>
+
+
+
+
+
+
+
+<ul class="postlist">
+
+<li class="postlist">
+    <h2 class="postlist">
+        
+        <img src="../../files/flame.png" style="max-height: 2ex;" alt="This article is HOT" title="This article is HOT" loading="lazy"> <a href="/blog/uci_fix_the_line/">Finish Line Fiasco: UCI's Paint Job Needs a Refresh</a>
+        
+    </h2>
+    <div class="date">
+        <time>7 Mar 2023</time>
+    </div>
+
+    <div>
+        UCI regulations are not keeping up with these close finishes. Caleb Ewen may have been robbed of a victory and we would know for sure if the UCI updated their finish line marking rules
+    </div>
+    <div>
+        ^ similarity rating: <b>0.36398</b>
+    </div>
+</li>
+
+<li class="postlist">
+    <h2 class="postlist">
+        
+        <a href="/blog/lazy_load_11ty/">Simplest way to add Lazy Loading in 11ty</a>
+        
+    </h2>
+    <div class="date">
+        <time>4 May 2021</time>
+    </div>
+
+    <div>
+        After a blog post of mine blew up, I was quickly heading towards Netlify's bandwidth limits. Lazy Loading images is an easy solution to decrease your bandwidth usage.
+    </div>
+    <div>
+        ^ similarity rating: <b>0.35821</b>
+    </div>
+</li>
+
+<li class="postlist">
+    <h2 class="postlist">
+        
+        <a href="/blog/spintel/">Hacking my ISP to get every customer's personal details</a>
+        
+    </h2>
+    <div class="date">
+        <time>1 Feb 2019</time>
+    </div>
+
+    <div>
+        Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... there's bound to be a security hole here.
+    </div>
+    <div>
+        ^ similarity rating: <b>0.35622</b>
+    </div>
+</li>
+
+</ul>
+
+
+  
+</body></html>
