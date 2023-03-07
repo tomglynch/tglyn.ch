@@ -3,6 +3,7 @@ title: "Finish Line Fiasco: UCI's Paint Job Needs a Refresh"
 blurb: "UCI regulations are not keeping up with these close finishes. Caleb Ewen may have been robbed of a victory and we would know for sure if the UCI updated their finish line marking rules"
 image: "/blog/images/followup_photo-finish_markers_after.png"
 date: 2023-03-07
+popularity: 5
 published: true
 ---
 
