@@ -72,7 +72,7 @@ If possible, the 1cm wide black markers should be reduced in width to the least 
 
 Implementing these suggestions would significantly reduce any risk of a repeat of Amstel Gold or De Brabantse Pijl. Professional cyclists put in huge amounts of hours and effort to be the best they can be, and it is a disservice to them to have the best quality equipment for measuring close finishes, but to then fail to measure accurately due to inadequate specs.
 
-As ex-pro Leon van Bom said:
+As ex-pro Léon van Bon said:
 
 > "It's so weird the find out the finish is not the finish".
 

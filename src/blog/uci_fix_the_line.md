@@ -29,7 +29,7 @@ I go into this in more detail in my [original photo-finish blog about the 2021 A
 
 # 3. This leaves us with no idea of who actually won 
 
-Well at least based on the photo finish alone that is. But the other photos suggest Caleb Ewan may have crossed the line first. Seems like if the technology can't seperate them, it should be considered a tie. And we all know what a tie means (or is this a long lost UCI rule too), a 1 v 1 race over 1000m to seperate the winners. 
+Well at least based on the photo finish alone that is. But the other photos suggest Caleb Ewan may have crossed the line first. Seems like if the technology can't separate them, it should be considered a tie. And we all know what a tie means (or is this a long lost UCI rule too), a 1 v 1 race over 1000m to separate the winners. 
 
 # 4. The UCI should pick up its act, enforce its standards and actually improve its finish line specs to ensure fair finishes in the future.
 
@@ -60,7 +60,7 @@ If possible, the 1cm wide black markers should be reduced in width to the least 
 
 Implementing these suggestions would significantly reduce any risk of a repeat of Amstel Gold or De Brabantse Pijl. Professional cyclists put in huge amounts of hours and effort to be the best they can be, and it is a disservice to them to have the best quality equipment for measuring close finishes, but to then fail to measure accurately due to inadequate specs.
 
-After my original post, ex-pro Leon van Bom said:
+After my original post, ex-pro Léon van Bon said:
 
 > "It's so weird the find out the finish is not the finish".
 
