@@ -1,5 +1,5 @@
 ---
-title: "It's not the photo-finish operators, it's how the line was painted"
+title: "It's not the photo-finish operators, it's the UCI rules on how the finish line is painted"
 blurb: "Let's look at De Brabantse Pijl to see if the photo-finish there was off too - and then make some suggestions to the UCI to solve these problems."
 image: "/blog/images/followup_photo-finish_markers_after.png"
 date: 2021-05-05
