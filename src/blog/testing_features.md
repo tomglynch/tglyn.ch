@@ -41,4 +41,6 @@ window.addEventListener("scroll", function() {
 
 
 THIS IS THE prodUrl: {{ env.prodUrl }}
+THIS IS THE environment: {{ env.environment }}
+THIS IS THE isProd: {{ env.isProd }}
 
