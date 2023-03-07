@@ -33,7 +33,7 @@ Well at least based on the photo finish alone that is. But the other photos sugg
 
 # 4. The UCI should pick up its act, enforce its standards and actually improve its finish line specs to ensure fair finishes in the future.
 
-In cycling, the difference between winning and losing can be razor-thin. Yet, the UCI's current finish line paint job is far from razor-sharp. It's baffling that the UCI has not taken a proactive approach to this issue.  With millimeters often deciding the winner and glory, prizemoney and relegations on the line, the technology used to determine the winner should be foolproof. Yet, the UCI specs ensure the finish line paint markings are not specific enough to ensure accurate results.
+In cycling, the difference between winning and losing can be razor-thin. Yet, the UCI's current finis=h line paint job is far from razor-sharp. It's baffling that the UCI has not taken a proactive approach to this issue.  With millimeters often deciding the winner and glory, prizemoney and relegations on the line, the technology used to determine the winner should be foolproof. Yet, the UCI specs ensure the finish line paint markings are not specific enough to ensure accurate results.
 
 Photo-finishes work best when the background is white, as it allows the timing staff to see the exact outline of the front wheel, due to the tyre being black. A black tire on a black background would not be easy to distinguish.
 
@@ -56,7 +56,7 @@ On the central 4cm white line, the leading edge has 1cm wide markers painted on 
 
 This takes the accuracy aspects used in athletics photo-finishes and allows it to work for cycling races where due to the higher speeds and greater number of unknowns in the courses, the painted finish line is required to be significantly wider.
 
-If possible, the 1cm wide black markers should be reduced in width to the least amount possible while still being able to focus across the entire finish line. I understand due to the imperfections of the road surface that it may not be possible to go much smaller, and if that is the case within 1cm should be fine - at 3500 photos per second and cyclists traveling 60km/h, 1cm should not be distinguishable and if it were to occur would be classed as a tie anyway.
+If possible, the 1cm wide black markers should be reduced in width to the least amount possible while still being able to focus across the entire finish line. I understand due to the imperfections of the road surface that it may not be possible to go much smaller, and if that is the case within 1cm should be fine - at 3500 photos per second and cyclists traveling 60km/h, the difference between the finish line being 1cm earlier or later is unlikely to affect the result, as the chance of one rider overtaking another within that 1cm window is unlikely, and if it were to occur it's probable it is so close it would be classed as a tie anyway.
 
 Implementing these suggestions would significantly reduce any risk of a repeat of Amstel Gold or De Brabantse Pijl. Professional cyclists put in huge amounts of hours and effort to be the best they can be, and it is a disservice to them to have the best quality equipment for measuring close finishes, but to then fail to measure accurately due to inadequate specs.
 
