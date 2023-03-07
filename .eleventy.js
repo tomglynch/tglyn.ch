@@ -22,13 +22,13 @@ function sortByOrder(values) {
 
 
 function removeUnpublished(values) {
-  let vals = [...values];
-  for (i in vals) {
-    if(vals[i].data.published == false){
-      vals.pop(i)
+  let vals = [];
+  for (let i = 0; i < values.length; i++) {
+    if (values[i].data.published) {
+      vals.push(values[i]);
     }
   }
-  return vals
+  return vals;
 }
 
 module.exports = (eleventyConfig) => {
