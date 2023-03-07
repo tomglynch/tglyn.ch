@@ -29,7 +29,7 @@ I go into this in more detail in my [original photo-finish blog about the 2021 A
 
 # 3. This leaves us with no idea of who actually won 
 
-Well at least based on the photo finish alone that is. But all the other photos strongly suggest Caleb Ewan crossed the line first so I'd suggest he is actually the correct winner. Sorry Gerben!
+Well at least based on the photo finish alone that is. But the other photos suggest Caleb Ewan may have crossed the line first. Seems like if the technology can't seperate them, it should be considered a tie. And we all know what a tie means (or is this a long lost UCI rule too), a 1 v 1 race over 1000m to seperate the winners.
 
 # 4. The UCI should pick up its act, enforce it's standards and actually improve its finish line specs to ensure fair finishes in the future.
 
