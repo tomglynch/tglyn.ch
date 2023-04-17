@@ -43,6 +43,8 @@
 		
 			<li><a href="/subscribe/">Subscribe</a></li>
 		
+			<li><a href="/DJ/">DJ Online Tom</a></li>
+		
 			<li><a href="/contact/">Contact</a></li>
 		
 	</ul>
@@ -61,7 +63,7 @@
 <p><img src="../images/spintel_login.png" alt="Image showing the Spintel Login page" title="Spintel Login page" loading="lazy"></p>
 <h3>So where do we begin?</h3>
 <p>So what do we do? Open up Chrome's Devtools, open the network tab, tick preserve log and get browsing of course! In the network tab, each request sent and recieved is logged, with their request, response and query string parameters. Here we are able to view all the data being sent and received from this website's server to your computer. Something I notice in these requests is the number 0000XXX812 (this is changed to protect the innocent btw) appears quite a bit. Using the find (the cmd + F thing) feature I'm able to spot in a request that the number is a user ID, which must be related to me!</p>
-<pre class="language-js"><code class="language-js"><span class="token punctuation">{</span><br>    <span class="token string">"x_value"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>    <span class="token string">"is_return"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>    <span class="token string">"session_only"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token string">"user_id"</span><span class="token operator">:</span> <span class="token string">"0000XXX812"</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">{</span><br>    <span class="token string-property property">"x_value"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"is_return"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"session_only"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token string-property property">"user_id"</span><span class="token operator">:</span> <span class="token string">"0000XXX812"</span><br><span class="token punctuation">}</span></code></pre>
 <p>After browsing the site for a while, I found seven requests that I send off a request that includes my user ID in the query string, and I receive back HTML pages of content. Do these pages check that the ID requested matched the user logged in? Let's find out.</p>
 <ul>
 <li>In Chrome Devtools network tab, right click on a request including the user ID. Select Copy &gt; Copy as curl</li>
