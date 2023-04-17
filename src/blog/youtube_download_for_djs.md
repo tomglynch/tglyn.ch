@@ -18,7 +18,6 @@ First, we need to install some tools:
 1. **Homebrew** : A package manager for macOS. You can install it by pasting the following command into your Terminal and hitting Enter:
 
 ```bash
-
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
@@ -26,7 +25,6 @@ First, we need to install some tools:
 2. **yt-dlp** : A command-line program to download videos from YouTube and other sites. You can install it with Homebrew:
 
 ```bash
-
 brew install yt-dlp
 ```
 
@@ -34,7 +32,6 @@ brew install yt-dlp
 3. **FFmpeg** : A powerful tool to process multimedia files. You can install it with Homebrew as well:
 
 ```bash
-
 brew install ffmpeg
 ```
 
@@ -43,7 +40,6 @@ brew install ffmpeg
 Now, let's create a folder on your desktop called `youtube_downloads` and navigate into it:
 
 ```bash
-
 mkdir -p ~/Desktop/youtube_downloads
 cd ~/Desktop/youtube_downloads
 ```
@@ -53,7 +49,6 @@ cd ~/Desktop/youtube_downloads
 Next, create a new file called `download_playlists.sh` in the `youtube_downloads` folder:
 
 ```bash
-
 touch download_playlists.sh
 ```
 
@@ -107,7 +102,6 @@ cd ~/Desktop/youtube_downloads
 Make the script executable by typing the following command in Terminal:
 
 ```bash
-
 chmod +x download_playlists.sh
 ```
 
@@ -116,16 +110,18 @@ chmod +x download_playlists.sh
 Now, you can run the script by typing:
 
 ```bash
-
 ./download_playlists.sh
 ```
-
-
 
 The script will loop through each playlist URL and download the audio and video files. It first gets the playlist title and creates a "safe" version of it by replacing characters that are not allowed in folder names. Then, it creates separate folders for audio and video files if they don't already exist.
 
 Next, the script downloads the audio files as MP3s with a quality of 160Kbps. It saves them in the "audio" subfolder and keeps a record of downloaded files in a text file. Similarly, it downloads video files with a maximum quality of 1080p, saves them as .mov files with H.264 video codec and AAC audio codec, and stores them in the "video" subfolder. It also keeps a record of downloaded video files in a separate text file.
 
 To add more playlists to the script, simply edit the `download_playlists.sh` file and add more playlist URLs to the `playlist_urls` array, following the same format as the existing URLs.
+
+Oh and last thing, to re-run the script quickly, if you have put the folder on your desktop as I suggested - just open a terminal and run
+```bash
+./Desktop/youtube_downloads/download_playlists.sh
+```
 
 I hope this script helps you quickly download audio and video files from YouTube playlists for your DJ work!
