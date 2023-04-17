@@ -3,14 +3,13 @@ title: "Automate YouTube Playlist Downloads with yt-dlp for DJ Work"
 blurb: "A quick script to download audio and videos from YouTube playlists onto your Mac, ready for VJing and DJing"
 image: "/blog/images/YouTubePlaylistDownload.png"
 date: 2023-04-17
-popularity: 5
+popularity: 3
 published: true
 ---
 
 Hey all, as a DJ, I often need to download audio and video files from multiple YouTube playlists to use in my work. I've created a simple script to automate this process on your Mac. It will create separate folders for each playlist and download the files in the appropriate formats. Please note that the YouTube playlists must be set as either public or unlisted for this script to work.
 
-![Image showing how to run the script in Terminal](https://chat.openai.com/images/YouTubePlaylistDownload.png) 
-
+![Here's what it looks like in Terminal](../images/youtube_download_terminal.png "Here's what it looks like in Terminal") 
 
 Before we start, let's talk a little about Terminal. Terminal is a command-line interface on macOS that allows you to interact with your computer using text commands. We will use Terminal to install some tools and run the script.
 
@@ -54,7 +53,7 @@ touch download_playlists.sh
 
 
 
-Open the `download_playlists.sh` file with your favorite text editor and paste the following script:
+Open the `download_playlists.sh` file with your favorite text editor and paste the following script, replace the youtube playlist URLs with your own youtube playlists:
 
 ```bash
 #!/bin/bash
@@ -89,7 +88,6 @@ for playlist_url in "${playlist_urls[@]}"; do
     yt-dlp --ignore-errors --no-warnings --format "bestvideo[height<=1080]+bestaudio" --merge-output-format mov --output "${safe_playlist_title}/video/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/video/downloaded_${safe_playlist_title}_video.txt" --postprocessor "FFmpegVideoConvertor" --postprocessor-args "-c:v libx264 -c:a aac"
 done
 ```
-
 
 Save the file and close the text editor. To run the script, open Terminal and navigate to the `youtube_downloads` folder:
 
