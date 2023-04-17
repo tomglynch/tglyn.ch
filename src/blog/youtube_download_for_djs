@@ -23,7 +23,7 @@ First, we need to install some tools:
 ```
 
  
-1. **yt-dlp** : A command-line program to download videos from YouTube and other sites. You can install it with Homebrew:
+2. **yt-dlp** : A command-line program to download videos from YouTube and other sites. You can install it with Homebrew:
 
 ```bash
 
@@ -31,7 +31,7 @@ brew install yt-dlp
 ```
 
  
-1. **FFmpeg** : A powerful tool to process multimedia files. You can install it with Homebrew as well:
+3. **FFmpeg** : A powerful tool to process multimedia files. You can install it with Homebrew as well:
 
 ```bash
 
@@ -62,7 +62,6 @@ touch download_playlists.sh
 Open the `download_playlists.sh` file with your favorite text editor and paste the following script:
 
 ```bash
-
 #!/bin/bash
 
 # Define a list of playlist URLs
@@ -89,26 +88,13 @@ for playlist_url in "${playlist_urls[@]}"; do
     fi
 
     # Download audio files
-    yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "${safe_playlist_title}/audio/%(title)s.%(
-```
+    yt-dlp --ignore-errors --no-warnings --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "${safe_playlist_title}/audio/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/audio/downloaded_${safe_playlist_title}_audio.txt"
 
-Person: 
-- continue please
-
-ChatGPT: 
-- ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/audio/downloaded_${safe_playlist_title}_audio.txt"
-
-```perl
-
-# Download video files (with max 1080p quality, .mov format, and H.264 video codec and AAC audio codec)
-yt-dlp --ignore-errors --format "bestvideo[height<=1080]+bestaudio" --merge-output-format mov --output "${safe_playlist_title}/video/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/video/downloaded_${safe_playlist_title}_video.txt"
-```
-
-
-
+    # Download video files (with max 1080p quality, .mov format, and H.264 video codec and AAC audio codec)
+    yt-dlp --ignore-errors --no-warnings --format "bestvideo[height<=1080]+bestaudio" --merge-output-format mov --output "${safe_playlist_title}/video/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/video/downloaded_${safe_playlist_title}_video.txt" --postprocessor "FFmpegVideoConvertor" --postprocessor-args "-c:v libx264 -c:a aac"
 done
+```
 
-```arduino
 
 Save the file and close the text editor. To run the script, open Terminal and navigate to the `youtube_downloads` folder:
 
