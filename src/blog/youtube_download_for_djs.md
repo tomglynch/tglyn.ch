@@ -14,7 +14,7 @@ Hey all, as a DJ, I often need to download audio and video files from multiple Y
 Before we start, let's talk a little about Terminal. Terminal is a command-line interface on macOS that allows you to interact with your computer using text commands. We will use Terminal to install some tools and run the script.
 
 First, we need to install some tools: 
-1. **Homebrew** : A package manager for macOS. You can install it by pasting the following command into your Terminal and hitting Enter:
+1. **Homebrew** : A package manager for macOS. You can install it by pasting the following command into your Terminal and hitting Enter (you may need to enter your password (hint: when entering your password it won't show the amount of letters you type, but don't worry - just hit enter when done and it will work)):
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
