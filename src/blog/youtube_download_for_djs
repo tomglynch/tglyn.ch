@@ -1,0 +1,145 @@
+---
+title: "Automate YouTube Playlist Downloads with yt-dlp for DJ Work"
+blurb: "A quick script to download audio and videos from YouTube playlists onto your Mac, ready for VJing and DJing"
+image: "/blog/images/YouTubePlaylistDownload.png"
+date: 2023-04-17
+popularity: 5
+published: true
+---
+
+Hey all, as a DJ, I often need to download audio and video files from multiple YouTube playlists to use in my work. I've created a simple script to automate this process on your Mac. It will create separate folders for each playlist and download the files in the appropriate formats. Please note that the YouTube playlists must be set as either public or unlisted for this script to work.
+
+![Image showing how to run the script in Terminal](https://chat.openai.com/images/YouTubePlaylistDownload.png) 
+
+
+Before we start, let's talk a little about Terminal. Terminal is a command-line interface on macOS that allows you to interact with your computer using text commands. We will use Terminal to install some tools and run the script.
+
+First, we need to install some tools: 
+1. **Homebrew** : A package manager for macOS. You can install it by pasting the following command into your Terminal and hitting Enter:
+
+```bash
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+ 
+1. **yt-dlp** : A command-line program to download videos from YouTube and other sites. You can install it with Homebrew:
+
+```bash
+
+brew install yt-dlp
+```
+
+ 
+1. **FFmpeg** : A powerful tool to process multimedia files. You can install it with Homebrew as well:
+
+```bash
+
+brew install ffmpeg
+```
+
+
+
+Now, let's create a folder on your desktop called `youtube_downloads` and navigate into it:
+
+```bash
+
+mkdir -p ~/Desktop/youtube_downloads
+cd ~/Desktop/youtube_downloads
+```
+
+
+
+Next, create a new file called `download_playlists.sh` in the `youtube_downloads` folder:
+
+```bash
+
+touch download_playlists.sh
+```
+
+
+
+Open the `download_playlists.sh` file with your favorite text editor and paste the following script:
+
+```bash
+
+#!/bin/bash
+
+# Define a list of playlist URLs
+playlist_urls=(
+"https://www.youtube.com/playlist?list=PLcduW1K6eOtn8mIAArqAjonxvYviQ6ZAa"
+"https://www.youtube.com/playlist?list=PLcduW1K6eOtluf6V9mlTqYlxE8pdI8TSe"
+)
+
+# Loop through each playlist URL
+for playlist_url in "${playlist_urls[@]}"; do
+    # Get the playlist title
+    playlist_title=$(yt-dlp -J --yes-playlist "$playlist_url" | python3 -c "import sys, json; print(json.load(sys.stdin)['title'])")
+
+    # Replace characters that are not allowed in folder names
+    safe_playlist_title=$(echo "$playlist_title" | tr '/\\:*?"<>|' '_')
+
+    # Create a folder for the playlist and subfolders for audio and video if they don't exist
+    if [ ! -d "${safe_playlist_title}/audio" ]; then
+        mkdir -p "${safe_playlist_title}/audio"
+    fi
+
+    if [ ! -d "${safe_playlist_title}/video" ]; then
+        mkdir -p "${safe_playlist_title}/video"
+    fi
+
+    # Download audio files
+    yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "${safe_playlist_title}/audio/%(title)s.%(
+```
+
+Person: 
+- continue please
+
+ChatGPT: 
+- ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/audio/downloaded_${safe_playlist_title}_audio.txt"
+
+```perl
+
+# Download video files (with max 1080p quality, .mov format, and H.264 video codec and AAC audio codec)
+yt-dlp --ignore-errors --format "bestvideo[height<=1080]+bestaudio" --merge-output-format mov --output "${safe_playlist_title}/video/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/video/downloaded_${safe_playlist_title}_video.txt"
+```
+
+
+
+done
+
+```arduino
+
+Save the file and close the text editor. To run the script, open Terminal and navigate to the `youtube_downloads` folder:
+
+```bash
+cd ~/Desktop/youtube_downloads
+```
+
+
+
+Make the script executable by typing the following command in Terminal:
+
+```bash
+
+chmod +x download_playlists.sh
+```
+
+
+
+Now, you can run the script by typing:
+
+```bash
+
+./download_playlists.sh
+```
+
+
+
+The script will loop through each playlist URL and download the audio and video files. It first gets the playlist title and creates a "safe" version of it by replacing characters that are not allowed in folder names. Then, it creates separate folders for audio and video files if they don't already exist.
+
+Next, the script downloads the audio files as MP3s with a quality of 160Kbps. It saves them in the "audio" subfolder and keeps a record of downloaded files in a text file. Similarly, it downloads video files with a maximum quality of 1080p, saves them as .mov files with H.264 video codec and AAC audio codec, and stores them in the "video" subfolder. It also keeps a record of downloaded video files in a separate text file.
+
+To add more playlists to the script, simply edit the `download_playlists.sh` file and add more playlist URLs to the `playlist_urls` array, following the same format as the existing URLs.
+
+I hope this script helps you quickly download audio and video files from YouTube playlists for your DJ work!
