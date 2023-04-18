@@ -72,20 +72,20 @@ for playlist_url in "${playlist_urls[@]}"; do
     # Replace characters that are not allowed in folder names
     safe_playlist_title=$(echo "$playlist_title" | tr '/\\:*?"<>|' '_')
 
-    # Create a folder for the playlist and subfolders for audio and video if they don't exist
-    if [ ! -d "${safe_playlist_title}/audio" ]; then
-        mkdir -p "${safe_playlist_title}/audio"
+    # Create subfolders for audio and video inside their respective top-level folders if they don't exist
+    if [ ! -d "audio/${safe_playlist_title}" ]; then
+        mkdir -p "audio/${safe_playlist_title}"
     fi
 
-    if [ ! -d "${safe_playlist_title}/video" ]; then
-        mkdir -p "${safe_playlist_title}/video"
+    if [ ! -d "video/${safe_playlist_title}" ]; then
+        mkdir -p "video/${safe_playlist_title}"
     fi
 
     # Download audio files
-    yt-dlp --ignore-errors --no-warnings --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "${safe_playlist_title}/audio/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/audio/downloaded_${safe_playlist_title}_audio.txt"
+    yt-dlp --ignore-errors --no-warnings --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "audio/${safe_playlist_title}/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "audio/${safe_playlist_title}/downloaded_${safe_playlist_title}_audio.txt"
 
     # Download video files (with max 1080p quality, .mov format, and H.264 video codec and AAC audio codec)
-    yt-dlp --ignore-errors --no-warnings --format "bestvideo[height<=1080]+bestaudio" --merge-output-format mov --output "${safe_playlist_title}/video/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "${safe_playlist_title}/video/downloaded_${safe_playlist_title}_video.txt" --postprocessor "FFmpegVideoConvertor" --postprocessor-args "-c:v libx264 -c:a aac"
+    yt-dlp --ignore-errors --no-warnings --format "bestvideo[height<=1080]+bestaudio" --merge-output-format mov --output "video/${safe_playlist_title}/%(title)s.%(ext)s" --yes-playlist "$playlist_url" --download-archive "video/${safe_playlist_title}/downloaded_${safe_playlist_title}_video.txt" --postprocessor "FFmpegVideoConvertor" --postprocessor-args "-c:v libx264 -c:a aac"
 done
 ```
 
