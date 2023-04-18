@@ -7,7 +7,7 @@ popularity: 3
 published: true
 ---
 
-Hey all, as a DJ, I often need to download audio and video files from multiple YouTube playlists to use in my work. I've created a simple script to automate this process on your Mac. It will create separate folders for each playlist and download the files in the appropriate formats. Please note that the YouTube playlists must be set as either public or unlisted for this script to work.
+Hey all, to improve my workflow when playing around with DJ ideas, I download audio and video files from multiple YouTube playlists to use in my work. I've created a simple script to automate this process on your Mac. It will create separate folders for each playlist and download the files in the appropriate formats. Please note that the YouTube playlists must be set as either public or unlisted for this script to work.
 
 ![Here's what it looks like in Terminal](../images/youtube_download_terminal.png "Here's what it looks like in Terminal") 
 
@@ -43,6 +43,7 @@ mkdir -p ~/Desktop/youtube_downloads
 cd ~/Desktop/youtube_downloads
 ```
 
+(`mkdir` stands for 'make directory' and `cd` stands for 'change directory')
 
 
 Next, create a new file called `download_playlists.sh` in the `youtube_downloads` folder:
@@ -51,6 +52,7 @@ Next, create a new file called `download_playlists.sh` in the `youtube_downloads
 touch download_playlists.sh
 ```
 
+(`touch` created a new file)
 
 
 Open the `download_playlists.sh` file with your favorite text editor and paste the following script, replace the youtube playlist URLs with your own youtube playlists:
@@ -89,7 +91,7 @@ for playlist_url in "${playlist_urls[@]}"; do
 done
 ```
 
-Save the file and close the text editor. To run the script, open Terminal and navigate to the `youtube_downloads` folder:
+Save the file and close the text editor. To access the script, open Terminal and navigate to the `youtube_downloads` folder:
 
 ```bash
 cd ~/Desktop/youtube_downloads
@@ -103,7 +105,8 @@ Make the script executable by typing the following command in Terminal:
 chmod +x download_playlists.sh
 ```
 
-
+(`chmod` changes file permissions
+)
 
 Now, you can run the script by typing:
 

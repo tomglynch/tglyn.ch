@@ -17,12 +17,9 @@ DJs from across the globe have shared their opinions:
 
 “Fantastic! :) Keep up the good work! I loved it!” -- S.B.
 
+"Is this guy a joke?! He just plays around on youtube and wants us to watch and maybe even dance? Fucking hell. Ridiculous." -- Felipe 44
 
-### Another idea
-
-Is this guy a joke?! He just plays around on youtube and wants us to watch and maybe even dance? Fucking hell. Ridiculous. 
-
-Oh that mix actually worked. Oh why is he playing Shrek? Oh I didn't expect a Shrek and Daft Punk mix to work.
+"Oh that mix actually worked. Oh why is he playing Shrek? Oh I didn't expect a Shrek and Daft Punk mix to work." -- Men in Black actor Shane Wibbles
 
 
 ### Request nostalgia

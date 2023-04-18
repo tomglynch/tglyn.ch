@@ -78,20 +78,9 @@
     </url>
   
     <url>
-      <loc>https://tglyn.ch/blog/uci_fix_the_line/</loc>
-      
-        <lastmod>Tue Mar 07 2023 11:00:00 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
-      
-
-      
-        <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
       <loc>https://tglyn.ch/about/</loc>
       
-        <lastmod>Tue Mar 07 2023 20:50:36 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+        <lastmod>Thu Nov 10 2022 18:07:48 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
       
 
       
@@ -102,7 +91,7 @@
     <url>
       <loc>https://tglyn.ch/blog/</loc>
       
-        <lastmod>Tue Mar 07 2023 20:50:36 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+        <lastmod>Thu Nov 10 2022 18:07:48 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
       
 
       
@@ -113,7 +102,7 @@
     <url>
       <loc>https://tglyn.ch/contact/</loc>
       
-        <lastmod>Tue Mar 07 2023 20:50:37 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+        <lastmod>Thu Nov 10 2022 18:07:48 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
       
 
       
@@ -124,7 +113,7 @@
     <url>
       <loc>https://tglyn.ch/</loc>
       
-        <lastmod>Tue Mar 07 2023 20:50:37 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+        <lastmod>Thu Nov 10 2022 18:07:48 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
       
 
       
@@ -135,7 +124,7 @@
     <url>
       <loc>https://tglyn.ch/research/</loc>
       
-        <lastmod>Tue Mar 07 2023 20:50:37 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+        <lastmod>Thu Nov 10 2022 18:07:48 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
       
 
       
@@ -146,7 +135,18 @@
     <url>
       <loc>https://tglyn.ch/subscribe/</loc>
       
-        <lastmod>Tue Mar 07 2023 20:50:37 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+        <lastmod>Thu Nov 10 2022 18:07:48 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
+      
+
+      
+        <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://tglyn.ch/blog/uci_fix_the_line/</loc>
+      
+        <lastmod>Tue Mar 07 2023 11:00:00 GMT+1100 (Australian Eastern Daylight Time)</lastmod>
       
 
       
@@ -168,7 +168,7 @@
     <url>
       <loc>https://tglyn.ch/DJ/</loc>
       
-        <lastmod>Mon Apr 17 2023 22:14:59 GMT+1000 (Australian Eastern Standard Time)</lastmod>
+        <lastmod>Tue Apr 18 2023 13:55:15 GMT+1000 (Australian Eastern Standard Time)</lastmod>
       
 
       
