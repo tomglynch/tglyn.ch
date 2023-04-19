@@ -52,7 +52,7 @@ Next, create a new file called `download_playlists.sh` in the `youtube_downloads
 touch download_playlists.sh
 ```
 
-(`touch` created a new file)
+(`touch` creates a new file)
 
 
 Open the `download_playlists.sh` file with your favorite text editor and paste the following script, replace the youtube playlist URLs with your own youtube playlists:
