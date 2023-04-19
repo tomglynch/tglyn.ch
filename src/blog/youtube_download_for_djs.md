@@ -1,7 +1,7 @@
 ---
 title: "Automate YouTube Playlist Downloads with yt-dlp for DJ Work"
 blurb: "A quick script to download audio and videos from YouTube playlists onto your Mac, ready for VJing and DJing"
-image: "/blog/images/YouTubePlaylistDownload.png"
+image: "/blog/images/youtube_download_terminal.png"
 date: 2023-04-17
 popularity: 3
 published: true
@@ -13,7 +13,7 @@ Hey all, to improve my workflow when playing around with DJ ideas, I download au
 
 Before we start, let's talk a little about Terminal. Terminal is a command-line interface on macOS that allows you to interact with your computer using text commands. We will use Terminal to install some tools and run the script.
 
-First, we need to install some tools: 
+First, we need to install some tools (note some of these may take like 5-10 minutes or more, so once it starts running just leave it in the background and wait):
 1. **Homebrew** : A package manager for macOS. You can install it by pasting the following command into your Terminal and hitting Enter (you may need to enter your password (hint: when entering your password it won't show the amount of letters you type, but don't worry - just hit enter when done and it will work)):
 
 ```bash
