@@ -41,7 +41,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary("md", markdownLib);
   
 
-  eleventyConfig.setTemplateFormats(["md", "js", "liquid", "css", "jpg", "png", "svg", "pdf"]); // include css and js to watch and reload on save
+  eleventyConfig.setTemplateFormats(["md", "js", "liquid", "css", "jpg", "png", "gif", "svg", "pdf"]); // include css and js to watch and reload on save
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPairedShortcode("include_js", function(content) {
@@ -62,7 +62,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addShortcode("youtube", embed.youtube);
   eleventyConfig.addShortcode("streamable", embed.streamable);
-
+  eleventyConfig.addShortcode("vimeo", embed.vimeo);
 
   eleventyConfig.addShortcode("social_link", function(url, social_network) {
     return `<a href="${url}" target="_blank" class="fa fa-${social_network}"></a>`
