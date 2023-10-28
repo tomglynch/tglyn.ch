@@ -7,17 +7,21 @@ order: 5
 
 ### Surf the Soundwaves with DJ Online Tom
 
-{% assign spiel = "Immerse yourself in a multi-sensory, real-time journey where Online Tom crafts an intricate tapestry of sound and sight. Dive into an ever-evolving narrative of upbeat dance and electronic music, seamlessly blended with an array of visual experiences straight from the browser. From the vibrant stage of a laptop screen, watch YouTube tabs transform into new avenues of exploration, each one curated to surprise and engage. As you groove to the beat, catch glimpses of '90s Aussie TV show intros and iconic commercials, adding a layer of nostalgia to the live experience. But the show is more than a spectacle—it's an interactive soundscape where you're part of the creative process. Picture a shared Zoom session that brings the crowd into the spotlight, or maybe interactive games like Wordle and GeoGuessr to shake things up. 
+{% assign spiel = "Hey, I'm Tom 👋 and over the past four years, I've developed a way of live-mixing videos straight from the internet. Described by punters as indescribable, I've put together a little highlights video and attached it below so you can get a feel for what I'm doing, but I'll try to explain anyway:
 
-Each click and search serves a calculated purpose, sculpting a performance that unveils the chaos and creativity of the internet like never before. Experience the soundwaves of the web, where the digital realm meets the dance floor, all guided by the creative ingenuity of DJ Online Tom." %}
+My 'Online Tom' project is half DJ, half interactive performance art — it's all live in the browser, and I'm projecting my screen so the audience can follow along with what I'm doing!
+
+It's like watching your friend click through YouTube videos, but as they switch tabs, the audio blends smoothly, turning it into a danceable experience. It's a real-time tapestry of sound and visuals, a live DJ set fused with a wide range of visuals from the internet through the browser.
+
+I mix tracks but also to get creative in involving the audience; so while they groove to the music, we can play a game of Wordle, join my on the projector via Zoom call, or leave the stage and have a Beyblade battle. Working with my partner Milla, the crowd is always involved.
+
+I also mix in nostalgic videos from your childhood, iconic TV ads. It's the internet like you've never experienced — where digital content meets the dance floor. As I mentioned earlier, words don't do it justice, so [have a watch:](https://vimeo.com/onlinetom/highlightsreel)" %}
 
 {% assign piccy = "./images/dj_me.gif" %}
 
 {% spiel_and_piccy spiel, piccy, 40 %}
 
-Look the video below is kind of long. Feel free to enjoy it all, but skip to 31:15 get a quick feel for it.
-
-{% vimeo "759472232" %}
+{% vimeo "878873949" %}
 
 Hope you enjoyed it. You can view the few more of my sets on my [Vimeo](https://vimeo.com/onlinetom). And if you have any suggestions for videos or things to include in my sets, please use the form below.
 
