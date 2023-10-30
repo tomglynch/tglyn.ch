@@ -1,7 +1,7 @@
 ---
 layout: pages/listpage.liquid
 title: research
-tags: ['menu']
+# tags: ['menu']
 order: 4
 ---
 
