@@ -1,5 +1,5 @@
 ---
-title: "Effortlessly Download Spotify Playlists on Your Mac with spotDL: A Beginner's Guide"
+title: "Download Spotify Playlists on Your Mac with spotDL"
 blurb: "Easily download your favorite Spotify playlists to your Mac, enhancing your music collection and DJ sets. This guide also includes an optional method for higher bitrate downloads."
 image: "/blog/images/spotdl_download_terminal.png"
 date: 2024-01-02
