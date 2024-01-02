@@ -49,11 +49,20 @@ Choose between Terminal and Finder to create your download folder.
 - **Using Finder**: Manually create a new folder.
 
 ## Installing spotDL
-Install `spotdl spotify-downloader`:
+Now, let's get `spotdl spotify-downloader` set up on your Mac.
 
-```bash
-pip install spotdl
-```
+- In Terminal, type the following command:
+  ```bash
+  pip install spotdl
+  ```
+- **Note for Python 3 Users**: If your Mac uses Python 3, you might need to use `pip3` instead of `pip`. You can check your Python version by typing `python --version` (or `python3 --version`) in Terminal. If it shows Python 3.x and `pip` doesn't work, try:
+  ```bash
+  pip3 install spotdl
+  ```
+  This ensures that `spotdl` is installed for the correct version of Python.
+
+- If you encounter any issues during installation, make sure pip is up-to-date by running `pip install --upgrade pip` (or `pip3 install --upgrade pip` for Python 3).
+
 - [spotDL GitHub](https://github.com/spotDL/spotify-downloader)
 
 ## Downloading a Spotify Playlist
