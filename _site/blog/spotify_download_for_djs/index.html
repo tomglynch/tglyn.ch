@@ -58,17 +58,18 @@
     <time>Jan 2, 2024</time>
 </div>
 <p>Welcome, music enthusiasts! This guide is designed to help you easily download Spotify playlists to your Mac using <code>spotdl spotify-downloader</code>, even if you're new to using command-line tools.</p>
-<p><img src="../images/spotdl_download_terminal.png" alt="Here's what it looks like in Terminal" title="Terminal View" loading="lazy"></p>
 <h2>Understanding the Basics</h2>
 <h3>What is Terminal?</h3>
-<p>Terminal is a Mac application used for executing text commands.</p>
 <ul>
+<li>Terminal is a Mac application used for executing text commands.</li>
 <li><strong>To Open Terminal</strong>: Go to Applications &gt; Utilities &gt; Terminal.</li>
 </ul>
 <h3>Navigating Folders in Terminal</h3>
-<p>Folders in Terminal are called 'directories'. Use <code>ls</code> to list items and <code>cd</code> to change directories. The Tab key can be used for auto-complete.</p>
+<ul>
+<li>Folders in Terminal are called 'directories'. Use <code>ls</code> to list items and <code>cd</code> to change directories. The Tab key can be used for auto-complete.</li>
+</ul>
 <h2>Pre-requisites</h2>
-<p>First, we'll walk you through installing the following:</p>
+<p>First, let's install the following essentials:</p>
 <ol>
 <li><strong>Python &amp; pip</strong>: Usually pre-installed on Macs. <a href="https://www.python.org/downloads/">Python</a></li>
 <li><strong>FFmpeg</strong>: Required for processing audio files. <a href="https://ffmpeg.org/download.html">FFmpeg</a></li>
@@ -76,56 +77,42 @@
 </ol>
 <h2>Installing Homebrew (If not already installed)</h2>
 <p>Homebrew simplifies the installation of software on Mac.</p>
+<pre class="language-bash"><code class="language-bash">/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span></code></pre>
 <ul>
-<li>Open Terminal and enter the command:<pre class="language-bash"><code class="language-bash">/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span></code></pre>
+<li>Follow the on-screen instructions. At the end of the installation, Homebrew will instruct you to add it to your PATH. Copy and paste the following commands in Terminal (replace <code>/Users/your_username/</code> with your actual username):<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'eval "$(/usr/local/bin/brew shellenv)"'</span> <span class="token operator">&gt;&gt;</span> /Users/your_username/.profile<br><span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>/usr/local/bin/brew shellenv<span class="token variable">)</span></span>"</span></code></pre>
 </li>
-<li>Follow the on-screen instructions.</li>
-<li><strong>Final Step</strong>: Homebrew requires you to add it to your PATH. After installation, you'll see two commands in the Terminal. Copy and paste the entire lines, including the brackets, for each command:
-<ol>
-<li>
-<pre class="language-bash"><code class="language-bash"><span class="token punctuation">(</span>echo<span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token string">'eval "$(/usr/local/bin/brew shellenv)"'</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> /Users/your_username/.profile</code></pre>
-</li>
-<li>
-<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>/usr/local/bin/brew shellenv<span class="token variable">)</span></span>"</span></code></pre>
-</li>
-</ol>
-Replace <code>/Users/your_username/</code> with your actual username. This step integrates Homebrew into your system.</li>
 </ul>
 <h2>Installing FFmpeg</h2>
 <p>Install FFmpeg using Homebrew:</p>
-<ul>
-<li>In Terminal, type:<pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> ffmpeg</code></pre>
-</li>
-</ul>
-<h2>Creating a Download Folder</h2>
-<p>Instead of using Terminal, you can create a folder in Finder where you want your music downloaded. Right-click on this folder and select 'New Terminal at Folder' to open Terminal directly in this folder. This approach is user-friendly and helps organize your downloads.</p>
+<pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> ffmpeg</code></pre>
 <h2>Installing spotDL</h2>
-<p>Let's install <code>spotdl spotify-downloader</code>. It will be installed on your entire system, allowing you to use it from any directory in Terminal.</p>
+<p>Let's get <code>spotdl spotify-downloader</code> set up on your Mac:</p>
+<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> spotdl</code></pre>
 <ul>
-<li>In Terminal, type:<pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> spotdl</code></pre>
-For Python 3 users, if <code>pip</code> doesn't work, try <code>pip3 install spotdl</code>.</li>
-<li><strong>Note</strong>: If you encounter issues during installation, update pip by running <code>pip install --upgrade pip</code> (or <code>pip3 install --upgrade pip</code> for Python 3).</li>
+<li>For Python 3 users, use <code>pip3 install spotdl</code> if <code>pip</code> doesn't work.</li>
 <li><a href="https://github.com/spotDL/spotify-downloader">spotDL GitHub</a></li>
 </ul>
-<h2>Downloading a Spotify Playlist</h2>
-<p>Ready to download your playlists!</p>
-<ol>
-<li>Get the Spotify playlist URL by clicking the three dots on the playlist in Spotify, 'Share', then 'Copy link to playlist'. Edit the link to remove anything after the "?".
+<h2>Creating a Download Folder</h2>
+<p>Now, create a folder for your downloads:</p>
 <ul>
-<li>Example: <code>https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M</code></li>
+<li><strong>Using Finder</strong>: Create a folder in your preferred location (e.g., Desktop).</li>
+<li><strong>Open Terminal in Your Folder</strong>: Right-click on the folder and choose 'New Terminal at Folder' to open Terminal directly in your chosen folder.</li>
 </ul>
-</li>
+<h2>Downloading a Spotify Playlist</h2>
+<p>Now you're ready to download your Spotify playlists:</p>
+<ol>
+<li>To get the Spotify playlist URL, go to the playlist in Spotify, click the three dots, 'Share', then 'Copy link to playlist'. Edit the link to remove everything after the "?".</li>
 <li>In Terminal, type:<pre class="language-bash"><code class="language-bash">spotdl <span class="token punctuation">[</span>Clean Spotify Playlist Link<span class="token punctuation">]</span></code></pre>
 Replace <code>[Clean Spotify Playlist Link]</code> with your link.</li>
 </ol>
 <h2>Troubleshooting Common Issues</h2>
 <ul>
-<li><strong>No matches found</strong>: Ensure the Spotify link has removed anything after and including the '?'.</li>
-<li><strong>Command Not Found</strong>: Make sure <code>spotdl</code> is installed and restart Terminal.</li>
+<li><strong>No matches found</strong>: Ensure your Spotify link has removed anything after and including the '?'.</li>
+<li><strong>Command Not Found</strong>: Ensure <code>spotdl</code> is installed and restart Terminal.</li>
 <li><strong>Download Problems</strong>: Check your internet connection or playlist link.</li>
 </ul>
 <h2>Conclusion</h2>
-<p>Congratulations! You've downloaded Spotify playlists to your Mac. Any questions or issues? Feel free to comment below. Enjoy your music!</p>
+<p>Congratulations! You've now downloaded Spotify playlists to your Mac. Any questions or issues? Drop a comment below. Enjoy your music!</p>
 <h2>Optional: Downloading Higher Bitrate Music using YouTube Music</h2>
 <p>For better sound quality, <code>spotdl</code> enables downloads from YouTube Music at 256kbps.</p>
 <h3>Requirements</h3>
