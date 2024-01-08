@@ -31,7 +31,7 @@ Homebrew simplifies the installation of software on Mac.
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-- Follow the on-screen instructions. At the end of the installation, Homebrew will instruct you to add it to your PATH. Copy and paste the following commands in Terminal (replace `/Users/your_username/` with your actual username):
+- Follow the on-screen instructions. At the end of the installation, Homebrew will instruct you what to do to add it to your PATH. Copy each of the two commands and paste them in Terminal and hit enter. They will likely look like this (except with your username instead of `your_username`):
   ```bash
   echo 'eval "$(/usr/local/bin/brew shellenv)"' >> /Users/your_username/.profile
   eval "$(/usr/local/bin/brew shellenv)"
@@ -45,19 +45,22 @@ brew install ffmpeg
 ```
 
 ## Installing spotDL
-Let's get `spotdl spotify-downloader` set up on your Mac:
+Let's get `spotdl spotify-downloader` set up on your Mac, depending on your version of python either run:
 
 ```bash
 pip install spotdl
 ```
-- For Python 3 users, use `pip3 install spotdl` if `pip` doesn't work.
-- [spotDL GitHub](https://github.com/spotDL/spotify-downloader)
+or 
+```bash
+pip3 install spotdl
+```
+- More deets here: [spotDL GitHub](https://github.com/spotDL/spotify-downloader)
 
 ## Creating a Download Folder
 Now, create a folder for your downloads:
 
 - **Using Finder**: Create a folder in your preferred location (e.g., Desktop).
-- **Open Terminal in Your Folder**: Right-click on the folder and choose 'New Terminal at Folder' to open Terminal directly in your chosen folder.
+- **Open Terminal in Your Folder**: Right-click on the folder and choose 'New Terminal at Folder' to open Terminal directly in your chosen folder. By opening terminal in the folder, when we download the songs they will appear in this folder.
 
 ## Downloading a Spotify Playlist
 Now you're ready to download your Spotify playlists:

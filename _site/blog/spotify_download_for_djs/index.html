@@ -79,24 +79,25 @@
 <p>Homebrew simplifies the installation of software on Mac.</p>
 <pre class="language-bash"><code class="language-bash">/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span></code></pre>
 <ul>
-<li>Follow the on-screen instructions. At the end of the installation, Homebrew will instruct you to add it to your PATH. Copy and paste the following commands in Terminal (replace <code>/Users/your_username/</code> with your actual username):<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'eval "$(/usr/local/bin/brew shellenv)"'</span> <span class="token operator">&gt;&gt;</span> /Users/your_username/.profile<br><span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>/usr/local/bin/brew shellenv<span class="token variable">)</span></span>"</span></code></pre>
+<li>Follow the on-screen instructions. At the end of the installation, Homebrew will instruct you what to do to add it to your PATH. Copy each of the two commands and paste them in Terminal and hit enter. They will likely look like this (except with your username instead of <code>your_username</code>):<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'eval "$(/usr/local/bin/brew shellenv)"'</span> <span class="token operator">&gt;&gt;</span> /Users/your_username/.profile<br><span class="token builtin class-name">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>/usr/local/bin/brew shellenv<span class="token variable">)</span></span>"</span></code></pre>
 </li>
 </ul>
 <h2>Installing FFmpeg</h2>
 <p>Install FFmpeg using Homebrew:</p>
 <pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> ffmpeg</code></pre>
 <h2>Installing spotDL</h2>
-<p>Let's get <code>spotdl spotify-downloader</code> set up on your Mac:</p>
+<p>Let's get <code>spotdl spotify-downloader</code> set up on your Mac, depending on your version of python either run:</p>
 <pre class="language-bash"><code class="language-bash">pip <span class="token function">install</span> spotdl</code></pre>
+<p>or</p>
+<pre class="language-bash"><code class="language-bash">pip3 <span class="token function">install</span> spotdl</code></pre>
 <ul>
-<li>For Python 3 users, use <code>pip3 install spotdl</code> if <code>pip</code> doesn't work.</li>
-<li><a href="https://github.com/spotDL/spotify-downloader">spotDL GitHub</a></li>
+<li>More deets here: <a href="https://github.com/spotDL/spotify-downloader">spotDL GitHub</a></li>
 </ul>
 <h2>Creating a Download Folder</h2>
 <p>Now, create a folder for your downloads:</p>
 <ul>
 <li><strong>Using Finder</strong>: Create a folder in your preferred location (e.g., Desktop).</li>
-<li><strong>Open Terminal in Your Folder</strong>: Right-click on the folder and choose 'New Terminal at Folder' to open Terminal directly in your chosen folder.</li>
+<li><strong>Open Terminal in Your Folder</strong>: Right-click on the folder and choose 'New Terminal at Folder' to open Terminal directly in your chosen folder. By opening terminal in the folder, when we download the songs they will appear in this folder.</li>
 </ul>
 <h2>Downloading a Spotify Playlist</h2>
 <p>Now you're ready to download your Spotify playlists:</p>
