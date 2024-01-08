@@ -9,83 +9,77 @@ published: true
 
 Welcome, music enthusiasts! This guide is designed to help you easily download Spotify playlists to your Mac using `spotdl spotify-downloader`, even if you're new to using command-line tools.
 
-![Here's what it looks like in Terminal](../images/spotdl_download_terminal.png "Here's what it looks like in Terminal") 
+![Here's what it looks like in Terminal](../images/spotdl_download_terminal.png "Terminal View") 
 
 ## Understanding the Basics
 
 ### What is Terminal?
-- Terminal is a Mac application used for executing text commands.
+Terminal is a Mac application used for executing text commands.
 - **To Open Terminal**: Go to Applications > Utilities > Terminal.
 
 ### Navigating Folders in Terminal
-- Folders in Terminal are called 'directories'. Use `ls` to list items and `cd` to change directories. The Tab key can be used for auto-complete.
+Folders in Terminal are called 'directories'. Use `ls` to list items and `cd` to change directories. The Tab key can be used for auto-complete.
 
 ## Pre-requisites
-First we'll teach you how to install the following:
-
+First, we'll walk you through installing the following:
 1. **Python & pip**: Usually pre-installed on Macs. [Python](https://www.python.org/downloads/)
 2. **FFmpeg**: Required for processing audio files. [FFmpeg](https://ffmpeg.org/download.html)
 3. **Homebrew**: A package manager for Mac. [Homebrew](https://brew.sh/)
 
 ## Installing Homebrew (If not already installed)
 Homebrew simplifies the installation of software on Mac.
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+- Open Terminal and enter the command:
+  ```bash
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
 - Follow the on-screen instructions.
+- **Final Step**: Homebrew requires you to add it to your PATH. After installation, you'll see two commands in the Terminal. Copy and paste the entire lines, including the brackets, for each command:
+  1. ```bash
+     (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/your_username/.profile
+     ```
+  2. ```bash
+     eval "$(/usr/local/bin/brew shellenv)"
+     ```
+  Replace `/Users/your_username/` with your actual username. This step integrates Homebrew into your system.
 
 ## Installing FFmpeg
 Install FFmpeg using Homebrew:
-
-```bash
-brew install ffmpeg
-```
+- In Terminal, type:
+  ```bash
+  brew install ffmpeg
+  ```
 
 ## Creating a Download Folder
-Choose between Terminal and Finder to create your download folder.
-
-- **Using Terminal**: `mkdir SpotifyDownloads` in your desired location.
-- **Using Finder**: Manually create a new folder.
+Instead of using Terminal, you can create a folder in Finder where you want your music downloaded. Right-click on this folder and select 'New Terminal at Folder' to open Terminal directly in this folder. This approach is user-friendly and helps organize your downloads.
 
 ## Installing spotDL
-Now, let's get `spotdl spotify-downloader` set up on your Mac.
-
-- In Terminal, type the following command:
+Let's install `spotdl spotify-downloader`. It will be installed on your entire system, allowing you to use it from any directory in Terminal.
+- In Terminal, type:
   ```bash
   pip install spotdl
   ```
-- **Note for Python 3 Users**: If your Mac uses Python 3, you might need to use `pip3` instead of `pip`. You can check your Python version by typing `python --version` (or `python3 --version`) in Terminal. If it shows Python 3.x and `pip` doesn't work, try:
-  ```bash
-  pip3 install spotdl
-  ```
-  This ensures that `spotdl` is installed for the correct version of Python.
-
-- If you encounter any issues during installation, make sure pip is up-to-date by running `pip install --upgrade pip` (or `pip3 install --upgrade pip` for Python 3).
-
+  For Python 3 users, if `pip` doesn't work, try `pip3 install spotdl`.
+- **Note**: If you encounter issues during installation, update pip by running `pip install --upgrade pip` (or `pip3 install --upgrade pip` for Python 3).
 - [spotDL GitHub](https://github.com/spotDL/spotify-downloader)
 
 ## Downloading a Spotify Playlist
 Ready to download your playlists!
-
-1. To get the Spotify playlist URL, go to the playlist, click the three dots, 'Share', then 'Copy link to playlist'. Edit the link to remove everything after the "?".
+1. Get the Spotify playlist URL by clicking the three dots on the playlist in Spotify, 'Share', then 'Copy link to playlist'. Edit the link to remove anything after the "?".
    - Example: `https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M`
-2. In Terminal (in your SpotifyDownloads folder), type:
-
+2. In Terminal, type:
    ```bash
    spotdl [Clean Spotify Playlist Link]
    ```
    Replace `[Clean Spotify Playlist Link]` with your link.
 
 ## Troubleshooting Common Issues
-Encountered an issue? Here's some help:
-
-- **No matches found**: Ensure your spotify link has removed anything after and including the '?'.
-- **Command Not Found**: Ensure `spotdl` is installed and restart Terminal.
+- **No matches found**: Ensure the Spotify link has removed anything after and including the '?'.
+- **Command Not Found**: Make sure `spotdl` is installed and restart Terminal.
 - **Download Problems**: Check your internet connection or playlist link.
 
 ## Conclusion
-Congratulations! You've now downloaded Spotify playlists to your Mac. Any questions or issues? Drop a comment below. Enjoy your music!
+Congratulations! You've downloaded Spotify playlists to your Mac. Any questions or issues? Feel free to comment below. Enjoy your music!
+
 
 ## Optional: Downloading Higher Bitrate Music using YouTube Music
 
