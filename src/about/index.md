@@ -8,7 +8,7 @@ order: 2
 
 {% assign spiel = "Hey everyone, I'm Tom and I'm a software engineer by trade but I also do a lot of other cool things so don't get too hung up on that. They include tinkering with and riding bikes on all terrains, visual DJ sets (only using youtube and chrome), watching pro cycling and trying to get involved when race organisers make mistakes, finding websites that seem insecure and trying to poke holes in them and trying to go viral on the internet. 
 
-Just below this, I'll pop a little list of links to social media sites and my resume and stuff. Feel free to have a look, and get in touch if you think I'm doing cool things and you'd like to work together. Further down is my more boring work blurb that I wrote one time (in third person lol) if you want to know a touch more about my technical skills but the resume pdf links aren't working or something." %}
+Below you'll find links to my social profiles and my resume in both web version (globe icon) and PDF (document icon) formats. Feel free to reach out if you think we could collaborate on something interesting! If you're curious about my technical background, scroll down for the more formal bio I wrote in third person (because that's what professionals do, right?)." %}
 {% assign piccy = "./images/photo_of_me_tom_lynch.jpg" %}
 
 {% spiel_and_piccy spiel, piccy, 40 %}
