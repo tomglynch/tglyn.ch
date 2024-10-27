@@ -1,7 +1,7 @@
 ---
 layout: pages/listpage.liquid
 title: blog
-tags: ['menu']
+tags: []
 order: 3
 ---
 

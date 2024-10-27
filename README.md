@@ -6,6 +6,9 @@ view at http://localhost:8080/
 run `DEBUG=Eleventy* npx @11ty/eleventy --serve` from the /tglyn.ch directory
 view at http://localhost:8080/
 
+## if something doesnt update
+- delete the _site folder, cancel the above process and re-run it.
+
 # push to netlify
 make a commit to master and push to github
 
