@@ -17,3 +17,10 @@ make a commit to master and push to github
 - install latest version of node
 - run npm install
 - then run the above
+
+# to publish
+- git add . 
+- git commit -m "message"
+- git push
+- '    '
+- check netlify but it should be deploying

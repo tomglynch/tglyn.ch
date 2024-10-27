@@ -4,6 +4,7 @@ title: about
 tags: ['menu']
 order: 2
 ---
+**[Casual]**
 
 {% assign spiel = "Hey everyone, I'm Tom and I'm a software engineer by trade but I also do a lot of other cool things so don't get too hung up on that. They include tinkering with and riding bikes on all terrains, visual DJ sets (only using youtube and chrome), watching pro cycling and trying to get involved when race organisers make mistakes, finding websites that seem insecure and trying to poke holes in them and trying to go viral on the internet. 
 
@@ -14,7 +15,13 @@ Just below this, I'll pop a little list of links to social media sites and my re
 
 {% include components/socials_list %}
 
-{% assign spiel = "Tom is an experienced software engineer with a background in web development, statistical analysis and machine learning. Completing his Bachelor of Science (Mechanical Systems), Master of Engineering (Software) at the University of Melbourne, Tom worked for the past six years in web-based development roles, launching cryptocurrency start-ups, building a price comparator of the Australian energy industry and using machine learning to increase the accuracy of property valuations." %}
-{% assign piccy = "./images/photo_of_me_tom_lynch_looking_pretty_cool_if_you_ask_me.jpg" %}
+**[Professional]**
 
-{% piccy_and_spiel spiel, piccy, 40 %}
+{% assign spiel = "Tom is an experienced Software Engineering Manager with a proven track record of leading high-performing teams and delivering complex, scalable software solutions. 
+
+With a deep skill set in architecting and implementing microservices-based systems, Tom excels at leveraging modern design patterns and best practices to create resilient, secure, and user-friendly applications. He brings a keen eye for identifying and mitigating security vulnerabilities and consistently drives technical direction while mentoring engineers and fostering a culture of continuous improvement. 
+
+In his spare time, Tom enjoys building, riding, and racing bicycles, creating audio-visual DJ sets, and blogging." %}
+{% assign piccy = "./images/photo_of_me_tom_lynch_2024.jpg" %}
+
+{% piccy_and_spiel spiel, piccy, 50 %}
