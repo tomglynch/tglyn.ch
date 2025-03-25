@@ -1,7 +1,8 @@
 ---
 title: "Is Tixel Legit? My Experience Buying Kneecap, Overmono, Caribou, and Laneway Festival Tickets Through Australia's Safest Ticket Resale Platform"
 blurb: "Having recently secured tickets to Overmono's January 2024 show at Forum Melbourne, Caribou's upcoming 2025 performance at PICA, Laneway Festival 2025, and Kneecap at 170 Russell through Tixel, I've become intimately familiar with this platform's workings. Here's my comprehensive breakdown of its legitimacy and functionality for fellow music enthusiasts."
-date: 2025-03-26
+date: 2025-03-25
+image: "/blog/images/tixel.png"
 published: true
 unlisted: true
 ---
