@@ -31,6 +31,17 @@ function removeUnpublished(values) {
   return vals;
 }
 
+// Add new function to filter out unlisted posts from listings
+function removeUnlisted(values) {
+  let vals = [];
+  for (let i = 0; i < values.length; i++) {
+    if (!values[i].data.unlisted) {
+      vals.push(values[i]);
+    }
+  }
+  return vals;
+}
+
 module.exports = (eleventyConfig) => {
 
   let markdownIt = require("markdown-it");
@@ -68,6 +79,28 @@ module.exports = (eleventyConfig) => {
     return `<a href="${url}" target="_blank" class="fa fa-${social_network}"></a>`
   });
 
+  eleventyConfig.addShortcode("callout", function(text) {
+    // Get the markdown library instance we configured earlier
+    const md = this.page.mdInst || markdownLib;
+    
+    // Process the text parameter through the markdown renderer
+    const renderedText = md.renderInline(text);
+    
+    // Replace the inline styles for links to make them light blue
+    const link = renderedText.replace(/<a /g, '<a style="color:rgb(227, 125, 0);" ');
+    
+    return `<div style="position: relative; background-color: #f0f0f0; padding: 15px; margin: 0 20px 20px 20px; border-radius: 8px; overflow: hidden;">
+      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background-color: rgb(227, 125, 0);"></div>
+      <p style="margin: 0 0 0 10px; display: flex; align-items: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgb(227, 125, 0)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; flex-shrink: 0;">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span style="flex-grow: 1; font-size: 0.9rem;">${link}</span>
+      </p>
+    </div>`;
+  });
 
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
@@ -75,6 +108,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addFilter("sortByOrder", sortByOrder);
   eleventyConfig.addFilter("removeUnpublished", removeUnpublished);
+  eleventyConfig.addFilter("removeUnlisted", removeUnlisted);
   eleventyConfig.addFilter("mostRelated", filtering.mostRelated);
   
   eleventyConfig.addPlugin(syntaxHighlight);

@@ -6,6 +6,15 @@ view at http://localhost:8080/
 run `DEBUG=Eleventy* npx @11ty/eleventy --serve` from the /tglyn.ch directory
 view at http://localhost:8080/
 
+## see what i will see on prod
+run `ELEVENTY_ENV=prod npx @11ty/eleventy --serve` from the /tglyn.ch directory
+view at http://localhost:8080/
+
+This activates the `env.isProd` condition, which filters blog posts according to their front matter properties:
+- `published: false` posts won't be shown anywhere (completely hidden drafts)
+- `published: true, unlisted: true` posts will be accessible via direct URL but won't appear in any blog listings (like secret pages)
+- `published: true` posts (without unlisted or with `unlisted: false`) will be fully visible in all blog post listings
+
 ## if something doesnt update
 - delete the _site folder, cancel the above process and re-run it.
 

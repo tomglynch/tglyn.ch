@@ -6,9 +6,8 @@
 
 
 {% if env.isProd %}
-{% assign blogposts = blogposts | removeUnpublished %}
+{% assign blogposts = blogposts | removeUnpublished | removeUnlisted %}
 {% endif %}
-
 
 
 <ul class="postlist">
