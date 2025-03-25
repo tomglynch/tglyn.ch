@@ -7,6 +7,28 @@ published: true
 unlisted: true
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "SoftwareApplication",
+    "name": "Tixel",
+    "applicationCategory": "Ticket Resale Platform"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Tom Lynch"
+  },
+  "reviewBody": "Tixel has become my go-to for last-minute tickets, ethical resales, and stress-free transactions. With robust fraud prevention, financial safeguards, and efficient dispute resolution, it offers a secure way to buy and sell event tickets."
+}
+</script>
+
 Having recently secured tickets to Overmono's January 2024 show at Forum Melbourne, Caribou's upcoming 2025 performance at PICA, Laneway Festival 2025, and Kneecap's March 2025 shows at 170 Russell through Tixel, I've become intimately familiar with this platform's workings. Here's my comprehensive breakdown of its legitimacy and functionality for fellow music enthusiasts.
 
 {% callout "If you're just here for the $10 discount, [here's the referral link](https://referrals.tixel.com/ujpqCaZS)." %}
@@ -128,6 +150,28 @@ Despite minor hiccups, Tixel has become my go-to for:
 - **Last-Minute Tickets:** Snagged Overmono tickets 3 hours pre-show
 - **Ethical Resales:** Avoided contributing to $150M Aussie scalping industry
 - **Stress-Free Transactions:** 9/10 experiences problem-free
+
+---
+
+# Frequently Asked Questions About Tixel
+
+### Is Tixel safe to buy tickets from?
+Based on my experiences, Tixel appears to be one of the safer ticket resale platforms available. The platform includes security measures like ticket verification systems and payment processing through Stripe. While no platform can guarantee 100% safety, Tixel's policy of holding seller funds until after the event adds an extra layer of protection. Remember, you can save $10 on your first transaction using the link in my post.
+
+### How does Tixel verify tickets?
+From what I've observed, Tixel has some form of verification technology that checks tickets. During my experience reselling an Overmono ticket, they flagged some metadata inconsistencies, suggesting they do perform some level of verification. However, I can't speak to exactly how their proprietary system works behind the scenes.
+
+### Does Tixel hold your money?
+In my experience, yes - Tixel holds the seller's payment until 3 days after the event. This seems to be their standard policy, which I found reassuring as a buyer. For sellers, this does mean you'll need to wait a bit for your funds, but it's part of how they attempt to maintain marketplace integrity. 
+
+### What are Tixel's fees?
+When I used Tixel, sellers paid 6.4% of the ticekt price as fees (with a minimum of $3 AUD). These fees were deducted automatically from transactions. You can offset some of these fees with the $10 credit both you and I receive when you use the link in my post.
+
+### Can I sell tickets for any price on Tixel?
+Tixel limits price markups to approximately 10% above face value, which differs from some other platforms that allow unlimited pricing. This cap seemed to help keep tickets I was interested in (like Laneway Festival) somewhat more affordable compared to listings I saw elsewhere, though prices can still vary based on demand.
+
+### What happens if my Tixel tickets don't work?
+Tixel states they offer buyer protection that should provide a refund if tickets prove invalid. Their customer service responded to my general inquiries within about 4 hours, though response times likely vary. If you're considering trying the platform, you might as well save $10 by using the link in my post.
 
 ---
 
