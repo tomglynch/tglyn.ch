@@ -1,0 +1,253 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="theme-color" content="#162447">
+    <title>How I Cut GitHub Notification Noise by Over 90% Using Gmail Filters - Tom Lynch</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/fa_icons.css">
+    <link rel="stylesheet" href="/css/prism-okaidia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+   
+    <meta property="og:title" content="How I Cut GitHub Notification Noise by Over 90% Using Gmail Filters">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="I received 317 GitHub emails monthly, but only 9% required action. Here's how Gmail search operators helped me focus on what matters.">
+    <meta property="og:image" content="https://tglyn.ch/blog/images/githubnoise.png">
+    <meta property="og:url" content="https://tglyn.ch/blog/reducing_github_noise_email_solution/">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@lynchyeatspizza">
+    <meta name="twitter:title" content="How I Cut GitHub Notification Noise by Over 90% Using Gmail Filters">
+    <meta name="twitter:description" content="I received 317 GitHub emails monthly, but only 9% required action. Here's how Gmail search operators helped me focus on what matters.">
+    <meta name="twitter:image" content="https://tglyn.ch/blog/images/githubnoise.png">
+    
+    
+
+    
+
+  </head>
+  <body>
+    
+<div class="menu">
+	<ul>
+		
+		
+			<li><a href="/">Home</a></li>
+		
+			<li><a href="/about/">About</a></li>
+		
+			<li><a href="/DJ/">Tom vs the Internet</a></li>
+		
+			<li><a href="/subscribe/">Subscribe</a></li>
+		
+			<li><a href="/contact/">Contact</a></li>
+		
+	</ul>
+</div>
+
+
+<article>
+<h1 class="posttitle">How I Cut GitHub Notification Noise by Over 90% Using Gmail Filters</h1>
+<author>
+    <a href="/about">Tom Lynch</a>
+</author>
+<div class="date">
+    <time>Apr 28, 2025</time>
+</div>
+<h2>The Problem: GitHub's Notification System Falls Short</h2>
+<p>After tracking a month of GitHub emails, I was faced with a stark reality: only 28 out of 317 notifications (8.8%) actually required my attention. The rest? Pure noise cluttering my inbox.</p>
+<p>If you've ever tried using GitHub's native notification settings, you'll quickly hit these frustrating limitations:</p>
+<ul>
+<li>The "participation-only" setting sounds promising but misses critical review requests</li>
+<li>Watch settings are all-or-nothing for entire repositories when you only care about specific parts</li>
+<li>There's no way to separate CI updates from human interactions</li>
+<li>You can't prioritize direct mentions over random thread subscriptions</li>
+</ul>
+<h2>The Solution: Gmail's Filtering Power</h2>
+<p><img src="../images/githubnoise.png" alt="Image showing the solution to github noise" title="github noise" loading="lazy"></p>
+<p>After some tinkering, I built a system using Gmail's Multiple Inboxes feature that achieved a 91.2% noise reduction. It works by:</p>
+<ol>
+<li>Keeping critical GitHub notifications (like review requests) visible alongside my regular emails</li>
+<li>Banishing all the routine updates to their own section where they won't distract me</li>
+</ol>
+<p>The beauty of this? Zero configuration needed in GitHub itself!</p>
+<h2>The Implementation</h2>
+<p>Setting this up is surprisingly simple:</p>
+<p><strong>Step 1: Enable Gmail Multiple Inboxes</strong></p>
+<ul>
+<li>Click Settings → See all settings → Inbox tab → Select "Multiple inboxes"</li>
+</ul>
+<p><strong>Step 2: Configure Two Search Queries</strong></p>
+<p>In the Multiple Inboxes settings, add the following search queries:</p>
+<ul>
+<li>
+<p><strong>Section 1: "Everything except github noise"</strong></p>
+<pre class="language-text"><code class="language-text">-from:github.com OR (cc:author@noreply.github.com OR cc:mention@noreply.github.com OR cc:assign@noreply.github.com OR (cc:review_requested@noreply.github.com "requested your review"))</code></pre>
+</li>
+<li>
+<p><strong>Section 2: "Github noise"</strong></p>
+<pre class="language-text"><code class="language-text">from:github.com -cc:author@noreply.github.com -cc:mention@noreply.github.com -cc:assign@noreply.github.com -(cc:review_requested@noreply.github.com "requested your review")</code></pre>
+</li>
+</ul>
+<p><strong>Step 3: Position and Save</strong></p>
+<ul>
+<li>Set "Multiple inbox position" to "Above the inbox"</li>
+<li>Set maximum section size to fit your workflow (15-20 works well for me)</li>
+</ul>
+<h2>Why This Works Better Than GitHub's Settings</h2>
+<p>I've compared this approach to GitHub's native settings, and the differences are stark:</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>GitHub Native</th>
+<th>Gmail Filters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Separate review requests from thread comments</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Keep critical notifications visible among regular emails</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Filter by notification type across all repositories</td>
+<td>⚠️ Limited</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Distinguish between CI and human interactions</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>The key advantage? GitHub forces an all-or-nothing approach per repository, while Gmail filters let you create notification categories that work across your entire workflow.</p>
+<h2>The Proof: Real-World Results</h2>
+<p>After implementing this setup and testing it across multiple repositories for a month:</p>
+<ul>
+<li>Before: 317 monthly GitHub emails with only 28 actionable (8.8%)</li>
+<li>After: Actionable emails remain visible in my primary inbox, with 91.2% of noise neatly tucked away</li>
+</ul>
+<p>Best of all, I verified that no critical notifications were miscategorized during testing.</p>
+<h2>Power-Up: Auto-Labeling for Finer Control</h2>
+<p>Want to take this even further? Create Gmail filters that auto-label GitHub notifications with better precision:</p>
+<ol>
+<li>
+<p><strong>Label: "GitHub/Mention"</strong></p>
+<pre class="language-text"><code class="language-text">from:notifications@github.com cc:mention@noreply.github.com</code></pre>
+</li>
+<li>
+<p><strong>Label: "GitHub/Assigned"</strong></p>
+<pre class="language-text"><code class="language-text">from:notifications@github.com cc:assign@noreply.github.com</code></pre>
+</li>
+<li>
+<p><strong>Label: "GitHub/ReviewRequested"</strong></p>
+<pre class="language-text"><code class="language-text">from:notifications@github.com cc:review_requested@noreply.github.com "requested your review"</code></pre>
+</li>
+<li>
+<p><strong>Label: "GitHub/CI"</strong></p>
+<pre class="language-text"><code class="language-text">from:ci_activity@github.com</code></pre>
+</li>
+<li>
+<p><strong>Label: "GitHub/MyPRs"</strong></p>
+<pre class="language-text"><code class="language-text">from:notifications@github.com subject:"Your pull request"</code></pre>
+</li>
+</ol>
+<p>Then incorporate these labels in your Multiple Inboxes queries:</p>
+<pre class="language-text"><code class="language-text">-from:github.com OR label:GitHub/Mention OR label:GitHub/Assigned OR label:GitHub/ReviewRequested</code></pre>
+<p>This refines filtering beyond the main solution while retaining all the benefits.</p>
+<h2>Try It Yourself</h2>
+<p>The implementation takes less than 2 minutes - seriously! Just copy the search queries, paste them into Gmail's Multiple Inboxes settings, and watch your notification noise disappear.</p>
+<p>I'd love to hear if this works for you or how you've improved it. Happy filtering!</p>
+
+
+<div class="socials_list">
+<a href="https://github.com/tomglynch" target="_blank" class="fa fa-github"></a>
+<a href="https://twitter.com/lynchyeatspizza" target="_blank" class="fa fa-twitter"></a>
+<a href="https://www.linkedin.com/in/tomglynch/" target="_blank" class="fa fa-linkedin"></a>
+<a href="https://news.ycombinator.com/user?id=tomglynch" target="_blank" class="fa fa-y-combinator"></a>
+<a href="/files/TomLynchResume2025.pdf" target="_blank" class="fa fa-file-text"></a>
+</div>
+
+<form name="subscribe" method="POST" data-netlify="true"> 
+    <input name="email" type="email" class="form-input" placeholder="Email" required="">
+    <input type="submit" value="Subscribe">
+</form>
+</article>
+
+<h2>Related blogs</h2>
+
+
+
+
+
+
+
+<ul class="postlist">
+
+<li class="postlist">
+    <h2 class="postlist">
+        
+        <img src="../../files/flame.png" style="max-height: 2ex;" alt="This article is HOT" title="This article is HOT" loading="lazy"> <a href="/blog/uci_fix_the_line/">Finish Line Fiasco: UCI's Paint Job Needs a Refresh</a>
+        
+    </h2>
+    <div class="date">
+        <time>Mar 7, 2023</time>
+    </div>
+
+    <div>
+        UCI regulations are not keeping up with these close finishes. Caleb Ewen may have been robbed of a victory and we would know for sure if the UCI updated their finish line marking rules
+    </div>
+    <div>
+        ^ similarity rating: <b>0.41007</b>
+    </div>
+</li>
+
+<li class="postlist">
+    <h2 class="postlist">
+        
+        <a href="/blog/spintel/">Hacking my ISP to get every customer's personal details</a>
+        
+    </h2>
+    <div class="date">
+        <time>Feb 1, 2019</time>
+    </div>
+
+    <div>
+        Logging in to Australian internet provider Spintel's online portal sent my security senses tingling... there's bound to be a security hole here.
+    </div>
+    <div>
+        ^ similarity rating: <b>0.39683</b>
+    </div>
+</li>
+
+<li class="postlist">
+    <h2 class="postlist">
+        
+        <img src="../../files/flame.png" style="max-height: 2ex;" alt="This article is HOT" title="This article is HOT" loading="lazy"> <a href="/blog/amstel_gold/">Who won the Amstel Gold Race? Human error in photo-finishes</a>
+        
+    </h2>
+    <div class="date">
+        <time>Apr 28, 2021</time>
+    </div>
+
+    <div>
+        Investigating the photo-finish of last Sunday's Amstel Gold Race. With millimeters separating the two riders does the photo-finish camera tell the truth?
+    </div>
+    <div>
+        ^ similarity rating: <b>0.37405</b>
+    </div>
+</li>
+
+</ul>
+
+
+  
+</body></html>
