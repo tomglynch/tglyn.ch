@@ -18,7 +18,7 @@ If you've ever tried using GitHub's native notification settings, you'll quickly
 
 ## The Solution: Gmail's Filtering Power
 
-![Image showing the solution to github noise](../images/githubnoise.png "github noise")
+![Image showing the solution to github noise](/blog/images/githubnoise.png "github noise")
 
 After some tinkering, I built a system using Gmail's Multiple Inboxes feature that achieved a 91.2% noise reduction. It works by:
 

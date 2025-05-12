@@ -7,7 +7,7 @@ published: true
 popularity: 3
 ---
 
-![Our travel blog](../images/travelblog.png "Our travel blog")
+![Our travel blog](/blog/images/travelblog.png "Our travel blog")
 
 My partner Milla and I spent most of 2024 having a look around. We saw lots. We kept our friends and family updated with an occasional email which automatically published to our [blog](https://tomandmilla.beehiiv.com/). Take a read!
 

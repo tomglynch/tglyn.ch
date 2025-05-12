@@ -9,7 +9,7 @@ published: true
 
 Hey all, to improve my workflow when playing around with DJ ideas, I download audio and video files from multiple YouTube playlists to use in my work. I've created a simple script to automate this process on your Mac. It will create separate folders for each playlist and download the files in the appropriate formats. Please note that the YouTube playlists must be set as either public or unlisted for this script to work.
 
-![Here's what it looks like in Terminal](../images/youtube_download_terminal.png "Here's what it looks like in Terminal") 
+![Here's what it looks like in Terminal](/blog/images/youtube_download_terminal.png "Here's what it looks like in Terminal") 
 
 Before we start, let's talk a little about Terminal. Terminal is a command-line interface on macOS that allows you to interact with your computer using text commands. We will use Terminal to install some tools and run the script.
 

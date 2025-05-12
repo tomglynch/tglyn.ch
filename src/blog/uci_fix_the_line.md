@@ -17,13 +17,13 @@ Page 139 of the [UCI specs](https://www.uci.org/docs/default-source/publications
 
 From the images, this is clearly not the case. It'd be lucky to be 30cm wide total and it's mostly black!
 
-![The GP Monseré finish line](../images/monsere_finish_side.png "The GP Monseré finish line")
+![The GP Monseré finish line](/blog/images/monsere_finish_side.png "The GP Monseré finish line")
 
 # 2. The photo finish camera is not set up in the right place.
 
 A simple way of checking if the photo finish line camera is set up in the correct place is to compare the background of the photo finish compared to a side on view of the finish line. 
 
-![The GP Monseré photo finish](../images/monsere_photo_finish.png "The GP Monseré photo finish")
+![The GP Monseré photo finish](/blog/images/monsere_photo_finish.png "The GP Monseré photo finish")
 
 I go into this in more detail in my [original photo-finish blog about the 2021 Amstel Gold race finish between Wout Van Aert and Tom Pidcock](/blog/amstel_gold/), but we can immediately see the photo finish has a black background, whereas the photo finish is meant to align with the leading edge of the backmost of the two white lines (this is where the two photo finish line accuracy markers are, the two black marks just behind the center black line) so this rules out the photo finish being in the correct location (I explain the accuracy markers in my [follow up post that the finish line painting needs to be reconsidered](/blog/photo-finish_paint_problem/)). You could argue the photo finish could be aiming directly down the ultra-thin black line in the middle of the finish but the finish line isn't even straight, so we'd expect the photo finish to veer off this line at points which would mean the background of the photo finish is both black and white - but this is not the case. That leaves us with only one option, the photo finish is either before or after the actual finish, thereby not giving a conclusive winner.
 
@@ -52,7 +52,7 @@ So I'd like to suggest an updated finish line design:
 
 On the central 4cm white line, the leading edge has 1cm wide markers painted on it. These are used to align the photo-finish camera and as long as all dots are contained in the photo-finish image, then we know categorically that the photo-finish was taken within 1cm of the actual finish line. Greatly reducing the risk of errors.
 
-![Specs of the suggested changes to the photo-finish line](../images/followup_suggested_finish_specs2.png "Specs of the suggested changes to the photo-finish line")
+![Specs of the suggested changes to the photo-finish line](/blog/images/followup_suggested_finish_specs2.png "Specs of the suggested changes to the photo-finish line")
 
 This takes the accuracy aspects used in athletics photo-finishes and allows it to work for cycling races where due to the higher speeds and greater number of unknowns in the courses, the painted finish line is required to be significantly wider.
 

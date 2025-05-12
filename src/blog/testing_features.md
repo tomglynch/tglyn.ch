@@ -33,8 +33,8 @@ window.addEventListener("scroll", function() {
 
 {% include_html %}
 <div id="gearbox">
-    <img src="../images/gear.svg" alt id="leftgear">
-    <img src="../images/gear.svg" alt id="rightgear">
+    <img src="/blog/images/gear.svg" alt id="leftgear">
+    <img src="/blog/images/gear.svg" alt id="rightgear">
 </div>
 {% endinclude_html %}
 

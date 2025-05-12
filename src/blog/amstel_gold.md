@@ -22,11 +22,11 @@ Did the race organiser receive the winner piccy via mms? And what about the othe
 
 The unofficial announcement, the 'provisional' results, the long wait and the warped photo-finish photo all gave the win to van Aert...
 
-![Warped photo of the photo-finish](../images/amstel_warped_photo_finish.jpg "Warped photo of the photo-finish")
+![Warped photo of the photo-finish](/blog/images/amstel_warped_photo_finish.jpg "Warped photo of the photo-finish")
 
 But looking at the slow-mo shots it looked like Pidcock might have won it:
 
-![Side on photo of the finish line](../images/amstel_side_shot.png "Side on photo of the finish line")
+![Side on photo of the finish line](/blog/images/amstel_side_shot.png "Side on photo of the finish line")
 
 Is there something more going on here?
 
@@ -34,13 +34,13 @@ Is there something more going on here?
 
 Firstly, the photo-finish is not like a regular photo where the whole image is captured at a single moment in time. Rather, it is taken over a period of time, similar to a video. The camera is mounted perpendicular to the finish line (at a high angle to decrease the chance of a front wheel blocking another) like so:
 
-![Photo finish camera position](../images/amstel_photofinish_camera_position.png "Photo finish camera position")
+![Photo finish camera position](/blog/images/amstel_photofinish_camera_position.png "Photo finish camera position")
 
 The camera takes up to 3500 photos per second of a single pixel wide slot, with a resolution of 2048 pixels, resulting in each photo being 1x2048. Each of these photos are then lined up in order, resulting in the photo-finish photo which looks similar to a real photo but also distinctly different.
 
 This is also the cause for the blurred looking background (like in the next image) - as it is a single point that is repeated over and over.
 
-![Photo finish blurred background](../images/amstel_blurred_photo.png "Photo finish blurred background")
+![Photo finish blurred background](/blog/images/amstel_blurred_photo.png "Photo finish blurred background")
 
 
 If you're still a bit confused, take a look at this video: {% youtube "Ut0nKdLCAEo" %}
@@ -49,13 +49,13 @@ If you're still a bit confused, take a look at this video: {% youtube "Ut0nKdLCA
 
 Well, what I noticed was that the background in the photo-finish photo is yellow, green and white. Yet in the side-on video of the finish the barrier that lines up with the finish line is red. Why is that?
 
-![Barrier alignment from side on camera](../images/amstel_barrier_alignment.png "Barrier alignment from side on camera")
+![Barrier alignment from side on camera](/blog/images/amstel_barrier_alignment.png "Barrier alignment from side on camera")
 
-![Barrier alignment from side on camera zoomed in](../images/amstel_barrier_alignment_zoom.png "Barrier alignment from side on camera zoomed in")
+![Barrier alignment from side on camera zoomed in](/blog/images/amstel_barrier_alignment_zoom.png "Barrier alignment from side on camera zoomed in")
 
 So now the next challenge was to work out where the photo finish camera was actually aligned to. And I saw yellow, green and white and quickly tweeted a couple of times seeing if my thoughts made sense:
 
-![First tweet about barrier positioning](../images/amstel_first_tweet.png "First tweet about barrier positioning")
+![First tweet about barrier positioning](/blog/images/amstel_first_tweet.png "First tweet about barrier positioning")
 
 And ended up getting a shout-out on the [GCN Racing News Show](https://www.youtube.com/watch?v=-Gj8UNw5TBE&t=235s) the following day. 
 
@@ -63,31 +63,31 @@ Now I must note, at that point in time I'd misread some UCI docs and thought tha
 
 But it took this tweet from Inoes followed by [Tom Pidcock's reply](https://twitter.com/Tompid/status/1384454320330919939) to really get me invested in researching this further:
 
-![Tom Pidcock tweeting 'But where is the finish line?'](../images/amstel_pidcock_where_is_the_line.png "Tom Pidcock tweeting 'But where is the finish line?'")
+![Tom Pidcock tweeting 'But where is the finish line?'](/blog/images/amstel_pidcock_where_is_the_line.png "Tom Pidcock tweeting 'But where is the finish line?'")
 
 # Let's find the finish line for Pidcock
 
 So I replied with what I knew and was quickly corrected by [@LaFlammeRouge16](https://twitter.com/laflammerouge16)
 
-![Me being corrected by La Flamme Rouge](../images/amstel_reply_to_tom.png "Me being corrected by La Flamme Rouge")
+![Me being corrected by La Flamme Rouge](/blog/images/amstel_reply_to_tom.png "Me being corrected by La Flamme Rouge")
 
 and from there La Flamme Rouge and I began working together to solve this.
 
 After searching through many pictures we found this shot which included a better picture of the banner:
 
-![Better picture of the finishing barrier](../images/amstel_barrier_bike_throw.png "Better picture of the finishing barrier")
+![Better picture of the finishing barrier](/blog/images/amstel_barrier_bike_throw.png "Better picture of the finishing barrier")
 
-![Closer picture of the finishing barrier](../images/amstel_barrier_closer.png "Closer picture of the finishing barrier")
+![Closer picture of the finishing barrier](/blog/images/amstel_barrier_closer.png "Closer picture of the finishing barrier")
 
 Which allowed us to work out which letters could possibly form the two green lines through the white section. Looking up Amstel Bier Radler we can find their little slogan, **Met trots voor u gebrouwen - Geen 18, geen alcohol**. Below the green lemon leaves are the words **geen alcohol** and within these words, the only letters that can be cut with two intersections are the letters **c** and **o**.
 
 From here I zoomed in and drew some vertical lines onto the barrier through the c and the o in the most likely positions. 
 
-![Drawing lines barrier](../images/amstel_vert_lines.png "Drawing lines on the barrier")
+![Drawing lines barrier](/blog/images/amstel_vert_lines.png "Drawing lines on the barrier")
 
 With the **o** seeming the most obvious as the dark bit on the leaf matches the top of the photo-finish blur:
 
-![Drawing lines barrier](../images/amstel_vert_lines_circled.png "Drawing lines on the barrier")
+![Drawing lines barrier](/blog/images/amstel_vert_lines_circled.png "Drawing lines on the barrier")
 
 So I played around a bit in photoshop to see if it matches (flick through to get the idea):
 
@@ -97,9 +97,9 @@ And it does! (Throughout the discussions with La Flamme Rouge I'd also tried [st
 
 Matching this all back up to the side video of the finish (I have used the end of the women's race earlier in the day (won by Marianne Vos) as the lighting is better to determine the dark lemon leaves on the Radler sign), we can draw a line where the photo-finish camera is pointing, and then extrapolate to determine where on the white band the photo-finish line was focussed.
 
-![Approximate photo-finish line](../images/amstel_approx_line.png "Approximate photo-finish line")
+![Approximate photo-finish line](/blog/images/amstel_approx_line.png "Approximate photo-finish line")
 
-![Approximate photo-finish line extrapolated](../images/amstel_approx_line_extrapolated.png "Approximate photo-finish line extrapolated")
+![Approximate photo-finish line extrapolated](/blog/images/amstel_approx_line_extrapolated.png "Approximate photo-finish line extrapolated")
 
 Please note that due to the camber of the road (the center is higher than the edges to allow drainage) the straight leading blue line does not perfectly follow the front of the white band.
 
@@ -111,7 +111,7 @@ The first measurement was 7 pixels of a total of 33 pixels, resulting in the pho
 
 The white band is 34cm wide, so 21% of that is 34*0.21 = 7.14cm. And 34-7.14 = 26.86cm.
 
-![Estimated distances based on the photo-finish line extrapolated](../images/amstel_estimates.png "Estimated distances based on the photo-finish line extrapolated")
+![Estimated distances based on the photo-finish line extrapolated](/blog/images/amstel_estimates.png "Estimated distances based on the photo-finish line extrapolated")
 
 So all in all, I'm estimating the photo-finish was focussed on a point approximately 26.86cm too early. 
 
@@ -128,11 +128,11 @@ I have a few thoughts on ways we could determine if Tom Pidcock could have overc
 
 Here are the three images I received in the quality they sent them (right click and select 'Open image in new tab' to see them full size):
 
-![Photo-finish picture 1](../images/amstel_IMG-20210419-WA0004.jpg "Photo-finish picture 1")
+![Photo-finish picture 1](/blog/images/amstel_IMG-20210419-WA0004.jpg "Photo-finish picture 1")
 
-![Photo-finish picture 2](../images/amstel_Finishphoto_AGR21_overview.png "Photo-finish picture 2")
+![Photo-finish picture 2](/blog/images/amstel_Finishphoto_AGR21_overview.png "Photo-finish picture 2")
 
-![Photo-finish picture 3](../images/amstel_Finishphoto_AGR21.png "Photo-finish picture 3")
+![Photo-finish picture 3](/blog/images/amstel_Finishphoto_AGR21.png "Photo-finish picture 3")
 
 So perhaps with these better resolution photos we could try to determine if Tom Pidcock was ahead ~27cm later. I have a few possible ways to go about this (please hit me up on Twitter ([@lynchyeatspizza](https://twitter.com/lynchyeatspizza)) if you're exploring any of these options):
 
@@ -144,7 +144,7 @@ So perhaps with these better resolution photos we could try to determine if Tom 
 3. Both Wout van Aert and Tom Pidcock were likely running 25mm tyres on their 700c wheels resulting in a diameter of around 672mm, or 67.2cm. So 26.86/67.2 = 0.3997 ≈ 0.4, so the photo-finish was approximately 40% of a wheel length too early - So measure when each rider's wheel reaches 40% of the way through. At 40% of the way across a circle, the length of the chord is 96% of the diameter (so just 2% difference at the bottom and 2% difference at the top). 
     - I think this would allow us to work out the actual winner if it was possible to determine accurately where this 40% occurs (please check my maths and confirm 40% first).
 
-![Secant of a bike wheel](../images/amstel_secant.png "Secant of a bike wheel")
+![Secant of a bike wheel](/blog/images/amstel_secant.png "Secant of a bike wheel")
 
 4. We would also need to work out what the times say in the bottom of the second photo-finish picture, so we can use that to determine how far Pidcock was behind when crossing the photo-finish line.
 
@@ -163,11 +163,11 @@ Yet there was only **one camera** which took just **2000** photos per second.
 
 - Change the requirements of the paint of the finish line to ensure that photo-finish camera operators have a set line to aim at. Suggestion would be to follow Athletics' example, by painting 2cm wide black spots along the edge of the white band, and aiming for that with the camera - ensuring the photo-finish is within 2cm's of the actual finish. Here's how it works in Athletics - see the black marks across the finish line:
 
-![Athletics photo-finish set up](../images/amstel_athletics.jpg "Athletics photo-finish set up")
+![Athletics photo-finish set up](/blog/images/amstel_athletics.jpg "Athletics photo-finish set up")
 
 
 ### And to finish
-- If you’re going to employ tech with a resolution of <span style="color:#969696">1/3500 =</span> 0.0002857s, don’t set it up 0.016s off the mark - **that's 56 times the resolution**
+- If you're going to employ tech with a resolution of <span style="color:#969696">1/3500 =</span> 0.0002857s, don't set it up 0.016s off the mark - **that's 56 times the resolution**
 
 (assuming riders are traveling at 60kph, the 26.86cm will take 0.016 seconds to travel)
 

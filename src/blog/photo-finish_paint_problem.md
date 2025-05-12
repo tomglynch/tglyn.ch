@@ -18,14 +18,14 @@ Elisa Balsamo lead out the sprint, before both Demi Vollering and Ruth Winder bo
 <blockquote class="twitter-tweet tw-align-center" ><p lang="en" dir="ltr">It doesn&#39;t get any closer than that. <a href="https://twitter.com/hashtag/BPwomen?src=hash&amp;ref_src=twsrc%5Etfw">#BPwomen</a> <a href="https://t.co/D0xtxbP0Av">pic.twitter.com/D0xtxbP0Av</a></p>&mdash; CyclingTips (@cyclingtips) <a href="https://twitter.com/cyclingtips/status/1382325964189753360?ref_src=twsrc%5Etfw">April 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endinclude_html %}
 
-![De Brabantse Pijl Dames side on camera](../images/followup_side-on_camera.jpg "De Brabantse Pijl Dames side on camera")
+![De Brabantse Pijl Dames side on camera](/blog/images/followup_side-on_camera.jpg "De Brabantse Pijl Dames side on camera")
 
 
 The side-on camera showed what seems to be a win for Vollering, but the photo-finish showed Winder had won it by a pixel.
 
-![De Brabantse Pijl Dames photo-finish](../images/followup_photo-finish.png "De Brabantse Pijl Dames photo-finish")
+![De Brabantse Pijl Dames photo-finish](/blog/images/followup_photo-finish.png "De Brabantse Pijl Dames photo-finish")
 
-![De Brabantse Pijl Dames photo-finish zoom](../images/followup_photo-finish_zoom.png "De Brabantse Pijl Dames photo-finish zoom")
+![De Brabantse Pijl Dames photo-finish zoom](/blog/images/followup_photo-finish_zoom.png "De Brabantse Pijl Dames photo-finish zoom")
 
 As per the footage from the men's Amstel Gold Race, the side-on camera at the finish and the photo-finish camera seemed to contradict each other.
 
@@ -35,7 +35,7 @@ Thankfully, the De Brabantse Pijl photo-finish requires significantly less inves
 
 Since these markers appear in the photo-finish, it means the single pixel width photo-finish was taken along a plane that intersects these markers, so somewhere between the two red lines drawn here:
 
-![De Brabantse Pijl Dames photo-finish range of possible positions](../images/followup_photo-finish_position.png "De Brabantse Pijl Dames photo-finish range of possible positions")
+![De Brabantse Pijl Dames photo-finish range of possible positions](/blog/images/followup_photo-finish_position.png "De Brabantse Pijl Dames photo-finish range of possible positions")
 
 Given the black line is 4cm as per the [UCI specs (page 139)](https://www.uci.org/docs/default-source/publications/uci-guide-orga-2020-eng.pdf), and counting the number of pixels of the line next to the lower marker is 17 pixels. The corresponding marker is 23 pixels. This means the marker is ```23 / 17 = 1.353``` wider than the line, so therefore, the width of the marker is ```1.353 * 4cm = 5.412cm```.
 
@@ -53,7 +53,7 @@ To increase the accuracy of photo-finishes, the UCI needs to improve the specifi
 
 So here's a quick artist's rendition of what I am suggesting:
 
-![Suggested changes to the photo-finish line](../images/followup_suggested_finish.png "Suggested changes to the photo-finish line")
+![Suggested changes to the photo-finish line](/blog/images/followup_suggested_finish.png "Suggested changes to the photo-finish line")
 
 The finish line is changed to be:
 - 34cm white band
@@ -64,7 +64,7 @@ The finish line is changed to be:
 
 On the central 4cm white line, the leading edge has 1cm wide markers painted on it. These are used to align the photo-finish camera and as long as all dots are contained in the photo-finish image, then we know categorically that the photo-finish was taken within 1cm of the actual finish line. Greatly reducing the risk of errors.
 
-![Specs of the suggested changes to the photo-finish line](../images/followup_suggested_finish_specs.png "Specs of the suggested changes to the photo-finish line")
+![Specs of the suggested changes to the photo-finish line](/blog/images/followup_suggested_finish_specs.png "Specs of the suggested changes to the photo-finish line")
 
 This takes the accuracy aspects used in athletics photo-finishes and allows it to work for cycling races where due to the higher speeds and greater number of unknowns in the courses, the painted finish line is required to be significantly wider.
 
