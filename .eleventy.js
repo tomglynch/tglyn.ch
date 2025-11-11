@@ -52,7 +52,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary("md", markdownLib);
   
 
-  eleventyConfig.setTemplateFormats(["md", "js", "liquid", "css", "jpg", "png", "gif", "svg", "pdf"]); // include css and js to watch and reload on save
+  eleventyConfig.setTemplateFormats(["md", "js", "liquid", "css", "jpg", "png", "gif", "svg", "pdf", "ics"]); // include css and js to watch and reload on save
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPairedShortcode("include_js", function(content) {
