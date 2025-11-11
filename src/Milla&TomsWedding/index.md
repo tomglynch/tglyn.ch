@@ -157,7 +157,19 @@ tags: []
               </a>
             </div>
           </div>
+
         </div>
+
+        <div style="margin-top: 60px; max-width: 400px; margin-left: auto; margin-right: auto;">
+          <form name="wedding-email" method="POST" data-netlify="true" class="wedding-email-form">
+            <p class="form-note">If we don't have your email, please share it so we can keep you updated!</p>
+            <input name="name" type="text" placeholder="Full Name" required/>
+            <input name="email" type="email" placeholder="Email Address" required/>
+            <input type="hidden" name="guest-name" class="guest-name-input" value=""/>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
       </div>
     </div>
   </div>

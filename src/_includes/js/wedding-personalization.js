@@ -39,6 +39,12 @@
       element.textContent = guestName;
     });
 
+    // Also populate the hidden form field with guest name
+    const guestNameInput = document.querySelector('.guest-name-input');
+    if (guestNameInput) {
+      guestNameInput.value = guestName;
+    }
+
     // Show main content
     const mainContent = document.getElementById('invitation-content');
     const errorSection = document.getElementById('invitation-error');

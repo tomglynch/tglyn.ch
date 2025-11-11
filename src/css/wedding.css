@@ -380,8 +380,67 @@ body.wedding-page {
     color: #1e1f20;
 }
 
-.rsvp-menu {
-    /* Inherits styles from calendar-menu */
+/* Wedding email form styling */
+.wedding-email-form {
+    padding: 0;
+    text-align: left;
+}
+
+.wedding-email-form .form-note {
+    font-size: 16px;
+    color: rgba(242, 244, 234, 0.8);
+    margin-bottom: 24px;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.wedding-email-form input[type="text"],
+.wedding-email-form input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    background: rgba(242, 244, 234, 0.08);
+    border: 2px solid rgba(242, 244, 234, 0.3);
+    border-radius: 4px;
+    color: #f2f4ea;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.wedding-email-form input::placeholder {
+    color: rgba(242, 244, 234, 0.5);
+}
+
+.wedding-email-form input:focus {
+    outline: none;
+    border-color: #5aaa96;
+    background: rgba(242, 244, 234, 0.12);
+}
+
+.wedding-email-form button[type="submit"] {
+    width: 100%;
+    padding: 16px 32px;
+    background: rgba(90, 170, 150, 0.15);
+    color: #f2f4ea;
+    border: 2px solid #5aaa96;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.wedding-email-form button[type="submit"]:hover {
+    background: #5aaa96;
+    color: #1e1f20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(90, 170, 150, 0.3);
 }
 
 @media (max-width: 768px) {
