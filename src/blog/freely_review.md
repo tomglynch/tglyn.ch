@@ -3,8 +3,7 @@ title: "Is Freely Legit? My Experience Using Australia's First App-Based Travel 
 blurb: "Having recently secured travel insurance through Freely for my adventures to Japan's cherry blossom season, New Zealand's winter wonderland, and Thailand's tropical beaches, I've become intimately familiar with this platform's workings. Here's my comprehensive breakdown of its legitimacy and functionality for fellow travelers."
 date: 2025-03-25
 image: "/blog/images/freely.png"
-published: true
-unlisted: true
+published: false
 ---
 
 <script type="application/ld+json">
