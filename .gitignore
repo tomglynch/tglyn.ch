@@ -1,6 +1,15 @@
 # Ignore installed npm modules
 node_modules/
 
+# Ignore Eleventy build output
+_site/
+
+# Ignore Playwright MCP cache
+.playwright-mcp/
+
+# Ignore DS_Store files
+.DS_Store
+
 package-lock.json
 *.code-workspace
 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="theme-color" content="#1e1f20">
+    <title>{{title | capitalize}} - {{site.my_name}}</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/wedding.css">
+
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="{{blurb}}" />
+    <meta property="og:image" content="{{site.url}}{{image}}" />
+    <meta property="og:url" content="{{site.url}}{{ page.url }}" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@lynchyeatspizza">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{blurb}}">
+    <meta name="twitter:image" content="{{site.url}}{{image}}">
+
+    {% if published==false %}
+    <meta name="robots" content="noindex, follow">
+    {% endif %}
+
+    {% if env.isProd %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179723365-1"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-179723365-1');
+    </script>
+    {% endif %}
+
+  </head>
+  <body class="wedding-page">
+    {{ content }}
+
+    <script>
+    {% include js/wedding-personalization.js %}
+
+    // Calendar dropdown toggle
+    function toggleCalendarMenu(event) {
+      event.stopPropagation();
+      const calMenu = document.getElementById('calendarMenu');
+      const rsvpMenu = document.getElementById('rsvpMenu');
+
+      // Close RSVP menu if open
+      if (rsvpMenu) rsvpMenu.classList.remove('show');
+
+      calMenu.classList.toggle('show');
+    }
+
+    // RSVP dropdown toggle
+    function toggleRsvpMenu(event) {
+      event.stopPropagation();
+      const calMenu = document.getElementById('calendarMenu');
+      const rsvpMenu = document.getElementById('rsvpMenu');
+
+      // Close calendar menu if open
+      if (calMenu) calMenu.classList.remove('show');
+
+      rsvpMenu.classList.toggle('show');
+    }
+
+    // Open RSVP email in different clients
+    function openRsvpEmail(clientType) {
+      const recipientEmail = "rsvp@millaandtom.com"; // Change this to your RSVP email
+      const emailSubject = "RSVP - Milla & Tom's Wedding";
+      const emailBody = `Hi Milla & Tom,
+
+I'm writing to RSVP for your wedding on Saturday, November 28th, 2026.
+
+[Please share your response below]
+
+Attending: Yes / No / Maybe
+Number of guests:
+Dietary requirements:
+Song requests:
+
+Looking forward to celebrating with you!
+
+Best regards,
+[Your Name]`;
+
+      // URL encode the parameters
+      const encodedSubject = encodeURIComponent(emailSubject);
+      const encodedBody = encodeURIComponent(emailBody);
+      const encodedTo = encodeURIComponent(recipientEmail);
+
+      let emailUrl;
+      switch(clientType) {
+        case 'gmail':
+          emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodedTo}&su=${encodedSubject}&body=${encodedBody}`;
+          break;
+        case 'outlook':
+          emailUrl = `https://outlook.office.com/mail/deeplink/compose?to=${encodedTo}&subject=${encodedSubject}&body=${encodedBody}`;
+          break;
+        case 'yahoo':
+          emailUrl = `https://compose.mail.yahoo.com/?to=${encodedTo}&subject=${encodedSubject}&body=${encodedBody}`;
+          break;
+        case 'default':
+        default:
+          emailUrl = `mailto:${encodedTo}?subject=${encodedSubject}&body=${encodedBody}`;
+          break;
+      }
+
+      // Open the email client
+      window.open(emailUrl, '_blank');
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+      const calMenu = document.getElementById('calendarMenu');
+      const rsvpMenu = document.getElementById('rsvpMenu');
+
+      if (calMenu && calMenu.classList.contains('show')) {
+        calMenu.classList.remove('show');
+      }
+      if (rsvpMenu && rsvpMenu.classList.contains('show')) {
+        rsvpMenu.classList.remove('show');
+      }
+    });
+    </script>
+  </body>
+</html>

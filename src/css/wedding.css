@@ -1,0 +1,408 @@
+/* Wedding Page Styles - Inspired by Canva Design */
+
+/* Overall page styling */
+body.wedding-page {
+    background-color: #1e1f20;
+    color: #f2f4ea;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.wedding-page article {
+    max-width: none;
+    padding: 0;
+}
+
+/* Hide default menu for wedding page */
+.wedding-page .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: transparent;
+    z-index: 1000;
+    padding: 30px 50px;
+}
+
+.wedding-page .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+
+.wedding-page .menu a {
+    color: #f2f4ea;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: none;
+    transition: opacity 0.3s ease;
+}
+
+.wedding-page .menu a:hover {
+    opacity: 0.7;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px;
+}
+
+.hero-title {
+    font-size: 120px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    margin: 0 0 60px 0;
+    color: #f2f4ea;
+}
+
+.hero-subtitle {
+    font-size: 70px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    margin: 0;
+    color: #f2f4ea;
+}
+
+/* Content Sections */
+.wedding-section {
+    min-height: 100vh;
+    padding: 100px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-content {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.section-text {
+    padding: 40px;
+}
+
+.section-title {
+    font-size: 70px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+    color: #f2f4ea;
+}
+
+.section-subtitle {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 0 0 40px 0;
+    color: #f2f4ea;
+    font-style: italic;
+}
+
+.section-image {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Details Section */
+.details-box {
+    background: rgba(30, 31, 32, 0.6);
+    padding: 60px;
+    border-radius: 0;
+    backdrop-filter: blur(10px);
+}
+
+.details-heading {
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px 0;
+    color: #f2f4ea;
+}
+
+.details-text {
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0 0 40px 0;
+    color: #f2f4ea;
+}
+
+.details-text-small {
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: #f2f4ea;
+}
+
+.details-text sup {
+    font-size: 60%;
+    vertical-align: super;
+}
+
+/* More to come section */
+.coming-soon {
+    text-align: center;
+    padding: 100px 40px;
+}
+
+.coming-soon-text {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: #f2f4ea;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 80px;
+    }
+
+    .hero-subtitle {
+        font-size: 50px;
+    }
+
+    .section-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section-title {
+        font-size: 50px;
+    }
+
+    .wedding-section {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 60px;
+    }
+
+    .hero-subtitle {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .section-subtitle {
+        font-size: 20px;
+    }
+
+    .details-text {
+        font-size: 24px;
+    }
+
+    .wedding-page .menu {
+        padding: 20px;
+    }
+
+    .wedding-page .menu ul {
+        gap: 20px;
+    }
+}
+
+/* Error Section */
+.error-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.error-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.error-title {
+    font-size: 80px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 40px 0;
+    color: #f2f4ea;
+}
+
+.error-text {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    color: #f2f4ea;
+}
+
+.error-subtext {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 40px 0 0 0;
+    color: rgba(242, 244, 234, 0.7);
+    font-style: italic;
+}
+
+/* Guest name personalization */
+.guest-name {
+    color: #f2f4ea;
+}
+
+/* Calendar dropdown */
+.calendar-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.calendar-button {
+    display: inline-block;
+    padding: 16px 32px;
+    background: rgba(242, 244, 234, 0.15);
+    color: #f2f4ea;
+    text-decoration: none;
+    border: 2px solid #f2f4ea;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.calendar-button:hover {
+    background: #f2f4ea;
+    color: #1e1f20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(242, 244, 234, 0.3);
+}
+
+.calendar-button svg {
+    transition: transform 0.3s ease;
+}
+
+.calendar-button:hover svg {
+    transform: scale(1.1);
+}
+
+.calendar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    background: #2a2b2c;
+    border: 2px solid #f2f4ea;
+    border-radius: 4px;
+    min-width: 250px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.calendar-menu.show {
+    display: block;
+}
+
+.calendar-option {
+    display: block;
+    padding: 14px 20px;
+    color: #f2f4ea;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(242, 244, 234, 0.1);
+}
+
+.calendar-option:last-child {
+    border-bottom: none;
+}
+
+.calendar-option:hover {
+    background: rgba(242, 244, 234, 0.1);
+}
+
+/* RSVP button variation */
+.rsvp-button {
+    background: rgba(227, 125, 0, 0.15);
+    border-color: #e37d00;
+}
+
+.rsvp-button:hover {
+    background: #e37d00;
+    color: #1e1f20;
+}
+
+.rsvp-menu {
+    /* Inherits styles from calendar-menu */
+}
+
+@media (max-width: 768px) {
+    .calendar-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .calendar-menu {
+        min-width: 220px;
+    }
+
+    .calendar-option {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* Stack buttons vertically on mobile */
+    .calendar-dropdown {
+        margin-left: 0 !important;
+        margin-top: 15px;
+        display: block;
+    }
+}
