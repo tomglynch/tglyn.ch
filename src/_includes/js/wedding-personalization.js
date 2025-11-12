@@ -36,17 +36,15 @@
     }
   }
 
-  // Parse multiple names from a string (supports both "&" and "and" separators)
+  // Parse multiple names from a string (supports "&", "and", and comma separators)
   function parseNames(guestName) {
-    // First try splitting by " & "
-    let names = guestName.split(' & ');
+    // Replace " & " and " and " with commas for uniform splitting
+    let normalizedName = guestName.replace(/ & /g, ',').replace(/ and /g, ',');
 
-    // If no "&" found, try splitting by " and "
-    if (names.length === 1) {
-      names = guestName.split(' and ');
-    }
+    // Split by comma
+    let names = normalizedName.split(',');
 
-    // Trim whitespace from each name
+    // Trim whitespace from each name and filter out empty strings
     return names.map(name => name.trim()).filter(name => name.length > 0);
   }
 
