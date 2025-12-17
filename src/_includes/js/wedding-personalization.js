@@ -185,8 +185,8 @@
             // image.style.transform = `translateY(${imageOffset}px)`;
 
             // // OPTION 4: Strong separation effect
-            const textOffset = 1.25 * (81 ** scrollProgress - 1) * 15;
-            const imageOffset = 1.25 * (81 ** scrollProgress - 1) * -10;
+            const textOffset = scrollProgress * 150;  // or whatever speed you prefer
+            const imageOffset = scrollProgress * -100;
             text.style.transform = `translateY(${textOffset}px)`;
             image.style.transform = `translateY(${imageOffset}px)`;
 
