@@ -104,7 +104,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">at our wedding!</h2>
       </div>
-      <img src="images/maxico.jpg" alt="Mexico" class="section-image" />
+      <img src="images/mexico.jpg" alt="Mexico" class="section-image" />
     </div>
   </section>
 
