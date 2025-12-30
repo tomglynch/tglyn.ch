@@ -95,7 +95,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">and our adventures</h2>
       </div>
-      <img src="images/coffeemachine.jpg" alt="Coffee machine" class="section-image" />
+      <img src="images/mtb.jpg" alt="MTB" class="section-image" />
     </div>
   </section>
 
@@ -104,20 +104,11 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">at our wedding!</h2>
       </div>
-      <img src="images/bokeh.jpg" alt="Bokeh lights" class="section-image" />
+      <img src="images/maxico.jpg" alt="Mexico" class="section-image" />
     </div>
   </section>
 
-  <section class="wedding-section">
-    <div class="section-content reverse">
-      <div class="section-text">
-        <h2 class="section-subtitle">Thank you for being a part of our lives up to this point, Milla & Tom</h2>
-      </div>
-      <img src="images/snow.jpg" alt="Snow" class="section-image" />
-    </div>
-  </section>
-
-  <section class="wedding-section">
+  <section class="wedding-section deets-section">
     <div class="section-content">
       <div class="section-text">
         <h2 class="section-title">The deets</h2>
@@ -141,13 +132,13 @@ tags: []
                 </svg>
               </button>
               <div class="calendar-menu" id="calendarMenu">
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Milla+%26+Tom%27s+wedding&dates=20251128/20251129&details=Festive+%26+formal+attire&location=Inner+north+of+Melbourne" target="_blank" class="calendar-option">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Milla+%26+Tom%27s+Wedding&dates=20261128/20261129&details=Saturday+November+28th+2026&location=Brunswick%2C+Melbourne" target="_blank" class="calendar-option">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 10px;">
                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
                   </svg>
                   Google Calendar
                 </a>
-                <a href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Milla+%26+Tom%27s+wedding&startdt=2025-11-28T00:00:00&enddt=2025-11-29T00:00:00&body=Festive+%26+formal+attire&location=Inner+north+of+Melbourne" target="_blank" class="calendar-option">
+                <a href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Milla+%26+Tom%27s+Wedding&startdt=2026-11-28T00:00:00&enddt=2026-11-29T00:00:00&body=Saturday+November+28th+2026&location=Brunswick%2C+Melbourne" target="_blank" class="calendar-option">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 10px;">
                     <path d="M7 2v20l8-4V6L7 2zm10 4v12l4 2V8l-4-2z"/>
                   </svg>
@@ -173,6 +164,7 @@ tags: []
               </div>
             </div>
 
+            <!-- RSVP button - commented out for now
             <div class="calendar-dropdown" style="margin-left: 20px;">
               <button class="calendar-button rsvp-button" onclick="toggleRsvpMenu(event)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;">
@@ -185,47 +177,41 @@ tags: []
                 </svg>
               </button>
               <div class="calendar-menu rsvp-menu" id="rsvpMenu">
-                <a href="#" onclick="openRsvpEmail('gmail'); return false;" class="calendar-option">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 10px;">
-                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.548l8.073-6.055C21.69 2.28 24 3.434 24 5.457z"/>
-                  </svg>
-                  Gmail
-                </a>
-                <a href="#" onclick="openRsvpEmail('outlook'); return false;" class="calendar-option">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 10px;">
-                    <path d="M7 2v20l8-4V6L7 2zm10 4v12l4 2V8l-4-2z"/>
-                  </svg>
-                  Outlook
-                </a>
-                <a href="#" onclick="openRsvpEmail('yahoo'); return false;" class="calendar-option">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 10px;">
-                    <path d="M12.46 2L9.52 8.92 6.58 2H4.49L8.66 11.83 8.66 22 10.38 22 10.38 11.83 14.55 2z"/>
-                    <path d="M17.73 8.89c-1.32 0-2.39 1.07-2.39 2.39 0 1.32 1.07 2.39 2.39 2.39 1.32 0 2.39-1.07 2.39-2.39C20.12 9.96 19.05 8.89 17.73 8.89z"/>
-                  </svg>
-                  Yahoo Mail
-                </a>
-                <a href="#" onclick="openRsvpEmail('default'); return false;" class="calendar-option">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 10px;">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                  Default Mail App
-                </a>
+                <a href="#" onclick="openRsvpEmail('gmail'); return false;" class="calendar-option">Gmail</a>
+                <a href="#" onclick="openRsvpEmail('outlook'); return false;" class="calendar-option">Outlook</a>
+                <a href="#" onclick="openRsvpEmail('yahoo'); return false;" class="calendar-option">Yahoo Mail</a>
+                <a href="#" onclick="openRsvpEmail('default'); return false;" class="calendar-option">Default Mail App</a>
               </div>
             </div>
+            -->
 
           </div>
 
-          <div style="margin-top: 60px; max-width: 400px; margin-left: auto; margin-right: auto;">
+          <div class="email-section">
             <form name="wedding-email" method="POST" data-netlify="true" class="wedding-email-form">
-              <p class="form-note">Please confirm your email here</p>
+              <p class="form-title">Please confirm your email</p>
+              <p class="form-subtitle">So we can keep you updated with all the details</p>
               <div id="email-fields"></div>
               <input type="hidden" name="guest-name" class="guest-name-input" value=""/>
               <button type="submit">Submit</button>
             </form>
           </div>
+
+          <div class="cant-make-it">
+            <p>If you already know that you won't be able to join us, please let us know as soon as possible as it will help with our planning.</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="wedding-section thank-you-section">
+    <div class="section-content reverse">
+      <div class="section-text">
+        <h2 class="section-subtitle">Thank you for being a part of our lives up to this point</h2>
+        <h2 class="section-subtitle">Milla & Tom</h2>
+      </div>
+      <img src="images/millatom.gif" alt="Milla and Tom" class="section-image" />
     </div>
   </section>
 

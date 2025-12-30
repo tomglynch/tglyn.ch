@@ -1,13 +1,22 @@
 /* Wedding Page Styles - Inspired by Canva Design */
 
-/* Import elegant serif font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&display=swap');
+/* Playfair Display font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* Text shadow for legibility over images */
+.hero-title,
+.section-title,
+.section-subtitle,
+.hero-subtitle {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
 
 /* Overall page styling */
 body.wedding-page {
     background-color: #1e1f20;
     color: #f2f4ea;
-    font-family: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+    /* Main font for the page */
+    font-family: 'Playfair Display', Georgia, serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -212,6 +221,57 @@ body.wedding-page {
 .details-text sup {
     font-size: 60%;
     vertical-align: super;
+}
+
+/* Deets section - centered and larger on desktop */
+.deets-section .section-content {
+    justify-content: center;
+}
+
+.deets-section .section-text {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+}
+
+@media (min-width: 1024px) {
+    .deets-section .section-text {
+        max-width: 800px;
+    }
+
+    .deets-section .section-title {
+        font-size: 85px;
+    }
+
+    .deets-section .details-box {
+        padding: 80px;
+    }
+
+    .deets-section .details-heading {
+        font-size: 26px;
+    }
+
+    .deets-section .details-text {
+        font-size: 36px;
+    }
+
+    .deets-section .details-text-small {
+        font-size: 36px;
+    }
+}
+
+/* Thank you section - reduce gap from deets */
+.thank-you-section {
+    min-height: auto;
+    padding: 60px 0;
+}
+
+.thank-you-section .section-content {
+    min-height: auto;
 }
 
 /* More to come section */
@@ -434,10 +494,39 @@ body.wedding-page {
 }
 
 /* Wedding email form styling */
+/* Email section - more prominent */
+.email-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: rgba(90, 170, 150, 0.1);
+    border: 2px solid rgba(90, 170, 150, 0.3);
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .wedding-email-form {
     padding: 0;
     text-align: left;
     overflow: visible;
+}
+
+.wedding-email-form .form-title {
+    font-size: 28px;
+    color: #f2f4ea;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.wedding-email-form .form-subtitle {
+    font-size: 16px;
+    color: rgba(242, 244, 234, 0.7);
+    margin-bottom: 30px;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .wedding-email-form .form-note {
@@ -446,6 +535,25 @@ body.wedding-page {
     margin-bottom: 24px;
     font-style: italic;
     line-height: 1.5;
+    text-align: center;
+}
+
+/* Can't make it message */
+.cant-make-it {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(242, 244, 234, 0.05);
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cant-make-it p {
+    font-size: 20px;
+    color: rgba(242, 244, 234, 0.85);
+    line-height: 1.6;
+    margin: 0;
     text-align: center;
 }
 
