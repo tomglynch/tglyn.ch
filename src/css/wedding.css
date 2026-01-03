@@ -335,7 +335,13 @@ body.wedding-page {
 
     .section-content {
         min-height: auto;
-        padding: 60px 0;
+        padding: 90px 0;
+    }
+
+    .section-image {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
     }
 
     .hero-title {
