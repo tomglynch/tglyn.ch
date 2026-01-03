@@ -30,7 +30,7 @@ tags: []
     <div class="section-content">
       <div class="section-text">
         <h2 class="section-title">our story</h2>
-        <p class="section-subtitle">...started back in 2014...</p>
+        <p class="section-subtitle">started back in 2014</p>
       </div>
       <img src="images/snow.jpg" alt="Snow" class="section-image" />
     </div>
@@ -39,25 +39,25 @@ tags: []
   <section class="wedding-section">
     <div class="section-content reverse">
       <div class="section-text">
-        <h2 class="section-title">so it's about time</h2>
-      </div>
-      <img src="images/dj.jpg" alt="DJ" class="section-image" />
-    </div>
-  </section>
-
-  <section class="wedding-section">
-    <div class="section-content">
-      <div class="section-text">
-        <h2 class="section-subtitle">...we celebrate it!</h2>
+        <h2 class="section-subtitle">so it's about time</h2>
       </div>
       <img src="images/perth.jpg" alt="Perth" class="section-image" />
     </div>
   </section>
 
   <section class="wedding-section">
+    <div class="section-content">
+      <div class="section-text">
+        <h2 class="section-title">we celebrate it!</h2>
+      </div>
+      <img src="images/dj.jpg" alt="DJ" class="section-image" />
+    </div>
+  </section>
+
+  <section class="wedding-section">
     <div class="section-content reverse">
       <div class="section-text">
-        <h2 class="hero-title"><span class="guest-name"></span>, you're<br>invited...</h2>
+        <h2 class="hero-title"><span class="guest-name"></span>, you're<br>invited</h2>
       </div>
       <img src="images/engagement.jpg" alt="Engagement photo" class="section-image" />
     </div>
@@ -104,7 +104,8 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">at our wedding!</h2>
       </div>
-      <img src="images/mexico.jpg" alt="Mexico" class="section-image" />
+      <img src="images/engagement_rings.jpg" alt="Engagement Rings" class="section-image" />
+      <!-- <img src="images/mexico.jpg" alt="Mexico" class="section-image" /> -->
     </div>
   </section>
 
@@ -197,8 +198,14 @@ tags: []
             </form>
           </div>
 
-          <div class="cant-make-it">
+          <div class="extra-info">
             <p>If you already know that you won't be able to join us, please let us know as soon as possible as it will help with our planning.</p>
+          </div>
+          <div class="extra-info">
+            <p>We kindly ask this be an adult-only affair.</p>
+          </div>
+          <div class="extra-info">
+            <p>Thank you for being a part of our lives up to this point!</p>
           </div>
         </div>
       </div>
@@ -208,7 +215,7 @@ tags: []
   <section class="wedding-section thank-you-section">
     <div class="section-content reverse">
       <div class="section-text">
-        <h2 class="section-subtitle">Thank you for being a part of our lives up to this point</h2>
+        <h2 class="section-subtitle">With love,</h2>
         <h2 class="section-subtitle">Milla & Tom</h2>
       </div>
       <img src="images/millatom.gif" alt="Milla and Tom" class="section-image" />
@@ -216,7 +223,7 @@ tags: []
   </section>
 
 <section class="coming-soon">
-    <p class="coming-soon-text">more to come...</p>
+    <p class="coming-soon-text">more details to come soon</p>
   </section>
 </div>
 {% endinclude_html %}
