@@ -23,7 +23,32 @@ tags: []
     <img src="images/bokeh.jpg" alt="Bokeh lights" class="hero-bg" />
     <div class="hero-content">
       <h1 class="hero-title">Dear <span class="guest-name"></span>,</h1>
+
+      <!-- Let's Go Button -->
+      <button class="hero-btn lets-go-btn" id="letsGoBtn" onclick="toggleExperience()">
+        <svg class="speaker-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </svg>
+        <span class="btn-label">Let's go</span>
+        <svg class="pause-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+      </button>
+      <div class="equalizer" id="equalizer">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
+
+    <!-- Hidden SoundCloud Player -->
+    <iframe id="soundcloudPlayer" style="display: none;"
+      width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/fatboyslim/09-praise-you&color=%23d4a030&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+    </iframe>
   </section>
 
   <section class="wedding-section">
@@ -223,7 +248,8 @@ tags: []
   </section>
 
 <section class="coming-soon">
-    <p class="coming-soon-text">more details to come soon</p>
+    <p class="coming-soon-text">We'll be in touch with more details soon</p>
   </section>
-</div>
+
+  </div>
 {% endinclude_html %}

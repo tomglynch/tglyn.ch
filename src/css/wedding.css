@@ -83,6 +83,9 @@ body.wedding-page {
     z-index: 1;
     text-align: center;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-title {
@@ -277,16 +280,16 @@ body.wedding-page {
 /* More to come section */
 .coming-soon {
     text-align: center;
-    padding: 100px 40px;
+    padding: 30px 40px 50px;
 }
 
 .coming-soon-text {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 300;
     letter-spacing: 0.01em;
     color: #f2f4ea;
     font-style: italic;
-    font-family: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 /* Responsive Design */
@@ -513,8 +516,8 @@ body.wedding-page {
 .email-section {
     margin-top: 60px;
     padding: 40px;
-    background: rgba(90, 170, 150, 0.1);
-    border: 2px solid rgba(90, 170, 150, 0.3);
+    background: rgba(212, 160, 48, 0.1);
+    border: 2px solid rgba(212, 160, 48, 0.3);
     border-radius: 8px;
     max-width: 500px;
     margin-left: auto;
@@ -603,16 +606,16 @@ body.wedding-page {
 
 .wedding-email-form input:focus {
     outline: none;
-    border-color: #5aaa96;
+    border-color: #d4a030;
     background: rgba(242, 244, 234, 0.12);
 }
 
 .wedding-email-form button[type="submit"] {
     width: 100%;
     padding: 16px 32px;
-    background: rgba(90, 170, 150, 0.15);
+    background: rgba(212, 160, 48, 0.15);
     color: #f2f4ea;
-    border: 2px solid #5aaa96;
+    border: 2px solid #d4a030;
     border-radius: 4px;
     font-size: 18px;
     font-weight: 400;
@@ -624,10 +627,10 @@ body.wedding-page {
 }
 
 .wedding-email-form button[type="submit"]:hover {
-    background: #5aaa96;
+    background: #d4a030;
     color: #1e1f20;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(90, 170, 150, 0.3);
+    box-shadow: 0 4px 12px rgba(212, 160, 48, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -650,5 +653,109 @@ body.wedding-page {
         margin-left: 0 !important;
         margin-top: 15px;
         display: block;
+    }
+}
+
+/* Let's Go Button */
+.hero-btn {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: rgba(212, 160, 48, 0.15);
+    border: 2px solid #d4a030;
+    border-radius: 50px;
+    color: #f2f4ea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 18px;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.hero-btn:hover {
+    background: #d4a030;
+    color: #1e1f20;
+    transform: scale(1.05);
+    animation: none;
+}
+
+.hero-btn.active {
+    animation: none;
+    background: rgba(212, 160, 48, 0.3);
+}
+
+.hero-btn svg {
+    flex-shrink: 0;
+}
+
+.hero-btn .btn-label {
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(212, 160, 48, 0.5), 0 0 15px rgba(212, 160, 48, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(212, 160, 48, 0.8), 0 0 30px rgba(212, 160, 48, 0.5);
+    }
+}
+
+/* Equalizer Animation */
+.equalizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 30px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.equalizer.playing {
+    opacity: 1;
+}
+
+.equalizer .bar {
+    width: 6px;
+    background: #d4a030;
+    border-radius: 3px;
+    height: 5px;
+    transition: height 0.1s ease;
+}
+
+.equalizer.playing .bar {
+    animation: equalizer-bar 0.8s ease-in-out infinite;
+}
+
+.equalizer.playing .bar:nth-child(1) { animation-delay: 0s; }
+.equalizer.playing .bar:nth-child(2) { animation-delay: 0.1s; }
+.equalizer.playing .bar:nth-child(3) { animation-delay: 0.2s; }
+.equalizer.playing .bar:nth-child(4) { animation-delay: 0.3s; }
+.equalizer.playing .bar:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes equalizer-bar {
+    0%, 100% {
+        height: 5px;
+    }
+    25% {
+        height: 25px;
+    }
+    50% {
+        height: 12px;
+    }
+    75% {
+        height: 20px;
+    }
+}
+
+/* Mobile adjustments for hero button */
+@media (max-width: 768px) {
+    .hero-btn {
+        margin-top: 30px;
+        padding: 14px 28px;
+        font-size: 16px;
     }
 }
