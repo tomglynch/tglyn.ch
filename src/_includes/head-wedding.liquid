@@ -7,6 +7,8 @@
     <title>{{title | capitalize}} - {{site.my_name}}</title>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="/css/wedding.css">
+    <!-- Preload SoundCloud API as early as possible -->
+    <script async src="https://w.soundcloud.com/player/api.js"></script>
 
     <meta property="og:title" content="{{title}}" />
     <meta property="og:type" content="article" />
@@ -187,10 +189,14 @@ Best regards,
       // Widget is ready (song preloaded)
       scWidget.bind(SC.Widget.Events.READY, function() {
         isReady = true;
-        // If user already clicked while loading, start now
+        // If user clicked while still loading, reset and prompt to tap again
+        // (mobile browsers block audio not triggered directly by user tap)
         if (isPlaying) {
-          updateButton('playing');
-          scWidget.play();
+          isPlaying = false;
+          hasStartedScroll = false;
+          releaseWakeLock();
+          const label = document.querySelector('.btn-label');
+          if (label) label.textContent = 'Ready! Tap again';
         }
       });
 
@@ -275,12 +281,14 @@ Best regards,
       }
     }
 
-    // Load and preload SoundCloud Widget API on page load
-    (function() {
-      const script = document.createElement('script');
-      script.src = 'https://w.soundcloud.com/player/api.js';
-      script.onload = initSoundCloudWidget;
-      document.head.appendChild(script);
+    // Initialize widget as soon as SoundCloud API is ready
+    // (API script loads in <head> for earliest possible start)
+    (function tryInit() {
+      if (window.SC) {
+        initSoundCloudWidget();
+      } else {
+        setTimeout(tryInit, 50);
+      }
     })();
 
     // Stop autoscroll (but not music) if user manually scrolls
