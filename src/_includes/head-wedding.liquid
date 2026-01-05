@@ -189,21 +189,16 @@ Best regards,
       // Widget is ready (song preloaded)
       scWidget.bind(SC.Widget.Events.READY, function() {
         isReady = true;
-        // If user clicked while still loading, reset and prompt to tap again
-        // (mobile browsers block audio not triggered directly by user tap)
-        if (isPlaying) {
-          isPlaying = false;
-          hasStartedScroll = false;
-          releaseWakeLock();
-          const label = document.querySelector('.btn-label');
-          if (label) label.textContent = 'Ready! Tap again';
+        // If user clicked while still loading, try to play now
+        if (isPlaying && !hasStartedScroll) {
+          scWidget.setVolume(100);
+          scWidget.play();
         }
       });
 
-      // Music actually playing (audio progressing) - start scroll after delay
-      scWidget.bind(SC.Widget.Events.PLAY_PROGRESS, function(data) {
-        // Only trigger when audio is actually playing (position > 0)
-        if (isPlaying && !hasStartedScroll && data.currentPosition > 0) {
+      // Music actually playing - update button and start scroll
+      scWidget.bind(SC.Widget.Events.PLAY, function() {
+        if (isPlaying && !hasStartedScroll) {
           hasStartedScroll = true;
           updateButton('playing');
           setTimeout(function() {
@@ -215,9 +210,16 @@ Best regards,
         }
       });
 
-      // Song ended
+      // Song ended or paused
       scWidget.bind(SC.Widget.Events.FINISH, function() {
         stopExperience();
+      });
+
+      scWidget.bind(SC.Widget.Events.PAUSE, function() {
+        // If paused unexpectedly while we think we're playing, reset
+        if (isPlaying && hasStartedScroll) {
+          stopExperience();
+        }
       });
     }
 
@@ -227,14 +229,15 @@ Best regards,
       hasStartedScroll = false;
       requestWakeLock();
 
+      // Always show loading first - only show "playing" when music actually starts
+      updateButton('loading');
+
       if (isReady && scWidget) {
-        updateButton('playing');
-        // Just play - don't seekTo first as it can cause issues on mobile
+        // Ensure volume is up and play
+        scWidget.setVolume(100);
         scWidget.play();
-      } else {
-        // Show loading immediately so user knows button worked
-        updateButton('loading');
       }
+      // If not ready, loading state stays until READY event
     }
 
     // Stop everything
