@@ -127,101 +127,126 @@ Best regards,
       }
     });
 
-    // Combined Experience: Music + Autoscroll
+    // === Let's Go Button: Music + Autoscroll ===
     let scWidget = null;
-    let widgetReady = false;
-    let experienceActive = false;
+    let isReady = false;
+    let isPlaying = false;
     let isScrolling = false;
-    let scrollTimerStarted = false;
+    let hasStartedScroll = false;
     let scrollAnimationId = null;
     let wakeLock = null;
-    const scrollSpeed = 1.5; // pixels per frame (~90px per second at 60fps)
+    const SCROLL_SPEED = 1.5;
+    const SCROLL_DELAY = 1500; // ms after music starts
 
-    // Keep screen awake during experience
+    // Wake lock to keep screen on
     async function requestWakeLock() {
       if ('wakeLock' in navigator) {
-        try {
-          wakeLock = await navigator.wakeLock.request('screen');
-        } catch (err) {
-          // Wake lock request failed (e.g., low battery)
-        }
+        try { wakeLock = await navigator.wakeLock.request('screen'); } catch(e) {}
       }
     }
-
     function releaseWakeLock() {
-      if (wakeLock) {
-        wakeLock.release();
-        wakeLock = null;
-      }
+      if (wakeLock) { wakeLock.release(); wakeLock = null; }
     }
 
-    // Initialize SoundCloud Widget when API is ready
-    function initSoundCloudWidget() {
-      const iframe = document.getElementById('soundcloudPlayer');
-      if (iframe && window.SC) {
-        scWidget = SC.Widget(iframe);
-
-        scWidget.bind(SC.Widget.Events.READY, function() {
-          widgetReady = true;
-          // If user clicked before ready, start music now
-          if (experienceActive) {
-            startMusic();
-          }
-        });
-
-        // Detect when music actually starts playing (audio is progressing)
-        scWidget.bind(SC.Widget.Events.PLAY_PROGRESS, function(data) {
-          // Only trigger once when we first detect audio is actually playing
-          if (experienceActive && !scrollTimerStarted && data.currentPosition > 0) {
-            scrollTimerStarted = true;
-            updateButtonState(true);
-            // Wait 0.75 seconds after music actually starts before scrolling
-            setTimeout(function() {
-              if (experienceActive && !isScrolling) {
-                isScrolling = true;
-                autoScroll();
-              }
-            }, 1500);
-          }
-        });
-
-        scWidget.bind(SC.Widget.Events.FINISH, function() {
-          // Song ended, stop the experience
-          stopExperience();
-        });
-      }
-    }
-
-    function startMusic() {
-      // Seek to beginning and play to ensure consistent timing
-      scWidget.seekTo(0);
-      scWidget.play();
-    }
-
-    function updateButtonState(active) {
+    // Update button appearance
+    function updateButton(state) {
       const btn = document.getElementById('letsGoBtn');
       const speakerIcon = btn.querySelector('.speaker-icon');
       const pauseIcon = btn.querySelector('.pause-icon');
       const label = btn.querySelector('.btn-label');
       const equalizer = document.getElementById('equalizer');
 
-      if (active) {
-        btn.classList.add('active');
-        speakerIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
-        label.textContent = 'Stop';
-        equalizer.classList.add('playing');
-      } else {
+      if (state === 'loading') {
+        label.textContent = '...';
         btn.classList.remove('active');
         speakerIcon.style.display = 'block';
         pauseIcon.style.display = 'none';
+        equalizer.classList.remove('playing');
+      } else if (state === 'playing') {
+        label.textContent = 'Stop';
+        btn.classList.add('active');
+        speakerIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+        equalizer.classList.add('playing');
+      } else {
         label.textContent = "Let's go";
+        btn.classList.remove('active');
+        speakerIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
         equalizer.classList.remove('playing');
       }
     }
 
+    // Initialize SoundCloud widget on page load
+    function initSoundCloudWidget() {
+      const iframe = document.getElementById('soundcloudPlayer');
+      if (!iframe || !window.SC) return;
+
+      scWidget = SC.Widget(iframe);
+
+      // Widget is ready (song preloaded)
+      scWidget.bind(SC.Widget.Events.READY, function() {
+        isReady = true;
+        // If user already clicked while loading, start now
+        if (isPlaying) {
+          updateButton('playing');
+          scWidget.seekTo(0);
+          scWidget.play();
+        }
+      });
+
+      // Music started playing - start scroll after delay
+      scWidget.bind(SC.Widget.Events.PLAY, function() {
+        if (isPlaying && !hasStartedScroll) {
+          hasStartedScroll = true;
+          updateButton('playing');
+          setTimeout(function() {
+            if (isPlaying) {
+              isScrolling = true;
+              autoScroll();
+            }
+          }, SCROLL_DELAY);
+        }
+      });
+
+      // Song ended
+      scWidget.bind(SC.Widget.Events.FINISH, function() {
+        stopExperience();
+      });
+    }
+
+    // Start everything
+    function startExperience() {
+      isPlaying = true;
+      hasStartedScroll = false;
+      requestWakeLock();
+
+      if (isReady) {
+        updateButton('playing');
+        scWidget.seekTo(0);
+        scWidget.play();
+      } else {
+        // Show loading immediately so user knows button worked
+        updateButton('loading');
+      }
+    }
+
+    // Stop everything
+    function stopExperience() {
+      isPlaying = false;
+      isScrolling = false;
+      hasStartedScroll = false;
+      if (scrollAnimationId) {
+        cancelAnimationFrame(scrollAnimationId);
+        scrollAnimationId = null;
+      }
+      if (scWidget) scWidget.pause();
+      updateButton('stopped');
+      releaseWakeLock();
+    }
+
+    // Stop just scrolling (user scrolled manually)
     function stopScrollingOnly() {
-      // Stop scrolling but keep music playing
       isScrolling = false;
       if (scrollAnimationId) {
         cancelAnimationFrame(scrollAnimationId);
@@ -229,49 +254,23 @@ Best regards,
       }
     }
 
-    function stopExperience() {
-      experienceActive = false;
-      scrollTimerStarted = false;
-      // Stop music
-      if (scWidget) {
-        scWidget.pause();
-      }
-      // Stop scrolling
-      stopScrollingOnly();
-      updateButtonState(false);
-      // Allow screen to sleep again
-      releaseWakeLock();
-    }
-
+    // Button click handler
     function toggleExperience() {
-      if (experienceActive) {
+      if (isPlaying) {
         stopExperience();
       } else {
-        experienceActive = true;
-        scrollTimerStarted = false;
-        // Keep screen awake during experience
-        requestWakeLock();
-        if (widgetReady) {
-          // Widget preloaded and ready, seek to start and play
-          startMusic();
-        } else {
-          // Widget not ready yet, show loading state
-          const label = document.querySelector('.btn-label');
-          if (label) label.textContent = 'Loading...';
-        }
+        startExperience();
       }
     }
 
+    // Smooth autoscroll
     function autoScroll() {
       if (!isScrolling) return;
-
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-
       if (window.scrollY < maxScroll) {
-        window.scrollBy(0, scrollSpeed);
+        window.scrollBy(0, SCROLL_SPEED);
         scrollAnimationId = requestAnimationFrame(autoScroll);
       } else {
-        // Reached the bottom, stop scrolling but keep music playing
         stopScrollingOnly();
       }
     }
