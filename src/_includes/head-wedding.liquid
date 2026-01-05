@@ -190,7 +190,6 @@ Best regards,
         // If user already clicked while loading, start now
         if (isPlaying) {
           updateButton('playing');
-          scWidget.seekTo(0);
           scWidget.play();
         }
       });
@@ -222,9 +221,9 @@ Best regards,
       hasStartedScroll = false;
       requestWakeLock();
 
-      if (isReady) {
+      if (isReady && scWidget) {
         updateButton('playing');
-        scWidget.seekTo(0);
+        // Just play - don't seekTo first as it can cause issues on mobile
         scWidget.play();
       } else {
         // Show loading immediately so user knows button worked
