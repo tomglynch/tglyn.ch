@@ -448,19 +448,20 @@ body.wedding-page {
     font-family: inherit;
 }
 
-.calendar-button:hover {
-    background: #f2f4ea;
-    color: #1e1f20;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(242, 244, 234, 0.3);
+@media (hover: hover) {
+    .calendar-button:hover {
+        background: #f2f4ea;
+        color: #1e1f20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(242, 244, 234, 0.3);
+    }
+    .calendar-button:hover svg {
+        transform: scale(1.1);
+    }
 }
 
 .calendar-button svg {
     transition: transform 0.3s ease;
-}
-
-.calendar-button:hover svg {
-    transform: scale(1.1);
 }
 
 .calendar-menu {
@@ -496,8 +497,10 @@ body.wedding-page {
     border-bottom: none;
 }
 
-.calendar-option:hover {
-    background: rgba(242, 244, 234, 0.1);
+@media (hover: hover) {
+    .calendar-option:hover {
+        background: rgba(242, 244, 234, 0.1);
+    }
 }
 
 /* RSVP button variation */
@@ -506,9 +509,11 @@ body.wedding-page {
     border-color: #e37d00;
 }
 
-.rsvp-button:hover {
-    background: #e37d00;
-    color: #1e1f20;
+@media (hover: hover) {
+    .rsvp-button:hover {
+        background: #e37d00;
+        color: #1e1f20;
+    }
 }
 
 /* Wedding email form styling */
@@ -626,11 +631,13 @@ body.wedding-page {
     font-family: inherit;
 }
 
-.wedding-email-form button[type="submit"]:hover {
-    background: #d4a030;
-    color: #1e1f20;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 160, 48, 0.3);
+@media (hover: hover) {
+    .wedding-email-form button[type="submit"]:hover {
+        background: #d4a030;
+        color: #1e1f20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(212, 160, 48, 0.3);
+    }
 }
 
 @media (max-width: 768px) {
@@ -674,11 +681,13 @@ body.wedding-page {
     animation: pulse-glow 2s ease-in-out infinite;
 }
 
-.hero-btn:hover {
-    background: #d4a030;
-    color: #1e1f20;
-    transform: scale(1.05);
-    animation: none;
+@media (hover: hover) {
+    .hero-btn:hover {
+        background: #d4a030;
+        color: #1e1f20;
+        transform: scale(1.05);
+        animation: none;
+    }
 }
 
 .hero-btn.active {

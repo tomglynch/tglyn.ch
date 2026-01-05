@@ -134,7 +134,26 @@ Best regards,
     let isScrolling = false;
     let scrollTimerStarted = false;
     let scrollAnimationId = null;
+    let wakeLock = null;
     const scrollSpeed = 1.5; // pixels per frame (~90px per second at 60fps)
+
+    // Keep screen awake during experience
+    async function requestWakeLock() {
+      if ('wakeLock' in navigator) {
+        try {
+          wakeLock = await navigator.wakeLock.request('screen');
+        } catch (err) {
+          // Wake lock request failed (e.g., low battery)
+        }
+      }
+    }
+
+    function releaseWakeLock() {
+      if (wakeLock) {
+        wakeLock.release();
+        wakeLock = null;
+      }
+    }
 
     // Initialize SoundCloud Widget when API is ready
     function initSoundCloudWidget() {
@@ -220,6 +239,8 @@ Best regards,
       // Stop scrolling
       stopScrollingOnly();
       updateButtonState(false);
+      // Allow screen to sleep again
+      releaseWakeLock();
     }
 
     function toggleExperience() {
@@ -228,6 +249,8 @@ Best regards,
       } else {
         experienceActive = true;
         scrollTimerStarted = false;
+        // Keep screen awake during experience
+        requestWakeLock();
         if (widgetReady) {
           // Widget preloaded and ready, seek to start and play
           startMusic();
