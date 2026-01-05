@@ -216,9 +216,28 @@ Best regards,
       });
 
       scWidget.bind(SC.Widget.Events.PAUSE, function() {
-        // If paused unexpectedly while we think we're playing, reset
-        if (isPlaying && hasStartedScroll) {
-          stopExperience();
+        // Browser auto-paused (mobile autoplay policy)
+        // Reset state and prompt user to tap again
+        if (isPlaying) {
+          isPlaying = false;
+          isScrolling = false;
+          hasStartedScroll = false;
+          if (scrollAnimationId) {
+            cancelAnimationFrame(scrollAnimationId);
+            scrollAnimationId = null;
+          }
+          releaseWakeLock();
+          // Show "Tap again" instead of "Let's go" so user knows to try again
+          const btn = document.getElementById('letsGoBtn');
+          const label = btn.querySelector('.btn-label');
+          const speakerIcon = btn.querySelector('.speaker-icon');
+          const pauseIcon = btn.querySelector('.pause-icon');
+          const equalizer = document.getElementById('equalizer');
+          btn.classList.remove('active');
+          speakerIcon.style.display = 'block';
+          pauseIcon.style.display = 'none';
+          equalizer.classList.remove('playing');
+          label.textContent = 'Tap again';
         }
       });
     }
