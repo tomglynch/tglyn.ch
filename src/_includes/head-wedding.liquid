@@ -195,9 +195,10 @@ Best regards,
         }
       });
 
-      // Music started playing - start scroll after delay
-      scWidget.bind(SC.Widget.Events.PLAY, function() {
-        if (isPlaying && !hasStartedScroll) {
+      // Music actually playing (audio progressing) - start scroll after delay
+      scWidget.bind(SC.Widget.Events.PLAY_PROGRESS, function(data) {
+        // Only trigger when audio is actually playing (position > 0)
+        if (isPlaying && !hasStartedScroll && data.currentPosition > 0) {
           hasStartedScroll = true;
           updateButton('playing');
           setTimeout(function() {
