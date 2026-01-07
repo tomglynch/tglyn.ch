@@ -146,7 +146,6 @@ Best regards,
     let myConfetti = null;
 
     function showConfetti() {
-      console.log('🎉 Confetti triggered!');
       if (typeof confetti !== 'function') return;
 
       // Create canvas if it doesn't exist
@@ -170,13 +169,14 @@ Best regards,
 
       (function frame() {
         frameCount++;
-        // Only fire every 10th frame to avoid heaps at once
+        // Only fire every 5th frame to avoid heaps at once
         if (frameCount % 5 === 0) {
           myConfetti({
             particleCount: 20,
             angle: 60,
             spread: 55,
             origin: { x: 0, y: 0.6 },
+            colors: ['#c68601', '#a95100ff', '#c1c1c1ff', '#ccff00ff', '#e3a807'],  
             ticks: 400,
             gravity: 0.6,
             decay: 0.94
@@ -186,6 +186,7 @@ Best regards,
             angle: 120,
             spread: 55,
             origin: { x: 1, y: 0.6 },
+            colors: ['#c68601', '#a95100ff', '#c1c1c1ff', '#ccff00ff', '#e3a807'],
             ticks: 400,
             gravity: 0.6,
             decay: 0.94
