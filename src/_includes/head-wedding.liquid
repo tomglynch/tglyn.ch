@@ -136,13 +136,7 @@ Best regards,
     let scrollDelayId = null;
     let wakeLock = null;
     let wasAtBottom = false;
-    const DESKTOP_SCROLL_DURATION = 40000; // 40 seconds on desktop
-    const MOBILE_SCROLL_DURATION = 55000; // 55 seconds on mobile
-    const MOBILE_BREAKPOINT = 768;
-
-    function getScrollDuration() {
-      return window.innerWidth < MOBILE_BREAKPOINT ? MOBILE_SCROLL_DURATION : DESKTOP_SCROLL_DURATION;
-    }
+    const SCROLL_DURATION = 50000; // 50 seconds
     const SCROLL_DELAY = 1000; // ms after music starts
     let scrollStartTime = null;
     let scrollStartY = 0; // Y position when scroll started
@@ -324,8 +318,7 @@ Best regards,
       }
 
       const elapsed = timestamp - scrollStartTime;
-      const duration = getScrollDuration();
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min(elapsed / SCROLL_DURATION, 1);
 
       // Calculate target based on CURRENT page height (adapts to lazy loading/parallax)
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
