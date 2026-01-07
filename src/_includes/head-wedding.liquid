@@ -136,8 +136,10 @@ Best regards,
     let scrollDelayId = null;
     let wakeLock = null;
     let wasAtBottom = false;
-    const BASE_SCROLL_SPEED = 0.005; // percentage of viewport height per frame
+    const SCROLL_DURATION = 55000; // 55 seconds to scroll entire page (used to calculate speed)
     const SCROLL_DELAY = 1000; // ms after music starts
+    let scrollStartTime = null;
+    let scrollSpeed = 0; // pixels per millisecond
 
     // Confetti when reaching bottom
     let confettiCanvas = null;
@@ -161,25 +163,34 @@ Best regards,
         myConfetti = confetti.create(confettiCanvas, { resize: true });
       }
 
-      // Fire multiple bursts for longer rain effect
-      var duration = 3000;
+      // Fire bursts for 1 second, with long-lasting particles
+      var duration = 1000;
       var end = Date.now() + duration;
+      var frameCount = 0;
 
       (function frame() {
-        myConfetti({
-          particleCount: 5,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0, y: 0.6 },
-          ticks: 200
-        });
-        myConfetti({
-          particleCount: 5,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1, y: 0.6 },
-          ticks: 200
-        });
+        frameCount++;
+        // Only fire every 10th frame to avoid heaps at once
+        if (frameCount % 5 === 0) {
+          myConfetti({
+            particleCount: 20,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0, y: 0.6 },
+            ticks: 400,
+            gravity: 0.6,
+            decay: 0.94
+          });
+          myConfetti({
+            particleCount: 20,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1, y: 0.6 },
+            ticks: 400,
+            gravity: 0.6,
+            decay: 0.94
+          });
+        }
 
         if (Date.now() < end) {
           requestAnimationFrame(frame);
@@ -248,7 +259,7 @@ Best regards,
         scrollDelayId = setTimeout(function() {
           if (isPlaying) {
             isScrolling = true;
-            autoScroll();
+            scrollAnimationId = requestAnimationFrame(autoScroll);
           }
         }, SCROLL_DELAY);
       }).catch(function(err) {
@@ -279,6 +290,8 @@ Best regards,
     // Stop just scrolling (user scrolled manually)
     function stopScrollingOnly() {
       isScrolling = false;
+      scrollStartTime = null;
+      lastScrollTime = null;
       if (scrollAnimationId) {
         cancelAnimationFrame(scrollAnimationId);
         scrollAnimationId = null;
@@ -294,13 +307,28 @@ Best regards,
       }
     }
 
-    // Smooth autoscroll (viewport-relative speed for consistency across screen sizes)
-    function autoScroll() {
+    // Smooth autoscroll (time-based for consistent speed across all devices)
+    let lastScrollTime = null;
+
+    function autoScroll(timestamp) {
       if (!isScrolling) return;
+
+      // Initialize on first frame - calculate speed based on initial page height
+      if (!scrollStartTime) {
+        scrollStartTime = timestamp;
+        lastScrollTime = timestamp;
+        const initialDistance = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
+        scrollSpeed = initialDistance / SCROLL_DURATION; // pixels per ms
+      }
+
+      // Calculate how far to scroll based on time elapsed since last frame
+      const deltaTime = timestamp - lastScrollTime;
+      lastScrollTime = timestamp;
+      const scrollAmount = scrollSpeed * deltaTime;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (window.scrollY < maxScroll) {
-        const scrollAmount = window.innerHeight * BASE_SCROLL_SPEED;
-        window.scrollBy(0, scrollAmount);
+
+      if (window.scrollY < maxScroll - 1) {
+        window.scrollTo(0, Math.min(window.scrollY + scrollAmount, maxScroll));
         scrollAnimationId = requestAnimationFrame(autoScroll);
       } else {
         stopScrollingOnly();
