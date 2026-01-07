@@ -163,47 +163,10 @@
           const image = section.querySelector('.section-image');
 
           if (text && image) {
-            // ===== PARALLAX OPTIONS =====
-            // Uncomment ONE option below to test different parallax effects
-
-            // OPTION 1: Subtle downward text drift (ACTIVE)
-            // const textOffset = scrollProgress * 50;
-            // const imageOffset = 0;
-            // text.style.transform = `translateY(${textOffset}px)`;
-            // image.style.transform = `translateY(${imageOffset}px)`;
-
-            // // OPTION 2: Medium text movement
-            // const textOffset = scrollProgress * 120;
-            // const imageOffset = 0;
-            // text.style.transform = `translateY(${textOffset}px)`;
-            // image.style.transform = `translateY(${imageOffset}px)`;
-
-            // // OPTION 3: Text and images both move (opposite directions)
-            // const textOffset = scrollProgress * 80;
-            // const imageOffset = scrollProgress * -50;
-            // text.style.transform = `translateY(${textOffset}px)`;
-            // image.style.transform = `translateY(${imageOffset}px)`;
-
-            // // OPTION 4: Strong separation effect
-            const textOffset = 2 * scrollProgress * 150;  // or whatever speed you prefer
+            const textOffset = 1.5 * scrollProgress * 150;  // or whatever speed you prefer
             const imageOffset = scrollProgress * -100;
             text.style.transform = `translateY(${textOffset}px)`;
             image.style.transform = `translateY(${imageOffset}px)`;
-
-            // // OPTION 5: Gentle reveal with slower effect
-            // const multiplier = 0.8;
-            // const textOffset = scrollProgress * 100 * multiplier;
-            // const imageOffset = scrollProgress * -30 * multiplier;
-            // text.style.transform = `translateY(${textOffset}px)`;
-            // image.style.transform = `translateY(${imageOffset}px)`;
-
-            // // OPTION 6: Delayed start (text appears first, then starts moving)
-            // const startDelay = 0.15; // Text starts moving after 15% scroll progress
-            // const adjustedProgress = Math.max(0, scrollProgress - startDelay) / (1 - startDelay);
-            // const textOffset = adjustedProgress * 100;
-            // const imageOffset = scrollProgress * -40;
-            // text.style.transform = `translateY(${textOffset}px)`;
-            // image.style.transform = `translateY(${imageOffset}px)`;
           }
         }
       });

@@ -139,6 +139,10 @@ module.exports = (eleventyConfig) => {
     dir: {
       input: inputDir
     },
+    // Disable BrowserSync ghost mode (syncs clicks/scrolls across tabs)
+    browserSyncConfig: {
+      ghostMode: false
+    }
   };
 };
 

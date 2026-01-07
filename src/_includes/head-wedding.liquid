@@ -7,6 +7,7 @@
     <title>{{title | capitalize}} - {{site.my_name}}</title>
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" href="/css/wedding.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
     <meta property="og:title" content="{{title}}" />
     <meta property="og:type" content="article" />
@@ -132,9 +133,63 @@ Best regards,
     let isPlaying = false;
     let isScrolling = false;
     let scrollAnimationId = null;
+    let scrollDelayId = null;
     let wakeLock = null;
-    const SCROLL_SPEED = 1.5;
+    let wasAtBottom = false;
+    const BASE_SCROLL_SPEED = 0.005; // percentage of viewport height per frame
     const SCROLL_DELAY = 1000; // ms after music starts
+
+    // Confetti when reaching bottom
+    let confettiCanvas = null;
+    let myConfetti = null;
+
+    function showConfetti() {
+      console.log('🎉 Confetti triggered!');
+      if (typeof confetti !== 'function') return;
+
+      // Create canvas if it doesn't exist
+      if (!confettiCanvas) {
+        confettiCanvas = document.createElement('canvas');
+        confettiCanvas.style.position = 'fixed';
+        confettiCanvas.style.top = '0';
+        confettiCanvas.style.left = '0';
+        confettiCanvas.style.width = '100vw';
+        confettiCanvas.style.height = '100vh';
+        confettiCanvas.style.pointerEvents = 'none';
+        confettiCanvas.style.zIndex = '99999';
+        document.body.appendChild(confettiCanvas);
+        myConfetti = confetti.create(confettiCanvas, { resize: true });
+      }
+
+      // Fire multiple bursts for longer rain effect
+      var duration = 3000;
+      var end = Date.now() + duration;
+
+      (function frame() {
+        myConfetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0, y: 0.6 },
+          ticks: 200
+        });
+        myConfetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1, y: 0.6 },
+          ticks: 200
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+    }
+
+    function isAtBottom() {
+      return (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 10);
+    }
 
     // Wake lock to keep screen on
     async function requestWakeLock() {
@@ -150,7 +205,7 @@ Best regards,
     function updateButton(state) {
       const btn = document.getElementById('letsGoBtn');
       const speakerIcon = btn.querySelector('.speaker-icon');
-      const pauseIcon = btn.querySelector('.pause-icon');
+      const stopIcon = btn.querySelector('.stop-icon');
       const label = btn.querySelector('.btn-label');
       const equalizer = document.getElementById('equalizer');
 
@@ -158,13 +213,13 @@ Best regards,
         label.textContent = 'Stop';
         btn.classList.add('active');
         speakerIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
+        stopIcon.style.display = 'block';
         equalizer.classList.add('playing');
       } else {
         label.textContent = "Let's go";
         btn.classList.remove('active');
         speakerIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
+        stopIcon.style.display = 'none';
         equalizer.classList.remove('playing');
       }
     }
@@ -190,7 +245,7 @@ Best regards,
         updateButton('playing');
 
         // Start scrolling after delay
-        setTimeout(function() {
+        scrollDelayId = setTimeout(function() {
           if (isPlaying) {
             isScrolling = true;
             autoScroll();
@@ -205,6 +260,10 @@ Best regards,
     function stopExperience() {
       isPlaying = false;
       isScrolling = false;
+      if (scrollDelayId) {
+        clearTimeout(scrollDelayId);
+        scrollDelayId = null;
+      }
       if (scrollAnimationId) {
         cancelAnimationFrame(scrollAnimationId);
         scrollAnimationId = null;
@@ -235,15 +294,17 @@ Best regards,
       }
     }
 
-    // Smooth autoscroll
+    // Smooth autoscroll (viewport-relative speed for consistency across screen sizes)
     function autoScroll() {
       if (!isScrolling) return;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       if (window.scrollY < maxScroll) {
-        window.scrollBy(0, SCROLL_SPEED);
+        const scrollAmount = window.innerHeight * BASE_SCROLL_SPEED;
+        window.scrollBy(0, scrollAmount);
         scrollAnimationId = requestAnimationFrame(autoScroll);
       } else {
         stopScrollingOnly();
+        showConfetti();
       }
     }
 
@@ -251,16 +312,32 @@ Best regards,
     initAudioPlayer();
 
     // Stop autoscroll (but not music) if user manually scrolls
-    window.addEventListener('wheel', function() {
-      if (isScrolling) {
+    // Use a threshold to avoid accidental stops from minor movements
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('wheel', function(e) {
+      if (isScrolling && Math.abs(e.deltaY) > 10) {
         stopScrollingOnly();
       }
     }, { passive: true });
 
+    window.addEventListener('touchstart', function() {
+      lastScrollY = window.scrollY;
+    }, { passive: true });
+
     window.addEventListener('touchmove', function() {
-      if (isScrolling) {
+      if (isScrolling && Math.abs(window.scrollY - lastScrollY) > 20) {
         stopScrollingOnly();
       }
+    }, { passive: true });
+
+    // Trigger confetti on manual scroll to bottom (only when newly arriving)
+    window.addEventListener('scroll', function() {
+      var atBottom = isAtBottom();
+      if (atBottom && !wasAtBottom) {
+        showConfetti();
+      }
+      wasAtBottom = atBottom;
     }, { passive: true });
     </script>
   </body>
