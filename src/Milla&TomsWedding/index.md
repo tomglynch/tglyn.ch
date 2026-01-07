@@ -20,7 +20,7 @@ tags: []
 <!-- Main invitation content -->
 <div id="invitation-content">
   <section class="hero-section">
-    <img src="images/bokeh.jpg" alt="Bokeh lights" class="hero-bg" />
+    <img src="images/bokeh.jpg" alt="Bokeh lights" class="hero-bg" width="1920" height="1280" />
     <div class="hero-content">
       <h1 class="hero-title">Dear <span class="guest-name"></span>,</h1>
 
@@ -55,7 +55,7 @@ tags: []
         <h2 class="section-title">our story</h2>
         <p class="section-subtitle">started back in 2014</p>
       </div>
-      <img src="images/snow.jpg" alt="Snow" class="section-image" />
+      <img src="images/snow.jpg" alt="Snow" class="section-image" width="960" height="960" />
     </div>
   </section>
 
@@ -64,7 +64,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-subtitle">so it's about time</h2>
       </div>
-      <img src="images/perth.jpg" alt="Perth" class="section-image" />
+      <img src="images/perth.jpg" alt="Perth" class="section-image" width="1126" height="1502" />
     </div>
   </section>
 
@@ -73,7 +73,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">we celebrate it!</h2>
       </div>
-      <img src="images/dj.jpg" alt="DJ" class="section-image" />
+      <img src="images/dj.jpg" alt="DJ" class="section-image" width="1002" height="1502" />
     </div>
   </section>
 
@@ -82,7 +82,7 @@ tags: []
       <div class="section-text">
         <h2 class="hero-title"><span class="guest-name"></span>, you're<br>invited</h2>
       </div>
-      <img src="images/engagement.jpg" alt="Engagement photo" class="section-image" />
+      <img src="images/engagement.jpg" alt="Engagement photo" class="section-image" width="2254" height="1502" />
     </div>
   </section>
 
@@ -91,7 +91,7 @@ tags: []
       <div class="section-text">
         <h2 class="hero-subtitle">to join us</h2>
       </div>
-      <img src="images/acatanango.jpg" alt="Acatanango" class="section-image" />
+      <img src="images/acatanango.jpg" alt="Acatanango" class="section-image" width="1920" height="1280" />
     </div>
   </section>
 
@@ -100,7 +100,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">in celebrating</h2>
       </div>
-      <img src="images/puglia.jpg" alt="Puglia" class="section-image" />
+      <img src="images/puglia.jpg" alt="Puglia" class="section-image" width="2002" height="1502" />
     </div>
   </section>
 
@@ -109,7 +109,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">our love</h2>
       </div>
-      <img src="images/amalfi.jpg" alt="Amalfi" class="section-image" />
+      <img src="images/amalfi.jpg" alt="Amalfi" class="section-image" width="1504" height="1502" />
     </div>
   </section>
 
@@ -118,7 +118,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">and our adventures</h2>
       </div>
-      <img src="images/mtb.jpg" alt="MTB" class="section-image" />
+      <img src="images/mtb.jpg" alt="MTB" class="section-image" width="1126" height="1502" />
     </div>
   </section>
 
@@ -127,7 +127,7 @@ tags: []
       <div class="section-text">
         <h2 class="section-title">at our wedding!</h2>
       </div>
-      <img src="images/engagement_rings.jpg" alt="Engagement Rings" class="section-image" />
+      <img src="images/engagement_rings.jpg" alt="Engagement Rings" class="section-image" width="4032" height="3024" />
       <!-- <img src="images/mexico.jpg" alt="Mexico" class="section-image" /> -->
     </div>
   </section>
@@ -241,7 +241,7 @@ tags: []
         <h2 class="section-subtitle">With love,</h2>
         <h2 class="section-subtitle">Milla & Tom</h2>
       </div>
-      <img src="images/millatom.gif" alt="Milla and Tom" class="section-image" />
+      <img src="images/millatom.gif" alt="Milla and Tom" class="section-image" width="388" height="500" />
     </div>
   </section>
 
