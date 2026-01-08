@@ -216,8 +216,12 @@ tags: []
               <p class="form-title">Please confirm your email</p>
               <p class="form-subtitle">So we can keep you updated with all the details</p>
               <div id="email-fields"></div>
-              <input type="hidden" name="guest-name" class="guest-name-input" value=""/>
               <!-- Hidden fields for Netlify to detect at build time (JS populates them) -->
+              <input type="hidden" name="guest-0" value=""/>
+              <input type="hidden" name="guest-1" value=""/>
+              <input type="hidden" name="guest-2" value=""/>
+              <input type="hidden" name="guest-3" value=""/>
+              <input type="hidden" name="guest-4" value=""/>
               <input type="hidden" name="email-0" value=""/>
               <input type="hidden" name="email-1" value=""/>
               <input type="hidden" name="email-2" value=""/>

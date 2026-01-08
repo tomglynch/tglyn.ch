@@ -67,12 +67,19 @@
     emailFieldsContainer.innerHTML = '';
 
     // Remove hidden placeholder fields (they're only for Netlify build-time detection)
+    // and populate guest name fields
     for (let i = 0; i < 5; i++) {
-      const hidden = document.querySelector(`input[type="hidden"][name="email-${i}"]`);
-      if (hidden) hidden.remove();
+      const hiddenEmail = document.querySelector(`input[type="hidden"][name="email-${i}"]`);
+      if (hiddenEmail) hiddenEmail.remove();
+
+      const hiddenGuest = document.querySelector(`input[type="hidden"][name="guest-${i}"]`);
+      if (hiddenGuest) {
+        // Populate with name if exists, otherwise leave empty
+        hiddenGuest.value = names[i] || '';
+      }
     }
 
-    // Create a field for each name
+    // Create a visible email field for each name
     names.forEach((name, index) => {
       const label = document.createElement('label');
       label.className = 'email-field-label';
@@ -102,13 +109,7 @@
       element.textContent = guestName;
     });
 
-    // Also populate the hidden form field with guest name
-    const guestNameInput = document.querySelector('.guest-name-input');
-    if (guestNameInput) {
-      guestNameInput.value = guestName;
-    }
-
-    // Generate dynamic email fields
+    // Generate dynamic email fields (also populates hidden guest-N fields)
     generateEmailFields(names);
 
     // Show main content
