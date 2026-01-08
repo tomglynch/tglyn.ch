@@ -66,6 +66,12 @@
     // Clear existing fields
     emailFieldsContainer.innerHTML = '';
 
+    // Remove hidden placeholder fields (they're only for Netlify build-time detection)
+    for (let i = 0; i < 5; i++) {
+      const hidden = document.querySelector(`input[type="hidden"][name="email-${i}"]`);
+      if (hidden) hidden.remove();
+    }
+
     // Create a field for each name
     names.forEach((name, index) => {
       const label = document.createElement('label');
