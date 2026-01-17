@@ -45,7 +45,7 @@ tags: []
 
     <!-- Hidden Audio Player -->
     <audio id="audioPlayer" preload="auto">
-      <source src="audio/praise-you.mp3" type="audio/mpeg">
+      <source src="audio/praise-you-mix.mp3" type="audio/mpeg">
     </audio>
   </section>
 
@@ -138,7 +138,7 @@ tags: []
         <h2 class="section-title">The deets</h2>
         <div class="details-box">
           <p class="details-heading">So far we can tell you...</p>
-          <p class="details-text">date: Saturday November 28<sup>th</sup> 2026</p>
+          <p class="details-text">date: Saturday November 28<sup>th</sup> 2026, from midday-ish</p>
           <p class="details-text-small">location: in and around brunswick</p>
 
           <div style="margin-top: 50px; text-align: center;">

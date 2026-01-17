@@ -129,6 +129,13 @@ Best regards,
     });
 
     // === Let's Go Button: Music + Autoscroll ===
+    const playlist = [
+      'audio/praise-you-mix.mp3',
+      'audio/astounded.mp3',
+      'audio/where-is-hubby.mp3',
+      'audio/the-bug-club-marriage.mp3'
+    ];
+    let currentTrack = 0;
     let audioPlayer = null;
     let isPlaying = false;
     let isScrolling = false;
@@ -241,9 +248,15 @@ Best regards,
       audioPlayer = document.getElementById('audioPlayer');
       if (!audioPlayer) return;
 
-      // Song ended
+      // Song ended - play next or stop if playlist done
       audioPlayer.addEventListener('ended', function() {
-        stopExperience();
+        currentTrack++;
+        if (currentTrack < playlist.length) {
+          audioPlayer.src = playlist[currentTrack];
+          audioPlayer.play();
+        } else {
+          stopExperience();
+        }
       });
     }
 
@@ -283,6 +296,9 @@ Best regards,
       if (audioPlayer) {
         audioPlayer.pause();
         audioPlayer.currentTime = 0;
+        // Reset to first track
+        currentTrack = 0;
+        audioPlayer.src = playlist[0];
       }
       updateButton('stopped');
       releaseWakeLock();
