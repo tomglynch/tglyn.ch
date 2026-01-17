@@ -382,6 +382,35 @@ Best regards,
       }
       wasAtBottom = atBottom;
     }, { passive: true });
+
+    // Handle form submission via AJAX (no redirect)
+    const emailForm = document.getElementById('wedding-email-form');
+    if (emailForm) {
+      emailForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(emailForm);
+        formData.append('form-name', 'wedding-email');
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        .then(function(response) {
+          if (response.ok) {
+            // Hide form, show success message
+            emailForm.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            alert('Sorry, there was an error. Please try again.');
+          }
+        })
+        .catch(function(error) {
+          alert('Sorry, there was an error. Please try again.');
+        });
+      });
+    }
     </script>
   </body>
 </html>

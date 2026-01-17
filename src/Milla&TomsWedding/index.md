@@ -212,7 +212,7 @@ tags: []
           </div>
 
           <div class="email-section">
-            <form name="wedding-email" method="POST" data-netlify="true" class="wedding-email-form">
+            <form name="wedding-email" method="POST" data-netlify="true" class="wedding-email-form" id="wedding-email-form">
               <p class="form-title">Please confirm your email</p>
               <p class="form-subtitle">So we can keep you updated with all the details</p>
               <div id="email-fields"></div>
@@ -229,6 +229,10 @@ tags: []
               <input type="hidden" name="email-5" value=""/>
               <button type="submit">Submit</button>
             </form>
+            <div id="form-success" class="form-success" style="display: none;">
+              <p class="form-title">Thanks!</p>
+              <p class="form-subtitle">We'll be in touch soon.</p>
+            </div>
           </div>
 
           <div class="extra-info">
