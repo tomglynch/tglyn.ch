@@ -92,11 +92,46 @@
       input.name = `email-${fieldNum}`;
       input.id = `email-${fieldNum}`;
       input.placeholder = toPossessive(name) + ' email address';
-      input.required = true;
+      // Not required individually - we validate at least one is filled on submit
+      input.required = false;
+      input.classList.add('guest-email-input');
 
       emailFieldsContainer.appendChild(label);
       emailFieldsContainer.appendChild(input);
     });
+
+    // Add validation: at least one email must be provided
+    const form = document.getElementById('wedding-email-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        const emailInputs = emailFieldsContainer.querySelectorAll('.guest-email-input');
+        const hasAtLeastOneEmail = Array.from(emailInputs).some(input => input.value.trim() !== '');
+
+        if (!hasAtLeastOneEmail) {
+          e.preventDefault();
+          // Show validation message
+          let errorMsg = emailFieldsContainer.querySelector('.email-validation-error');
+          if (!errorMsg) {
+            errorMsg = document.createElement('p');
+            errorMsg.className = 'email-validation-error';
+            errorMsg.textContent = 'Please provide at least one email address';
+            emailFieldsContainer.appendChild(errorMsg);
+          }
+          // Highlight empty fields
+          emailInputs.forEach(input => input.classList.add('needs-input'));
+          return false;
+        }
+      });
+
+      // Clear error styling when user types
+      emailFieldsContainer.addEventListener('input', function() {
+        const errorMsg = emailFieldsContainer.querySelector('.email-validation-error');
+        if (errorMsg) errorMsg.remove();
+        emailFieldsContainer.querySelectorAll('.guest-email-input').forEach(input => {
+          input.classList.remove('needs-input');
+        });
+      });
+    }
   }
 
   // Personalize the page with guest name

@@ -385,6 +385,21 @@ Best regards,
 
     // Handle form submission via AJAX (no redirect)
     const emailForm = document.getElementById('wedding-email-form');
+    const formError = document.getElementById('form-error');
+    const tryAgainBtn = document.getElementById('try-again-btn');
+
+    function showFormError() {
+      emailForm.style.display = 'none';
+      formError.style.display = 'block';
+    }
+
+    if (tryAgainBtn) {
+      tryAgainBtn.addEventListener('click', function() {
+        formError.style.display = 'none';
+        emailForm.style.display = 'block';
+      });
+    }
+
     if (emailForm) {
       emailForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -403,11 +418,11 @@ Best regards,
             emailForm.style.display = 'none';
             document.getElementById('form-success').style.display = 'block';
           } else {
-            alert('Sorry, there was an error. Please try again.');
+            showFormError();
           }
         })
         .catch(function(error) {
-          alert('Sorry, there was an error. Please try again.');
+          showFormError();
         });
       });
     }

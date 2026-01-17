@@ -629,6 +629,17 @@ body.wedding-page {
     background: rgba(242, 244, 234, 0.12);
 }
 
+.wedding-email-form input.needs-input {
+    border-color: #e07a5f;
+}
+
+.wedding-email-form .email-validation-error {
+    color: #e07a5f;
+    font-size: 14px;
+    margin: 8px 0 16px;
+    text-align: center;
+}
+
 .wedding-email-form button[type="submit"] {
     width: 100%;
     padding: 16px 32px;
@@ -651,6 +662,41 @@ body.wedding-page {
         color: #1e1f20;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(212, 160, 48, 0.3);
+    }
+}
+
+.form-error {
+    text-align: center;
+}
+
+.form-error .form-title {
+    color: #e07a5f;
+}
+
+.form-error .form-subtitle {
+    color: rgba(224, 122, 95, 0.85);
+}
+
+.form-error button {
+    padding: 12px 24px;
+    background: rgba(224, 122, 95, 0.15);
+    color: #f2f4ea;
+    border: 2px solid #e07a5f;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+@media (hover: hover) {
+    .form-error button:hover {
+        background: #e07a5f;
+        color: #1e1f20;
     }
 }
 

@@ -233,6 +233,11 @@ tags: []
               <p class="form-title">Thanks!</p>
               <p class="form-subtitle">We'll be in touch soon.</p>
             </div>
+            <div id="form-error" class="form-error" style="display: none;">
+              <p class="form-title">Oops!</p>
+              <p class="form-subtitle">Something went wrong. Please try again.</p>
+              <button type="button" id="try-again-btn">Try again</button>
+            </div>
           </div>
 
           <div class="extra-info">
