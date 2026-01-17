@@ -404,6 +404,26 @@ Best regards,
       emailForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Validate at least one email is provided
+        const emailFieldsContainer = document.getElementById('email-fields');
+        const emailInputs = emailFieldsContainer ? emailFieldsContainer.querySelectorAll('.guest-email-input') : [];
+        const hasAtLeastOneEmail = Array.from(emailInputs).some(function(input) {
+          return input.value.trim() !== '';
+        });
+
+        if (emailInputs.length > 0 && !hasAtLeastOneEmail) {
+          // Show validation message
+          var errorMsg = emailFieldsContainer.querySelector('.email-validation-error');
+          if (!errorMsg) {
+            errorMsg = document.createElement('p');
+            errorMsg.className = 'email-validation-error';
+            errorMsg.textContent = 'Please provide at least one email address';
+            emailFieldsContainer.appendChild(errorMsg);
+          }
+          emailInputs.forEach(function(input) { input.classList.add('needs-input'); });
+          return;
+        }
+
         const formData = new FormData(emailForm);
         formData.append('form-name', 'wedding-email');
 
