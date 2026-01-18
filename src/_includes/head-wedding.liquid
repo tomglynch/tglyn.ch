@@ -151,6 +151,8 @@ Best regards,
     // Confetti when reaching bottom
     let confettiCanvas = null;
     let myConfetti = null;
+    let currentConfettiPieces = 0;
+    const PARTICLE_LIFETIME_MS = 6700; // ~400 ticks at 60fps
 
     function showConfetti() {
       if (typeof confetti !== 'function') return;
@@ -169,8 +171,8 @@ Best regards,
         myConfetti = confetti.create(confettiCanvas, { resize: true });
       }
 
-      // Fire bursts for 1 second, with long-lasting particles
-      var duration = 1000;
+      // Fire bursts with randomized duration (700-1300ms, avg 1000ms)
+      var duration = 700 + Math.random() * 600;
       var end = Date.now() + duration;
       var frameCount = 0;
 
@@ -178,18 +180,23 @@ Best regards,
         frameCount++;
         // Only fire every 5th frame to avoid heaps at once
         if (frameCount % 5 === 0) {
+          // Randomize particle count per side (12-28, avg 20)
+          var leftCount = 12 + Math.floor(Math.random() * 17);
+          var rightCount = 12 + Math.floor(Math.random() * 17);
+          var burstTotal = leftCount + rightCount;
+
           myConfetti({
-            particleCount: 20,
+            particleCount: leftCount,
             angle: 60,
             spread: 55,
             origin: { x: 0, y: 0.6 },
-            colors: ['#c68601', '#a95100ff', '#c1c1c1ff', '#ccff00ff', '#e3a807'],  
+            colors: ['#c68601', '#a95100ff', '#c1c1c1ff', '#ccff00ff', '#e3a807'],
             ticks: 400,
             gravity: 0.6,
             decay: 0.94
           });
           myConfetti({
-            particleCount: 20,
+            particleCount: rightCount,
             angle: 120,
             spread: 55,
             origin: { x: 1, y: 0.6 },
@@ -198,12 +205,34 @@ Best regards,
             gravity: 0.6,
             decay: 0.94
           });
+          currentConfettiPieces += burstTotal;
+          updateConfettiCounter();
+          // Schedule removal when particles fade out
+          (function(count) {
+            setTimeout(function() {
+              currentConfettiPieces = Math.max(0, currentConfettiPieces - count);
+              updateConfettiCounter();
+            }, PARTICLE_LIFETIME_MS);
+          })(burstTotal);
         }
 
         if (Date.now() < end) {
           requestAnimationFrame(frame);
         }
       }());
+    }
+
+    function updateConfettiCounter() {
+      const counter = document.getElementById('confetti-counter');
+      const countEl = document.getElementById('confetti-count');
+      if (counter && countEl) {
+        countEl.textContent = currentConfettiPieces.toLocaleString();
+        if (currentConfettiPieces > 0) {
+          counter.classList.add('visible');
+        } else {
+          counter.classList.remove('visible');
+        }
+      }
     }
 
     function isAtBottom() {

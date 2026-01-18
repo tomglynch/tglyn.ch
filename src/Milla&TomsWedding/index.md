@@ -213,6 +213,13 @@ tags: []
 
           </div>
 
+          <div class="extra-info">
+            <p>If you already know that you won't be able to join us, please let us know as soon as possible as it will help with our planning.</p>
+          </div>
+          <div class="extra-info">
+            <p>We kindly ask this be an adult-only affair.</p>
+          </div>
+
           <div class="email-section">
             <form name="wedding-email" method="POST" data-netlify="true" class="wedding-email-form" id="wedding-email-form">
               <p class="form-title">Please confirm your email</p>
@@ -241,17 +248,15 @@ tags: []
               <button type="button" id="try-again-btn">Try again</button>
             </div>
           </div>
-
-          <div class="extra-info">
-            <p>If you already know that you won't be able to join us, please let us know as soon as possible as it will help with our planning.</p>
-          </div>
-          <div class="extra-info">
-            <p>We kindly ask this be an adult-only affair.</p>
-          </div>
-          <div class="extra-info">
-            <p>Thank you for being a part of our lives up to this point!</p>
-          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wedding-section thank-you-message-section">
+    <div class="section-content">
+      <div class="section-text">
+        <p class="thank-you-message">Thank you for being a part of our lives up to this point!</p>
       </div>
     </div>
   </section>
@@ -269,6 +274,10 @@ tags: []
 <section class="coming-soon">
     <p class="coming-soon-text">We'll be in touch with more details soon</p>
   </section>
+
+  <div id="confetti-counter" class="confetti-counter">
+    <span id="confetti-count">0</span> confetti
+  </div>
 
   </div>
 {% endinclude_html %}
