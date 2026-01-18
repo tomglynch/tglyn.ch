@@ -1,6 +1,8 @@
 ---
 layout: pages/page-wedding.liquid
 title: Milla & Tom's Wedding
+blurb: Our story started back in 2014...
+image: /Milla&TomsWedding/images/bokeh.jpg
 excludeFromSitemap: true
 published: false
 tags: []
