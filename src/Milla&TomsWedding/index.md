@@ -276,6 +276,10 @@ tags: []
     <p class="coming-soon-text">We'll be in touch with more details soon</p>
   </section>
 
+  <footer class="wedding-credits">
+    <p>Website by Tom, Photos and Music by Milla</p>
+  </footer>
+
   <div id="confetti-counter" class="confetti-counter">
     <span id="confetti-count">0</span> confetti
   </div>
