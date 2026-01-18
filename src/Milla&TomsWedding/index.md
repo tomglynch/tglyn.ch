@@ -224,6 +224,7 @@ tags: []
             <form name="wedding-email" method="POST" data-netlify="true" class="wedding-email-form" id="wedding-email-form">
               <p class="form-title">Please confirm your email</p>
               <p class="form-subtitle">So we can keep you updated with all the details</p>
+              <p class="form-note">(emails can be submitted separately or together)</p>
               <div id="email-fields"></div>
               <!-- Hidden fields for Netlify to detect at build time (JS populates them) -->
               <input type="hidden" name="guest-1" value=""/>
