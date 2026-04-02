@@ -10,15 +10,18 @@ This is a personal website/blog built with Eleventy (11ty) v0.12.1, a static sit
 
 ### Local Development
 ```bash
+# Install dependencies
+pnpm install
+
 # Standard development server
-npx @11ty/eleventy --serve
+pnpm exec eleventy --serve
 # View at http://localhost:8080/
 
 # Debug mode (shows Eleventy debug output)
-DEBUG=Eleventy* npx @11ty/eleventy --serve
+DEBUG=Eleventy* pnpm exec eleventy --serve
 
 # Production mode (applies publishing filters)
-ELEVENTY_ENV=prod npx @11ty/eleventy --serve
+ELEVENTY_ENV=prod pnpm exec eleventy --serve
 ```
 
 ### Deployment

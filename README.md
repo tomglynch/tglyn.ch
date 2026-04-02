@@ -1,13 +1,15 @@
 # serve locally
-run `npx @11ty/eleventy --serve` from the /tglyn.ch directory
+run `pnpm exec eleventy --serve` from the /tglyn.ch directory
 view at http://localhost:8080/
 
+(or `npx @11ty/eleventy --serve` if using npm)
+
 ## in debug mode
-run `DEBUG=Eleventy* npx @11ty/eleventy --serve` from the /tglyn.ch directory
+run `DEBUG=Eleventy* pnpm exec eleventy --serve` from the /tglyn.ch directory
 view at http://localhost:8080/
 
 ## see what i will see on prod
-run `ELEVENTY_ENV=prod npx @11ty/eleventy --serve` from the /tglyn.ch directory
+run `ELEVENTY_ENV=prod pnpm exec eleventy --serve` from the /tglyn.ch directory
 view at http://localhost:8080/
 
 This activates the `env.isProd` condition, which filters blog posts according to their front matter properties:
@@ -24,7 +26,7 @@ make a commit to master and push to github
 # how to get set up
 - install nvm
 - install latest version of node
-- run npm install
+- run `pnpm install` (or `npm install`)
 - then run the above
 
 # to publish

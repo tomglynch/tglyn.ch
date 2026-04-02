@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "dotenv": "^8.4.0",
-    "jsdom": "^16.5.3"
+    "jsdom": "^16.5.3",
+    "luxon": "^3.7.2"
   }
 }
