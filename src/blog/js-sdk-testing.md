@@ -32,7 +32,7 @@ unlisted: true
     var s = document.createElement('script');
     s.id = 'qz-sdk-script';
     s.async = true;
-    s.src = baseUrl + '/sdk/' + filename;
+    s.src = baseUrl + '/sdk/' + filename + '?cachebust=' + Date.now();
     document.head.appendChild(s);
     document.getElementById('active-sdk').textContent = s.src + ' → ' + agentId;
   }
