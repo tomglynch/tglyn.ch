@@ -23,6 +23,6 @@ unlisted: true
 </script>
 
 <button onclick="Quarterzip.launchZip()">Launch Zip</button>
-<button onclick="Quarterzip.open()">Open</button>
-<button onclick="Quarterzip.open({ showStartButton: true, aiCursorActive: true })">Open with Config</button>
+<button onclick="Quarterzip.open({ agent_id: 'qwpbgz', user: { email: 'jane@company.com', name: 'Jane Smith', id: 'your_internal_user_id' } })">Open qwpbgz staging github</button>
+<button onclick="Quarterzip.open({ agent_id: 'wi6lxe', user: { email: 'jane@company.com', name: 'Jane Smith', id: 'your_internal_user_id' } })">Open wi6lxe prod github</button>
 <button onclick="Quarterzip.close()">Close</button>
