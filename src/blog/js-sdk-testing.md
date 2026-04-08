@@ -17,7 +17,7 @@ unlisted: true
     };
     var s = document.createElement('script');
     s.async = true;
-    s.src = 'https://app.toocan-staging.com/sdk/qz.js';
+    s.src = 'https://app.toocan-staging.com/sdk/qz.staging.js';
     document.head.appendChild(s);
   })();
 </script>
