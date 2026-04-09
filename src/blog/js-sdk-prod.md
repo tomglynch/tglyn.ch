@@ -22,5 +22,6 @@ unlisted: true
   })();
 </script>
 
-<button onclick="Quarterzip.open({ agent_id: 'wi6lxe', user: { email: 'jane@company.com', name: 'Jane Smith', id: 'test-user-123' } })">Open Agent (wi6lxe prod)</button>
+
+<button onclick="Quarterzip.open({ agentId: 'wi6lxe', workspaceToken: 'token', user: { email: 'jane@company.com', displayName: 'Jane Smith', id: 'test-user-123' } })">Open Agent (qwpbgz staging)</button>
 <button onclick="Quarterzip.close()">Close</button>
