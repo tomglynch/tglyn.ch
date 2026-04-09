@@ -5,6 +5,7 @@ date: 2026-04-02
 image: "/blog/images/blog_generic.jpg"
 published: true
 unlisted: true
+minimal: true
 ---
 
 <style>

@@ -12,6 +12,7 @@ layout: body.liquid
 </div>
 {{content}}
 
+{% unless minimal %}
 {% include components/socials_list %}
 
 {% include components/subscribe_form %}
@@ -19,3 +20,4 @@ layout: body.liquid
 
 <h2>Related blogs</h1>
 {% include components/related_postlist %}
+{% endunless %}
