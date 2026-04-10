@@ -31,5 +31,5 @@ minimal: true
   .sdk-btn-close { background: #051821; color: #fff; margin-left: 8px; }
 </style>
 
-<button class="sdk-btn sdk-btn-open" onclick="Quarterzip.open({ agentId: 'wi6lxe', workspaceToken: 'token', user: { email: 'jane@company.com', displayName: 'Jane Smith', id: 'test-user-123' } })">Open Agent (wi6lxe prod)</button>
+<button class="sdk-btn sdk-btn-open" onclick="Quarterzip.open({ agentId: 'wi6lxe', workspaceToken: 'f9JWIcg19cjfhyxHBE', user: { email: 'jane@company.com', displayName: 'Jane Smith', id: 'test-user-123' } })">Open Agent (wi6lxe prod)</button>
 <button class="sdk-btn sdk-btn-close" onclick="Quarterzip.close()">Close</button>
