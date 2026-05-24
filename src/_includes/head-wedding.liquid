@@ -130,10 +130,10 @@ Best regards,
 
     // === Let's Go Button: Music + Autoscroll ===
     const playlist = [
-      'audio/praise-you-mix.mp3',
-      'audio/astounded.mp3',
-      'audio/where-is-hubby.mp3',
-      'audio/the-bug-club-marriage.mp3'
+      '/Milla&TomsWedding/audio/praise-you-mix.mp3',
+      '/Milla&TomsWedding/audio/astounded.mp3',
+      '/Milla&TomsWedding/audio/where-is-hubby.mp3',
+      '/Milla&TomsWedding/audio/the-bug-club-marriage.mp3'
     ];
     let currentTrack = 0;
     let audioPlayer = null;
@@ -463,9 +463,8 @@ Best regards,
         })
         .then(function(response) {
           if (response.ok) {
-            // Hide form, show success message
-            emailForm.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
+            var s = new URLSearchParams(window.location.search).get('s');
+            window.location.href = '/Milla&TomsWedding/RSVP/' + (s ? '?s=' + encodeURIComponent(s) : '');
           } else {
             showFormError();
           }
