@@ -56,7 +56,21 @@ tags: []
     <form name="wedding-rsvp" method="POST" data-netlify="true" id="rsvp-form" class="rsvp-form">
 
       <!-- Hidden fields for Netlify to detect at build time -->
-      <input type="hidden" name="guests-summary" />
+      <input type="hidden" name="guest-1-name" />
+      <input type="hidden" name="guest-1-attending" />
+      <input type="hidden" name="guest-1-dietary" />
+      <input type="hidden" name="guest-2-name" />
+      <input type="hidden" name="guest-2-attending" />
+      <input type="hidden" name="guest-2-dietary" />
+      <input type="hidden" name="guest-3-name" />
+      <input type="hidden" name="guest-3-attending" />
+      <input type="hidden" name="guest-3-dietary" />
+      <input type="hidden" name="guest-4-name" />
+      <input type="hidden" name="guest-4-attending" />
+      <input type="hidden" name="guest-4-dietary" />
+      <input type="hidden" name="guest-5-name" />
+      <input type="hidden" name="guest-5-attending" />
+      <input type="hidden" name="guest-5-dietary" />
       <input type="hidden" name="address-street" />
       <input type="hidden" name="address-suburb" />
       <input type="hidden" name="address-state" />
@@ -200,14 +214,12 @@ tags: []
           '</label>' +
         '</div>' +
         '<div class="guest-row-dietary" style="display:none">' +
-          '<input type="text" class="guest-dietary-input" placeholder="Dietary requirements (or \'none\')" />' +
+          '<input type="text" class="guest-dietary-input" placeholder="Dietary requirements or allergies (leave blank if none)" />' +
         '</div>' +
       '</div>';
 
-    // Show/hide dietary when attending is selected
     row.querySelector('.row-yes').addEventListener('change', function() {
       row.querySelector('.guest-row-dietary').style.display = 'block';
-      row.querySelector('.guest-dietary-input').focus();
     });
     row.querySelector('.row-no').addEventListener('change', function() {
       row.querySelector('.guest-row-dietary').style.display = 'none';
@@ -302,13 +314,12 @@ tags: []
     var guests   = collectGuests();
     var anyYes   = guests.some(function(g) { return g.attending === 'yes'; });
 
-    var summary = guests.map(function(g) {
-      return g.name + ': ' + (g.attending === 'yes'
-        ? 'attending — ' + (g.dietary || 'no dietary requirements')
-        : 'not attending');
-    }).join('\n');
-
-    rsvpForm.querySelector('[name="guests-summary"]').value = summary;
+    guests.slice(0, 5).forEach(function(g, i) {
+      var n = i + 1;
+      rsvpForm.querySelector('[name="guest-' + n + '-name"]').value      = g.name;
+      rsvpForm.querySelector('[name="guest-' + n + '-attending"]').value = g.attending === 'yes' ? 'yes' : 'no';
+      rsvpForm.querySelector('[name="guest-' + n + '-dietary"]').value   = g.attending === 'yes' ? (g.dietary || '') : '';
+    });
 
     if (document.getElementById('include-address-check').checked) {
       rsvpForm.querySelector('[name="address-street"]').value   = document.getElementById('addr-street').value;
