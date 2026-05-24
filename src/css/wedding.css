@@ -941,3 +941,734 @@ body.wedding-page {
 #confetti-count {
     font-weight: 600;
 }
+
+/* =============================================
+   RSVP Page Styles
+   ============================================= */
+
+/* Animated background (RSVP page only) */
+#rsvp-animated-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#rsvp-animated-bg svg {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Single-page layout — no full-height scrolling sections */
+.rsvp-page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#rsvp-error-screen {
+    position: relative;
+    z-index: 1;
+}
+
+/* Readonly invite page: fixed RSVP nav in top-right */
+.invite-readonly-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 28px 40px;
+}
+
+.invite-readonly-nav-link {
+    color: rgba(242, 244, 234, 0.75);
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+
+@media (hover: hover) {
+    .invite-readonly-nav-link:hover {
+        color: #f2f4ea;
+    }
+}
+
+/* Back-to-invitation nav link */
+#rsvp-page-nav {
+    padding: 20px 30px 0;
+}
+
+.rsvp-nav-link {
+    color: rgba(242, 244, 234, 0.55);
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    transition: color 0.2s ease;
+    letter-spacing: 0.02em;
+}
+
+@media (hover: hover) {
+    .rsvp-nav-link:hover {
+        color: #f2f4ea;
+    }
+}
+
+.rsvp-page-header {
+    width: 100%;
+    overflow: hidden;
+}
+
+.rsvp-page-bg {
+    display: block;
+    width: 100%;
+    height: 50vh;
+    min-height: 220px;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+@media (min-width: 768px) {
+    .rsvp-page-bg {
+        height: 60vh;
+        object-position: center 18%;
+    }
+}
+
+.rsvp-page-header-content {
+    text-align: center;
+    padding: 40px 40px 0;
+}
+
+.rsvp-eyebrow {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(242, 244, 234, 0.75);
+    margin: 0 0 10px 0;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.rsvp-page-title {
+    font-size: 72px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.05;
+    margin: 0 0 12px 0;
+    color: #f2f4ea;
+    font-family: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+}
+
+.rsvp-page-date {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(242, 244, 234, 0.7);
+    margin: 0;
+    font-family: 'Bodoni Moda', Georgia, serif;
+}
+
+.rsvp-page-date sup {
+    font-size: 60%;
+    vertical-align: super;
+}
+
+.rsvp-page-body {
+    flex: 1;
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 56px 0 60px;
+}
+
+.rsvp-form-heading {
+    font-size: 52px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #f2f4ea;
+    font-family: 'Bodoni Moda', Georgia, serif;
+    text-align: center;
+    margin: 0 0 32px 0;
+}
+
+.rsvp-sign-off {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(242, 244, 234, 0.7);
+    margin: 48px 0 0 0;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+@media (max-width: 768px) {
+    .rsvp-page-title {
+        font-size: 48px;
+    }
+
+    .rsvp-eyebrow {
+        font-size: 16px;
+    }
+
+    .rsvp-page-date {
+        font-size: 16px;
+    }
+
+    .rsvp-page-body {
+        padding: 36px 0 48px;
+    }
+
+    .rsvp-form-heading {
+        font-size: 38px;
+    }
+}
+
+/* Inputs shared between both wedding forms */
+.rsvp-form input[type="text"],
+.rsvp-form input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    background: rgba(242, 244, 234, 0.08);
+    border: 2px solid rgba(242, 244, 234, 0.3);
+    border-radius: 4px;
+    color: #f2f4ea;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.rsvp-form input::placeholder {
+    color: rgba(242, 244, 234, 0.5);
+}
+
+.rsvp-form input:focus {
+    outline: none;
+    border-color: #d4a030;
+    background: rgba(242, 244, 234, 0.12);
+}
+
+.rsvp-form button[type="submit"] {
+    width: 100%;
+    padding: 16px 32px;
+    background: rgba(212, 160, 48, 0.15);
+    color: #f2f4ea;
+    border: 2px solid #d4a030;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin-top: 16px;
+}
+
+@media (hover: hover) {
+    .rsvp-form button[type="submit"]:hover {
+        background: #d4a030;
+        color: #1e1f20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(212, 160, 48, 0.3);
+    }
+}
+
+/* Form field groups */
+.rsvp-field-group {
+    margin-bottom: 36px;
+    text-align: left;
+}
+
+.rsvp-field-label {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    color: #f2f4ea;
+    margin: 0 0 8px 0;
+    font-family: inherit;
+}
+
+.rsvp-field-hint {
+    font-size: 14px;
+    color: rgba(242, 244, 234, 0.55);
+    font-style: italic;
+    margin: 0 0 12px 0;
+    font-family: inherit;
+}
+
+.optional-tag {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(242, 244, 234, 0.5);
+    font-style: italic;
+    margin-left: 6px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* Attendance yes/no toggle */
+.attendance-toggle {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.attendance-option {
+    cursor: pointer;
+    flex: 1;
+    min-width: 160px;
+}
+
+.attendance-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.attendance-label {
+    display: block;
+    padding: 16px 20px;
+    border: 2px solid rgba(242, 244, 234, 0.25);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: rgba(242, 244, 234, 0.6);
+    cursor: pointer;
+}
+
+.attendance-option input[type="radio"]:checked + .yes-label {
+    border-color: #d4a030;
+    background: rgba(212, 160, 48, 0.15);
+    color: #f2f4ea;
+}
+
+.attendance-option input[type="radio"]:checked + .no-label {
+    border-color: rgba(242, 244, 234, 0.6);
+    background: rgba(242, 244, 234, 0.08);
+    color: #f2f4ea;
+}
+
+@media (hover: hover) {
+    .attendance-label:hover {
+        border-color: rgba(242, 244, 234, 0.5);
+        color: #f2f4ea;
+        background: rgba(242, 244, 234, 0.05);
+    }
+}
+
+/* Checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #d4a030;
+    flex-shrink: 0;
+}
+
+.checkbox-item span {
+    font-size: 17px;
+    color: rgba(242, 244, 234, 0.85);
+    font-family: inherit;
+}
+
+@media (hover: hover) {
+    .checkbox-item:hover {
+        background: rgba(242, 244, 234, 0.05);
+    }
+}
+
+.address-toggle-check {
+    border: 1px solid rgba(242, 244, 234, 0.15);
+    border-radius: 4px;
+    padding: 10px 14px;
+}
+
+/* Address fields side-by-side (state + postcode) */
+.address-row {
+    display: flex;
+    gap: 12px;
+}
+
+.address-row input {
+    flex: 1;
+}
+
+/* Form success state */
+.form-success {
+    text-align: center;
+}
+
+.form-success .form-title {
+    font-size: 32px;
+    color: #f2f4ea;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.form-success .form-subtitle {
+    font-size: 18px;
+    color: rgba(242, 244, 234, 0.75);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Details info box (schedule, location, dress code) */
+.rsvp-info-box {
+    background: rgba(242, 244, 234, 0.04);
+    border: 1px solid rgba(242, 244, 234, 0.12);
+    border-radius: 4px;
+    padding: 36px 40px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.rsvp-info-box p {
+    font-size: 18px;
+    color: rgba(242, 244, 234, 0.85);
+    line-height: 1.7;
+    margin: 0 0 12px 0;
+    font-family: inherit;
+}
+
+.rsvp-info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.rsvp-info-box .info-detail {
+    font-size: 22px;
+    color: #f2f4ea;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.rsvp-info-box .info-small {
+    font-size: 15px;
+    color: rgba(242, 244, 234, 0.6);
+    font-style: italic;
+}
+
+.rsvp-info-divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(242, 244, 234, 0.2);
+    margin: 24px auto;
+}
+
+/* Guest rows */
+.guest-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding: 20px;
+    background: rgba(242, 244, 234, 0.04);
+    border: 1px solid rgba(242, 244, 234, 0.1);
+    border-radius: 4px;
+}
+
+.guest-row-number {
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(242, 244, 234, 0.3);
+    min-width: 22px;
+    padding-top: 2px;
+    font-family: 'Bodoni Moda', Georgia, serif;
+}
+
+.guest-row-fields {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.guest-row-name {
+    font-size: 22px;
+    font-weight: 300;
+    color: #f2f4ea;
+    font-family: 'Bodoni Moda', Georgia, serif;
+    letter-spacing: 0.02em;
+}
+
+/* Inline attendance toggle (compact, per-row) */
+.guest-row-attendance {
+    display: flex;
+    gap: 8px;
+}
+
+.guest-attendance-option {
+    cursor: pointer;
+    flex: 1;
+}
+
+.guest-attendance-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.guest-attendance-label {
+    display: block;
+    padding: 10px 14px;
+    border: 1px solid rgba(242, 244, 234, 0.2);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    color: rgba(242, 244, 234, 0.5);
+    cursor: pointer;
+}
+
+.guest-attendance-option input[type="radio"]:checked + .yes-label {
+    border-color: #d4a030;
+    background: rgba(212, 160, 48, 0.15);
+    color: #f2f4ea;
+}
+
+.guest-attendance-option input[type="radio"]:checked + .no-label {
+    border-color: rgba(242, 244, 234, 0.5);
+    background: rgba(242, 244, 234, 0.07);
+    color: #f2f4ea;
+}
+
+@media (hover: hover) {
+    .guest-attendance-label:hover {
+        border-color: rgba(242, 244, 234, 0.45);
+        color: #f2f4ea;
+    }
+}
+
+.guest-dietary-input {
+    width: 100%;
+    padding: 11px 14px;
+    background: rgba(242, 244, 234, 0.07);
+    border: 1px solid rgba(242, 244, 234, 0.2);
+    border-radius: 4px;
+    color: #f2f4ea;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.guest-dietary-input::placeholder {
+    color: rgba(242, 244, 234, 0.38);
+}
+
+.guest-dietary-input:focus {
+    outline: none;
+    border-color: #d4a030;
+    background: rgba(242, 244, 234, 0.11);
+}
+
+/* Review: per-guest items */
+.review-guest-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Next / submit button */
+.rsvp-next-btn {
+    width: 100%;
+    padding: 16px 32px;
+    background: rgba(212, 160, 48, 0.15);
+    color: #f2f4ea;
+    border: 2px solid #d4a030;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin-top: 8px;
+}
+
+@media (hover: hover) {
+    .rsvp-next-btn:hover {
+        background: #d4a030;
+        color: #1e1f20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(212, 160, 48, 0.3);
+    }
+}
+
+/* Validation error */
+.rsvp-validation-error {
+    color: #e07a5f;
+    font-size: 14px;
+    font-style: italic;
+    margin: 8px 0 12px;
+    font-family: inherit;
+}
+
+/* Step 2: Review summary */
+.review-summary {
+    background: rgba(242, 244, 234, 0.04);
+    border: 1px solid rgba(242, 244, 234, 0.15);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.review-attendance {
+    margin-bottom: 16px;
+}
+
+.review-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+}
+
+.review-badge.attending {
+    background: rgba(212, 160, 48, 0.15);
+    border: 1px solid rgba(212, 160, 48, 0.5);
+    color: #d4a030;
+}
+
+.review-badge.regrets {
+    background: rgba(242, 244, 234, 0.06);
+    border: 1px solid rgba(242, 244, 234, 0.2);
+    color: rgba(242, 244, 234, 0.7);
+}
+
+.review-guest-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.review-guest-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px 16px;
+    background: rgba(242, 244, 234, 0.04);
+    border-radius: 4px;
+}
+
+.review-guest-name {
+    font-size: 18px;
+    color: #f2f4ea;
+    font-weight: 400;
+}
+
+.review-guest-dietary {
+    font-size: 14px;
+    color: rgba(242, 244, 234, 0.55);
+    font-style: italic;
+}
+
+.review-regrets-name {
+    font-size: 18px;
+    color: #f2f4ea;
+    margin: 8px 0 0;
+}
+
+/* Step nav (back + submit) */
+.step-nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    color: rgba(242, 244, 234, 0.5);
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+@media (hover: hover) {
+    .btn-back:hover {
+        color: #f2f4ea;
+    }
+}
+
+.step-nav .rsvp-next-btn {
+    flex: 1;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .rsvp-info-box {
+        padding: 24px 20px;
+    }
+
+    .attendance-toggle {
+        flex-direction: column;
+    }
+
+    .attendance-option {
+        min-width: unset;
+    }
+
+    .address-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .guest-row {
+        gap: 8px;
+        padding: 12px;
+    }
+}
+
+/* ===== RSVP animated background: content box overlays ===== */
+.rsvp-page .rsvp-info-box,
+.rsvp-page .guest-row,
+.rsvp-page .review-summary {
+    background: rgba(30, 31, 32, 0.80);
+    border-color: rgba(242, 244, 234, 0.18);
+    backdrop-filter: blur(4px);
+}
