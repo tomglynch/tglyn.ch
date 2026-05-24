@@ -946,11 +946,32 @@ body.wedding-page {
    RSVP Page Styles
    ============================================= */
 
+/* Animated background (RSVP page only) */
+#rsvp-animated-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#rsvp-animated-bg svg {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
 /* Single-page layout — no full-height scrolling sections */
 .rsvp-page {
+    position: relative;
+    z-index: 1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+#rsvp-error-screen {
+    position: relative;
+    z-index: 1;
 }
 
 /* Readonly invite page: fixed RSVP nav in top-right */
@@ -1011,7 +1032,14 @@ body.wedding-page {
     height: 50vh;
     min-height: 220px;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 20%;
+}
+
+@media (min-width: 768px) {
+    .rsvp-page-bg {
+        height: 60vh;
+        object-position: center 18%;
+    }
 }
 
 .rsvp-page-header-content {
@@ -1634,4 +1662,13 @@ body.wedding-page {
         gap: 8px;
         padding: 12px;
     }
+}
+
+/* ===== RSVP animated background: content box overlays ===== */
+.rsvp-page .rsvp-info-box,
+.rsvp-page .guest-row,
+.rsvp-page .review-summary {
+    background: rgba(30, 31, 32, 0.80);
+    border-color: rgba(242, 244, 234, 0.18);
+    backdrop-filter: blur(4px);
 }

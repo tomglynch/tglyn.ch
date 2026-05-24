@@ -151,6 +151,7 @@ Best regards,
     // Confetti when reaching bottom
     let confettiCanvas = null;
     let myConfetti = null;
+    let confettiShapes = null;
     let currentConfettiPieces = 0;
     const PARTICLE_LIFETIME_MS = 6700; // ~400 ticks at 60fps
 
@@ -169,6 +170,11 @@ Best regards,
         confettiCanvas.style.zIndex = '99999';
         document.body.appendChild(confettiCanvas);
         myConfetti = confetti.create(confettiCanvas, { resize: true });
+        confettiShapes = {
+          heart:   confetti.shapeFromPath({ path: 'M 0,3.5 C -0.5,2.5 -3,2.5 -3,0 C -3,-2 -1.5,-3 0,-1.5 C 1.5,-3 3,-2 3,0 C 3,2.5 0.5,2.5 0,3.5 Z' }),
+          diamond: confetti.shapeFromPath({ path: 'M 0,-4 L 3.5,0 L 0,4 L -3.5,0 Z' }),
+          circle:  'circle'
+        };
       }
 
       // Fire bursts with randomized duration (700-1300ms, avg 1000ms)
@@ -180,30 +186,22 @@ Best regards,
         frameCount++;
         // Only fire every 5th frame to avoid heaps at once
         if (frameCount % 5 === 0) {
-          // Randomize particle count per side (12-28, avg 20)
-          var leftCount = 12 + Math.floor(Math.random() * 17);
-          var rightCount = 12 + Math.floor(Math.random() * 17);
-          var burstTotal = leftCount + rightCount;
+          // Fixed equal count per shape per side
+          var perShape = 7;
+          var burstTotal = perShape * 3 * 2;
 
-          myConfetti({
-            particleCount: leftCount,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0, y: 0.6 },
-            colors: ['#c68601', '#a95100ff', '#c1c1c1ff', '#ccff00ff', '#e3a807'],
-            ticks: 400,
-            gravity: 0.6,
-            decay: 0.94
-          });
-          myConfetti({
-            particleCount: rightCount,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1, y: 0.6 },
-            colors: ['#c68601', '#a95100ff', '#c1c1c1ff', '#ccff00ff', '#e3a807'],
-            ticks: 400,
-            gravity: 0.6,
-            decay: 0.94
+          var shapeList = [
+            { shape: confettiShapes.heart,   color: '#D63F7B', scalar: 0.7  },
+            { shape: confettiShapes.diamond, color: '#2462B4', scalar: 0.7  },
+            { shape: confettiShapes.circle,  color: '#E8A93D', scalar: 1.05 }
+          ];
+          shapeList.forEach(function(s) {
+            myConfetti({ particleCount: perShape, angle: 60,  spread: 55, origin: { x: 0, y: 0.6 },
+                         colors: [s.color], shapes: [s.shape], scalar: s.scalar,
+                         ticks: 400, gravity: 0.6, decay: 0.94 });
+            myConfetti({ particleCount: perShape, angle: 120, spread: 55, origin: { x: 1, y: 0.6 },
+                         colors: [s.color], shapes: [s.shape], scalar: s.scalar,
+                         ticks: 400, gravity: 0.6, decay: 0.94 });
           });
           currentConfettiPieces += burstTotal;
           updateConfettiCounter();
