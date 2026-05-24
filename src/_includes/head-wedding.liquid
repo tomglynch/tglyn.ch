@@ -431,23 +431,33 @@ Best regards,
       emailForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Validate at least one email is provided
+        var s = new URLSearchParams(window.location.search).get('s');
+        var rsvpUrl = '/Milla&TomsWedding/RSVP/' + (s ? '?s=' + encodeURIComponent(s) : '');
+
         const emailFieldsContainer = document.getElementById('email-fields');
         const emailInputs = emailFieldsContainer ? emailFieldsContainer.querySelectorAll('.guest-email-input') : [];
-        const hasAtLeastOneEmail = Array.from(emailInputs).some(function(input) {
+        const filledInputs = Array.from(emailInputs).filter(function(input) {
           return input.value.trim() !== '';
         });
 
-        if (emailInputs.length > 0 && !hasAtLeastOneEmail) {
-          // Show validation message
+        if (filledInputs.length === 0) {
+          window.location.href = rsvpUrl;
+          return;
+        }
+
+        const invalidInputs = filledInputs.filter(function(input) {
+          return !input.checkValidity();
+        });
+
+        if (invalidInputs.length > 0) {
           var errorMsg = emailFieldsContainer.querySelector('.email-validation-error');
           if (!errorMsg) {
             errorMsg = document.createElement('p');
             errorMsg.className = 'email-validation-error';
-            errorMsg.textContent = 'Please provide at least one email address';
             emailFieldsContainer.appendChild(errorMsg);
           }
-          emailInputs.forEach(function(input) { input.classList.add('needs-input'); });
+          errorMsg.textContent = 'Please enter a valid email address';
+          invalidInputs.forEach(function(input) { input.classList.add('needs-input'); });
           return;
         }
 
@@ -461,8 +471,7 @@ Best regards,
         })
         .then(function(response) {
           if (response.ok) {
-            var s = new URLSearchParams(window.location.search).get('s');
-            window.location.href = '/Milla&TomsWedding/RSVP/' + (s ? '?s=' + encodeURIComponent(s) : '');
+            window.location.href = rsvpUrl;
           } else {
             showFormError();
           }
