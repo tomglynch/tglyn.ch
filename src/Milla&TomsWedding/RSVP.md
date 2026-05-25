@@ -45,7 +45,7 @@ tags: []
       <div class="rsvp-info-divider"></div>
       <p>Our first location for the day will be sent to your email closer to the date. We will then continue on for lunch at <strong>Hotel Railway on Albert St in Brunswick</strong>. Finally, at sunset we'll stroll down to Brunswick West to continue the celebrations at our home at 133 Pearson St!</p>
       <div class="rsvp-info-divider"></div>
-      <p class="info-detail">Dress code: Formal and Fun!</p>
+      <p class="info-detail">Dress code: Semi-formal but fully-fun!</p>
       <p class="info-small">With shoes you can walk &amp; dance in</p>
       <div class="rsvp-info-divider"></div>
       <p class="info-small">Your presence is truly the greatest gift. If you'd like to contribute to our future adventures together, there will be a wishing well at our home.</p>
