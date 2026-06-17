@@ -43,7 +43,7 @@ tags: []
     <div class="rsvp-info-box">
       <p class="info-detail">Celebrations kick off at 12:30pm</p>
       <div class="rsvp-info-divider"></div>
-      <p>Our first location for the day will be sent to your email closer to the date. We will then continue on for lunch at <strong>Hotel Railway on Albert St in Brunswick</strong>. Finally, at sunset we'll stroll down to Brunswick West to continue the celebrations at our home at 133 Pearson St!</p>
+      <p>Our first location for the day will be sent to your email closer to the date. We will then continue on for lunch at <strong>Hotel Railway on Albert St in Brunswick</strong>. Finally, before sunset we'll stroll down to Brunswick West to continue the celebrations at our home at 133 Pearson St!</p>
       <div class="rsvp-info-divider"></div>
       <p class="info-detail">Dress code: Semi-formal but fully-fun!</p>
       <p class="info-small">With shoes you can walk &amp; dance in</p>
