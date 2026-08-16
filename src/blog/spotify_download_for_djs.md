@@ -7,6 +7,8 @@ popularity: 3
 published: true
 ---
 
+*Updated 2026: this post now uses `uv` to install everything — no more Homebrew, no more Python/pip headaches, and it works on older Macs too.*
+
 Welcome, music enthusiasts! This guide is designed to help you easily download Spotify playlists to your Mac using `spotdl spotify-downloader`, even if you're new to using command-line tools.
 
 ## Understanding the Basics
@@ -20,37 +22,24 @@ Welcome, music enthusiasts! This guide is designed to help you easily download S
 
 ## Installation: Setting up the Essentials
 
-First, let's install the necessary tools. We will install **Homebrew** first, as it simplifies the installation of **FFmpeg**.
+First, let's install the necessary tools. There are only two steps, and both are quick.
 
-### 1. Install Homebrew (The Package Manager)
-Homebrew simplifies the installation of software on Mac. Run this in terminal by pasting it in and pressing enter:
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-````
-
-  - Follow the on-screen instructions. At the end of the installation, Homebrew will instruct you what to do to add it to your PATH. Copy each of the two commands and paste them in Terminal and hit enter. They will likely look like this (except with your username instead of `your_username`):
-    ```bash
-    echo 'eval "$(/usr/local/bin/brew shellenv)"' >> /Users/your_username/.profile
-    eval "$(/usr/local/bin/brew shellenv)"
-    ```
-
-### 2\. Install FFmpeg (The Audio Processor)
-
-FFmpeg is required by `spotdl` for processing audio files. Install it using Homebrew (again paste and hit enter in terminal):
+### 1. Install uv (The Tool Manager)
+uv installs and manages command-line programs for you — it even brings its own Python, so it doesn't matter what's already on your Mac. Run this in terminal by pasting it in and pressing enter:
 
 ```bash
-brew install ffmpeg
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 3\. Install Python 3 (If needed) & spotDL
+  - When it finishes, close and reopen Terminal so your Mac can find the newly installed tools.
 
-Python 3 is usually pre-installed on modern Macs, as is its package manager, `pip3`. If you need to install Python, you can find it here: [Python](https://www.python.org/downloads/).
+### 2\. Install spotDL (The Downloader)
 
-Let's get `spotdl spotify-downloader` set up on your Mac (in terminal):
+Let's get `spotdl spotify-downloader` set up on your Mac with uv, then have it fetch its own private copy of FFmpeg (the audio processor it needs) — no Homebrew, no Xcode tools required. Paste each line and hit enter in terminal:
 
 ```bash
-pip3 install spotdl
+uv tool install spotdl
+spotdl --download-ffmpeg
 ```
 
   - More deets here: [spotDL GitHub](https://github.com/spotDL/spotify-downloader)
@@ -79,29 +68,20 @@ Now you're ready to download your Spotify playlists:
   - **Command Not Found**: Ensure `spotdl` is installed and restart Terminal.
   - **Download Problems**: Check your internet connection or playlist link.
 
-### **Issue: Resolving Future Upgrade Problems (`KeyError: 'header'`)**
+### Downloads breaking out of nowhere?
 
-The underlying issue for most download problems is that YouTube frequently updates how it serves audio and video data, which often breaks external tools like `spotdl` until their developers release a fix. You'll know this is the issue if you get a Python error message that includes **`KeyError: 'header'`**.
+If `spotdl` has been working fine and then suddenly stops, the likely cause is that Spotify or YouTube has changed the way they do things, which breaks external tools like `spotdl` until their developers release a fix. The fix is to update your tools — this one command updates everything uv has installed:
 
-This error means your installed versions are too old to understand YouTube's new structure. While running a simple `pip3 install -U spotdl` *should* fix it, sometimes **`pip` caches an older version** and fails to get the proper update.
+```bash
+uv tool upgrade --all
+```
 
-To solve this during future upgrades, you need to clear your `pip` cache and then re-run the installation command:
+If it's still broken after updating, reinstall `spotdl` from scratch:
 
-1.  **Clear the `pip` Cache:**
-    This command clears all locally cached package files, forcing `pip` to download everything fresh from the internet.
-
-    ```bash
-    pip3 cache purge
-    ```
-
-2.  **Re-run the Installation/Update Command:**
-    Now, run the update command one more time to fetch and install the latest available versions, explicitly targeting `spotdl` and the package that caused the error, `ytmusicapi`.
-
-    ```bash
-    pip3 install -U spotdl ytmusicapi --break-system-packages
-    ```
-
-    *Note: The `--break-system-packages` flag is often needed on modern macOS systems to allow installation outside of the system's protected Python environment.*
+```bash
+uv tool uninstall spotdl
+uv tool install spotdl
+```
 
 ## Conclusion
 
