@@ -1,0 +1,15 @@
+<nav class="wedding-nav">
+  <a href="/Milla&TomsWedding/invitation/" class="wedding-nav-link{% if page.url contains '/invitation/' %} current{% endif %}">Invitation</a>
+  <a href="/Milla&TomsWedding/RSVP/" class="wedding-nav-link{% if page.url contains '/RSVP/' %} current{% endif %}">RSVP</a>
+  <a href="/Milla&TomsWedding/the-day/" class="wedding-nav-link{% if page.url contains '/the-day/' %} current{% endif %}">The Day</a>
+</nav>
+<script>
+(function() {
+  // Carry the personalised ?s= link across pages
+  var s = new URLSearchParams(window.location.search).get('s');
+  if (!s) return;
+  document.querySelectorAll('.wedding-nav-link').forEach(function(a) {
+    a.href += '?s=' + encodeURIComponent(s);
+  });
+})();
+</script>

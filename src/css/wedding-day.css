@@ -1,0 +1,506 @@
+/* =============================================
+   The Day page: sky goes from noon to night as you scroll
+   ============================================= */
+
+:root {
+    --day-on-bg: #fff;
+    --day-on-bg-muted: rgba(255, 255, 255, 0.9);
+    --day-on-bg-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    --day-card-bg: rgba(255, 251, 242, 0.93);
+    --day-card-border: rgba(74, 36, 24, 0.15);
+    --day-card-text: #4A3428;
+    --day-card-strong: #2A1A12;
+    --day-card-muted: rgba(74, 52, 40, 0.65);
+    --day-accent: #B8650F;
+    --day-line: rgba(74, 36, 24, 0.25);
+    --day-dot: #4A2418;
+}
+
+/* ===== Text sitting straight on the sky ===== */
+.day-page .rsvp-page-title,
+.day-page .rsvp-form-heading {
+    color: var(--day-on-bg);
+    text-shadow: var(--day-on-bg-shadow);
+}
+
+.day-page .rsvp-eyebrow,
+.day-page .rsvp-page-date,
+.day-page .rsvp-sign-off,
+.day-intro {
+    color: var(--day-on-bg-muted);
+    text-shadow: var(--day-on-bg-shadow);
+}
+
+/* No header photo, so the title sits in the open noon sky */
+.day-page .day-header {
+    padding-top: 22vh;
+}
+
+.day-page .day-greeting {
+    margin: 18px 0 0 0;
+}
+
+.day-calendar {
+    margin: 28px 0 0 0;
+}
+
+.day-calendar .calendar-button {
+    font-family: inherit;
+    cursor: pointer;
+    text-shadow: var(--day-on-bg-shadow);
+}
+
+.day-intro {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Playfair Display', Georgia, serif;
+    margin: 0 0 48px 0;
+}
+
+/* Nav is light text, so give it a backing over the bright noon sky */
+.day-page .wedding-nav {
+    top: 12px;
+    right: 12px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: rgba(20, 22, 26, 0.55);
+    backdrop-filter: blur(6px);
+}
+
+/* ===== Cards ===== */
+.day-page .rsvp-info-box {
+    background: var(--day-card-bg);
+    border-color: var(--day-card-border);
+}
+
+.day-page .rsvp-info-box p {
+    color: var(--day-card-text);
+}
+
+.day-page .rsvp-info-box .info-detail {
+    color: var(--day-card-strong);
+}
+
+.day-page .rsvp-info-box .info-small {
+    color: var(--day-card-muted);
+}
+
+.day-page .rsvp-info-divider {
+    background: var(--day-line);
+}
+
+.day-page .rsvp-info-box .day-gift {
+    font-style: italic;
+}
+
+.day-page .day-vote-box {
+    border-color: rgba(232, 169, 61, 0.7);
+}
+
+/* ===== Timeline ===== */
+.day-timeline {
+    list-style: none;
+    margin: 0 0 64px 0;
+    padding: 32px 28px 32px 56px;
+    background-color: var(--day-card-bg);
+    background-image: linear-gradient(var(--day-line), var(--day-line));
+    background-size: 1px calc(100% - 64px);
+    background-position: 27px 32px;
+    background-repeat: no-repeat;
+    border: 1px solid var(--day-card-border);
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+.day-timeline li {
+    position: relative;
+    margin: 0 0 40px 0;
+}
+
+.day-timeline li:last-child {
+    margin-bottom: 0;
+}
+
+.day-timeline li::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--day-dot);
+}
+
+/* Journeys get an amber dot; they're part of the day, not gaps */
+.day-timeline .day-journey {
+    padding: 20px 0;
+}
+
+.day-timeline .day-journey::before {
+    background: #E8A93D;
+    top: 26px;
+}
+
+/* Times are the bit people most need, so they're bold and a step up in size */
+.day-timeline .day-time {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--day-card-muted);
+    margin: 0 0 4px 0;
+}
+
+.day-title {
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--day-card-strong);
+    font-family: 'Bodoni Moda', Georgia, serif;
+    margin: 0 0 8px 0;
+}
+
+.day-timeline p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--day-card-text);
+    margin: 0 0 8px 0;
+}
+
+.day-timeline .day-place {
+    color: var(--day-card-strong);
+    font-weight: 500;
+}
+
+.day-nearby {
+    margin: 0 0 12px 0;
+    padding: 0 0 0 20px;
+}
+
+.day-nearby li {
+    margin: 0 0 4px 0;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--day-card-text);
+}
+
+/* The timeline's dot markers are on the li elements, so keep them off this nested list */
+.day-timeline .day-nearby li::before {
+    content: none;
+}
+
+.day-map {
+    margin: 12px 0;
+    border: 1px solid var(--day-card-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.day-map iframe {
+    display: block;
+    width: 100%;
+    height: 260px;
+    border: 0;
+}
+
+.day-map-link {
+    color: var(--day-accent);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+@media (hover: hover) {
+    .day-map-link:hover {
+        text-decoration: underline;
+    }
+}
+
+.day-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 16px 0 0 0;
+    border: 6px solid #fff;
+    border-radius: 2px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: rotate(1.5deg);
+}
+
+.day-photo-tilt {
+    transform: rotate(-2deg);
+}
+
+/* Tall photos would otherwise run the full card width and dwarf everything around them */
+.day-photo-portrait {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.day-timeline .day-caption {
+    margin-top: 12px;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--day-card-muted);
+    text-align: center;
+}
+
+/* Fade and lift in as each part scrolls into view. Only applied when JS is running */
+.day-reveal-on .day-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.day-reveal-on .day-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ===== Train chugging along its track ===== */
+.day-train-track {
+    position: relative;
+    overflow: hidden;
+    height: 52px;
+    margin: 4px 0 12px 0;
+    border-bottom: 3px double var(--day-line);
+}
+
+.day-train {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 44px;
+    width: auto;
+    animation: day-train-run 7s linear infinite, day-train-bob 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes day-train-run {
+    from { transform: translateX(-110%); }
+    to { transform: translateX(100vw); }
+}
+
+@keyframes day-train-bob {
+    from { margin-bottom: 0; }
+    to { margin-bottom: 2px; }
+}
+
+/* ===== Lunch: glasses clinking ===== */
+.day-glasses {
+    display: block;
+    width: 110px;
+    height: auto;
+    margin: 4px 0 8px 0;
+    overflow: visible;
+}
+
+.day-glass {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: day-clink-l 2.6s ease-in-out infinite;
+}
+
+.day-glass-r {
+    animation-name: day-clink-r;
+}
+
+.day-sparkle {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+    animation: day-sparkle 2.6s ease-in-out infinite;
+}
+
+@keyframes day-clink-l {
+    0%, 25%, 75%, 100% { transform: rotate(0deg); }
+    45%, 55% { transform: rotate(9deg); }
+}
+
+@keyframes day-clink-r {
+    0%, 25%, 75%, 100% { transform: rotate(0deg); }
+    45%, 55% { transform: rotate(-9deg); }
+}
+
+@keyframes day-sparkle {
+    0%, 42% { opacity: 0; transform: scale(0.2); }
+    50% { opacity: 1; transform: scale(1.2) rotate(20deg); }
+    65%, 100% { opacity: 0; transform: scale(0.2); }
+}
+
+/* ===== Walk home: petals drifting down, clipped here so the timeline dot isn't ===== */
+.day-petals {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.day-petals span {
+    position: absolute;
+    top: -20px;
+    width: 12px;
+    height: 16px;
+    border-radius: 80% 0 80% 0;
+    background: #D63F7B;
+    opacity: 0.85;
+    animation: day-petal-fall 9s linear infinite;
+}
+
+.day-petals span:nth-child(even) { background: #E8A93D; width: 10px; height: 13px; }
+.day-petals span:nth-child(1) { left: 5%;  animation-delay: 0s; }
+.day-petals span:nth-child(2) { left: 18%; animation-delay: 3.5s; animation-duration: 11s; }
+.day-petals span:nth-child(3) { left: 32%; animation-delay: 1.2s; }
+.day-petals span:nth-child(4) { left: 47%; animation-delay: 6s; animation-duration: 10s; }
+.day-petals span:nth-child(5) { left: 60%; animation-delay: 2.4s; animation-duration: 12s; }
+.day-petals span:nth-child(6) { left: 72%; animation-delay: 7.5s; }
+.day-petals span:nth-child(7) { left: 84%; animation-delay: 4.6s; animation-duration: 10s; }
+.day-petals span:nth-child(8) { left: 94%; animation-delay: 0.8s; animation-duration: 13s; }
+
+@keyframes day-petal-fall {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    50%  { transform: translate(24px, 50vh) rotate(180deg); }
+    100% { transform: translate(-12px, 100vh) rotate(360deg); }
+}
+
+.day-walk > *:not(.day-petals) {
+    position: relative;
+}
+
+/* ===== Finale: open space at the end to see the bokeh ===== */
+.day-finale {
+    position: relative;
+    z-index: 1;
+    min-height: 85vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px 0 0 0;
+}
+
+.day-finale .rsvp-sign-off {
+    margin: 0;
+}
+
+/* ===== Sky layer behind everything ===== */
+.day-sky {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: linear-gradient(var(--sky-top, #1F5FA8), var(--sky-bottom, #4E8FCB));
+}
+
+.day-stars {
+    position: absolute;
+    inset: 0;
+    opacity: var(--stars-opacity, 0);
+}
+
+.day-stars i {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    animation: day-twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes day-twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+/* Soft out-of-focus party lights that fade in at the end of the night */
+.day-bokeh {
+    position: absolute;
+    inset: 0;
+    opacity: var(--bokeh-opacity, 0);
+}
+
+/* Flat discs with a faint bright rim, like a lens out of focus. Soft ones sit further back */
+.day-bokeh i {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--c), 0.55) 0 62%, rgba(var(--c), 0.8) 67%, rgba(var(--c), 0) 71%);
+    filter: blur(2px);
+    mix-blend-mode: screen;
+    animation: day-bokeh-drift 20s ease-in-out infinite alternate;
+}
+
+.day-bokeh i.soft {
+    filter: blur(14px);
+    opacity: 0.7;
+}
+
+/* Bright blurry glow along the bottom, like the lights nearest the lens */
+.day-bokeh::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -12vh;
+    height: 28vh;
+    background: linear-gradient(90deg, rgba(24, 200, 216, 0.35), rgba(255, 230, 200, 0.55) 40%, rgba(255, 200, 50, 0.4) 65%, rgba(122, 60, 255, 0.35));
+    filter: blur(40px);
+}
+
+@keyframes day-bokeh-drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(var(--dx), var(--dy)); }
+}
+
+/* Laser show at the bottom of the page, drawn over everything */
+.day-laser-show {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .day-train,
+    .day-petals span,
+    .day-glass,
+    .day-sparkle,
+    .day-stars i,
+    .day-bokeh i {
+        animation: none;
+    }
+
+    .day-petals,
+    .day-sparkle {
+        display: none;
+    }
+
+    .day-train {
+        left: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .day-title {
+        font-size: 24px;
+    }
+
+    .day-intro {
+        font-size: 17px;
+    }
+
+    .day-timeline {
+        padding: 24px 16px 24px 40px;
+        background-position: 22px 24px;
+        background-size: 1px calc(100% - 48px);
+    }
+
+    .day-timeline li::before {
+        left: -24px;
+    }
+
+    .day-page .wedding-nav {
+        padding: 8px 14px;
+    }
+}

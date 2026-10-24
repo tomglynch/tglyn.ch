@@ -3,16 +3,7 @@ layout: body-wedding.liquid
 ---
 
 {% if invite_mode == 'readonly' %}
-<div class="invite-readonly-nav">
-  <a href="#" id="readonly-rsvp-link" class="invite-readonly-nav-link">RSVP &#8594;</a>
-</div>
-<script>
-(function() {
-  var s = new URLSearchParams(window.location.search).get('s');
-  var link = document.getElementById('readonly-rsvp-link');
-  if (link) link.href = '/Milla&TomsWedding/RSVP/' + (s ? '?s=' + encodeURIComponent(s) : '');
-})();
-</script>
+{% include components/wedding-nav %}
 {% endif %}
 
 <!-- Error message for missing/invalid personalization -->

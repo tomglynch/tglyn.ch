@@ -974,50 +974,49 @@ body.wedding-page {
     z-index: 1;
 }
 
-/* Readonly invite page: fixed RSVP nav in top-right */
-.invite-readonly-nav {
+/* Shared nav across invitation, RSVP and The Day: fixed top-right */
+.wedding-nav {
     position: fixed;
     top: 0;
     right: 0;
     z-index: 1000;
-    padding: 28px 40px;
+    padding: 24px 36px;
+    display: flex;
+    gap: 22px;
 }
 
-.invite-readonly-nav-link {
-    color: rgba(242, 244, 234, 0.75);
+.wedding-nav-link {
+    color: rgba(242, 244, 234, 0.7);
     font-size: 15px;
     text-decoration: none;
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     letter-spacing: 0.03em;
     transition: color 0.2s ease;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+}
+
+.wedding-nav-link.current {
+    color: #f2f4ea;
+    border-bottom-color: #E8A93D;
 }
 
 @media (hover: hover) {
-    .invite-readonly-nav-link:hover {
+    .wedding-nav-link:hover {
         color: #f2f4ea;
     }
 }
 
-/* Back-to-invitation nav link */
-#rsvp-page-nav {
-    padding: 20px 30px 0;
-}
+@media (max-width: 768px) {
+    .wedding-nav {
+        padding: 14px 16px;
+        gap: 16px;
+    }
 
-.rsvp-nav-link {
-    color: rgba(242, 244, 234, 0.55);
-    font-size: 14px;
-    text-decoration: none;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    transition: color 0.2s ease;
-    letter-spacing: 0.02em;
-}
-
-@media (hover: hover) {
-    .rsvp-nav-link:hover {
-        color: #f2f4ea;
+    .wedding-nav-link {
+        font-size: 14px;
     }
 }
 
@@ -1671,4 +1670,16 @@ body.wedding-page {
     background: rgba(30, 31, 32, 0.80);
     border-color: rgba(242, 244, 234, 0.18);
     backdrop-filter: blur(4px);
+}
+
+/* RSVP success: link through to The Day */
+.rsvp-day-link {
+    color: #E8A93D;
+    text-decoration: none;
+}
+
+@media (hover: hover) {
+    .rsvp-day-link:hover {
+        text-decoration: underline;
+    }
 }
