@@ -72,8 +72,8 @@ tags: []
         <ul class="day-nearby">
           <li>Royal Park Station (Upfield line)</li>
           <li>The Melbourne Zoo or Royal Park Station tram stops (route 58)</li>
-          <li>The zoo's back gate and car park</li>
-          <li>The State Netball &amp; Hockey Centre car park</li>
+          <li>The zoo's back gate car park, the best place to park if you're driving</li>
+          <li>The State Netball &amp; Hockey Centre, handy for drop-offs</li>
         </ul>
         <p><a class="day-map-link" href="https://www.google.com/maps/search/?api=1&query=-37.782495,144.948845" target="_blank" rel="noopener">Open in Google Maps &#8594;</a></p>
       </li>
