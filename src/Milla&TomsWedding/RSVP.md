@@ -34,7 +34,7 @@ tags: []
   <div class="rsvp-page-header-content">
     <p class="rsvp-eyebrow"><span id="rsvp-hero-names"></span>, please join us in celebrating</p>
     <h1 class="rsvp-page-title">Our Love</h1>
-    <p class="rsvp-page-date">Saturday, November 28<sup>th</sup> 2026</p>
+    <p class="rsvp-page-date">Saturday 28<sup>th</sup> November 2026</p>
     <p class="rsvp-eyebrow" style="margin-top: 14px;">RSVP below</p>
   </div>
 
