@@ -475,10 +475,14 @@
 }
 
 /* Laser show at the bottom of the page, drawn over everything */
-/* Sized by inset alone: on iPhone 100vh is taller than the visible area, which stretched it */
+/* 100% of the visible area, not 100vh (taller than the screen on iPhone, which stretched it).
+   It needs an explicit size: a canvas ignores inset and shows at its pixel size, which at 2x
+   pushed the right-hand cannon off screen */
 .day-laser-show {
     position: fixed;
     inset: 0;
+    width: 100%;
+    height: 100%;
     z-index: 99999;
     pointer-events: none;
 }
