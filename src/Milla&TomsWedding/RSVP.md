@@ -41,9 +41,10 @@ tags: []
   <div class="rsvp-page-body">
 
     <div class="rsvp-info-box">
-      <p class="info-detail">Celebrations kick off at 12:30pm</p>
+      <p class="info-detail">Arrive 12:15pm for a 12:30pm start</p>
       <div class="rsvp-info-divider"></div>
-      <p>Our first location for the day will be sent to your email closer to the date. We will then continue on for lunch at <strong>Hotel Railway on Albert St in Brunswick</strong>. Finally, before sunset we'll stroll down to Brunswick West to continue the celebrations at our home at 133 Pearson St!</p>
+      <p>We'll begin in <strong>Royal Park</strong>, catch the train to a long lunch at <strong>Hotel Railway on Albert St in Brunswick</strong>, then before sunset stroll down to Brunswick West to continue the celebrations at our home at 133 Pearson St!</p>
+      <p><a href="/Milla&TomsWedding/the-day/" id="rsvp-plan-link" class="rsvp-day-link">See the full plan for the day &#8594;</a></p>
       <div class="rsvp-info-divider"></div>
       <p class="info-detail">Dress code: Semi-formal but fully-fun!</p>
       <p class="info-small">With shoes you can walk &amp; dance in</p>
@@ -182,6 +183,7 @@ tags: []
   var heroNames = document.getElementById('rsvp-hero-names');
   if (heroNames) heroNames.textContent = decoded;
   document.getElementById('rsvp-day-link').href += '?s=' + encodeURIComponent(encoded);
+  document.getElementById('rsvp-plan-link').href += '?s=' + encodeURIComponent(encoded);
 
   // ── Build guest rows ─────────────────────────────────────────
   function escapeHtml(s) {

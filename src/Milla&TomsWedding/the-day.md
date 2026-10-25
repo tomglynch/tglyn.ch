@@ -2,7 +2,7 @@
 layout: pages/page-wedding.liquid
 title: Milla & Tom's Wedding — The Day
 blurb: Times, places and the plan for Milla & Tom's Wedding
-image: /Milla&TomsWedding/images/puglia.jpg
+image: /Milla&TomsWedding/images/ceremony-preview.jpg
 excludeFromSitemap: true
 published: false
 tags: []
