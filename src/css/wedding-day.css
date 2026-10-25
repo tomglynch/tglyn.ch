@@ -58,16 +58,6 @@
     margin: 0 0 48px 0;
 }
 
-/* Nav is light text, so give it a backing over the bright noon sky */
-.day-page .wedding-nav {
-    top: 12px;
-    right: 12px;
-    padding: 10px 20px;
-    border-radius: 999px;
-    background: rgba(20, 22, 26, 0.55);
-    backdrop-filter: blur(6px);
-}
-
 /* ===== Cards ===== */
 /* The cards are nearly opaque, so the shared stylesheet's backdrop blur isn't worth its cost on phones */
 .day-page .rsvp-info-box {
@@ -395,17 +385,36 @@
     background: linear-gradient(var(--sky-top, #1F5FA8), var(--sky-bottom, #4E8FCB));
 }
 
+/* Night layers stay out of the page until the scroll script switches them on */
+.day-stars,
+.day-bokeh {
+    display: none;
+}
+
+.day-sky.stars-on .day-stars,
+.day-sky.bokeh-on .day-bokeh {
+    display: block;
+}
+
 .day-stars {
     position: absolute;
     inset: 0;
     opacity: var(--stars-opacity, 0);
 }
 
+/* Each dot carries half the stars as box-shadows; the two twinkle out of step */
 .day-stars i {
     position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 2px;
     border-radius: 50%;
-    background: #fff;
     animation: day-twinkle 4s ease-in-out infinite alternate;
+}
+
+.day-stars i + i {
+    animation-delay: -2s;
 }
 
 @keyframes day-twinkle {
@@ -457,11 +466,10 @@
 }
 
 /* Laser show at the bottom of the page, drawn over everything */
+/* Sized by inset alone: on iPhone 100vh is taller than the visible area, which stretched it */
 .day-laser-show {
     position: fixed;
     inset: 0;
-    width: 100vw;
-    height: 100vh;
     z-index: 99999;
     pointer-events: none;
 }
@@ -503,9 +511,5 @@
 
     .day-timeline li::before {
         left: -24px;
-    }
-
-    .day-page .wedding-nav {
-        padding: 8px 14px;
     }
 }
