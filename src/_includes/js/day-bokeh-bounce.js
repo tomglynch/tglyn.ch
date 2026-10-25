@@ -1,5 +1,5 @@
-// Milla's idea: at the end of The Day page the bokeh discs come alive and bounce off the edges of the
-// screen like party lights, flaring brighter as they hit a wall. Scrolling back up glides them home
+// Milla's idea: at the end of The Day page the bokeh discs come alive and drift around, bouncing off
+// the edges of the screen like party lights. Scrolling back up glides them home
 (function() {
   var layer = document.querySelector('.day-bokeh');
   if (!layer) return;
@@ -7,6 +7,9 @@
   var raf = null, mode = null, last, returnStart, runStart;
   // Seconds to ease up to full speed, so the discs gather pace rather than jumping into motion
   var RAMP = 2;
+  // Narrow screens get side walls out past the edges, as wide as a laptop screen, so discs drift
+  // off and back rather than bouncing off the sides of a phone constantly
+  var MIN_ROOM = 900;
 
   function rnd(a, b) { return a + Math.random() * (b - a); }
 
@@ -29,12 +32,9 @@
         y: r.top - origin.top,
         vx: Math.cos(a) * speed,
         vy: Math.sin(a) * speed,
-        flash: 0,
         duration: el.style.animationDuration,
         left: el.style.left,
-        top: el.style.top,
-        // Flares lift opacity to full, which the compositor handles without repainting
-        base: el.classList.contains('soft') ? 0.7 : 0.75
+        top: el.style.top
       };
     });
     // Switch to absolute positioning in the same frame, or each disc flashes at the top-left corner
@@ -55,7 +55,6 @@
       d.el.style.left = d.left;
       d.el.style.top = d.top;
       d.el.style.transform = '';
-      d.el.style.opacity = '';
     });
     dots = [];
     mode = null;
@@ -63,18 +62,14 @@
   }
 
   // Turn back at the edges without snapping position: many discs start partly off screen, and
-  // snapping them all in at once (with a flare) looked like a flash. They only flare on a real
-  // wall hit, once they've been fully on screen
+  // snapping them all in at once looked like a jump
   function walls(d, W, H) {
     var p = pad(d);
-    var minX = -p, maxX = W - d.size + p, minY = -p, maxY = H - d.size + p;
-    var hit = false;
-    if (d.x < minX && d.vx < 0) { d.vx = -d.vx; hit = true; }
-    if (d.x > maxX && d.vx > 0) { d.vx = -d.vx; hit = true; }
-    if (d.y < minY && d.vy < 0) { d.vy = -d.vy; hit = true; }
-    if (d.y > maxY && d.vy > 0) { d.vy = -d.vy; hit = true; }
-    if (hit && d.onScreen) d.flash = 1;
-    if (d.x >= minX && d.x <= maxX && d.y >= minY && d.y <= maxY) d.onScreen = true;
+    var extra = Math.max(0, (MIN_ROOM - W) / 2);
+    if (d.x < -p - extra && d.vx < 0) d.vx = -d.vx;
+    if (d.x > W - d.size + p + extra && d.vx > 0) d.vx = -d.vx;
+    if (d.y < -p && d.vy < 0) d.vy = -d.vy;
+    if (d.y > H - d.size + p && d.vy > 0) d.vy = -d.vy;
   }
 
   function step(now) {
@@ -88,7 +83,6 @@
       dots.forEach(function(d) {
         d.x += d.vx * pace * dt;
         d.y += d.vy * pace * dt;
-        d.flash = Math.max(0, d.flash - dt * 2.5);
         walls(d, W, H);
       });
     } else if (mode === 'return') {
@@ -97,14 +91,12 @@
       dots.forEach(function(d) {
         d.x = d.rx + (d.hx - d.rx) * e;
         d.y = d.ry + (d.hy - d.ry) * e;
-        d.flash = Math.max(0, d.flash - dt * 2.5);
       });
       if (t >= 1) { restore(); return; }
     }
 
     dots.forEach(function(d) {
-      d.el.style.transform = 'translate(' + d.x + 'px, ' + d.y + 'px) scale(' + (1 + d.flash * 0.15) + ')';
-      d.el.style.opacity = d.flash ? d.base + (1 - d.base) * d.flash : '';
+      d.el.style.transform = 'translate(' + d.x + 'px, ' + d.y + 'px)';
     });
     raf = requestAnimationFrame(step);
   }
