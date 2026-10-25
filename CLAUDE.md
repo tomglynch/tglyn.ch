@@ -32,6 +32,8 @@ git commit -m "message"
 git push
 ```
 
+Every push to master is a Netlify production deploy, and the free plan only allows about 20 a month. Commit after each change, but push once at the end of a session, not as you go. To check changes on a phone without deploying, open the dev server from the same wifi at `http://<this Mac's IP>:8080/` (the IP is in the `--serve` output under "External"). Add `[skip netlify]` to a commit message to push without deploying.
+
 ### Troubleshooting
 If changes don't update, delete the `_site` folder and restart the dev server.
 
