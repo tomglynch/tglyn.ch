@@ -12,6 +12,14 @@ tags: []
 
 <link rel="stylesheet" href="/css/wedding-day.css">
 
+<script>
+// Always open at noon. iPhone browsers were reloading to an old position, often the very bottom,
+// which skipped the sunset and dropped straight into the heaviest part of the page
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+window.addEventListener('load', function() { window.scrollTo(0, 0); });
+</script>
+
 <div class="day-sky" aria-hidden="true">
   <div class="day-stars"></div>
   <div class="day-bokeh"></div>
