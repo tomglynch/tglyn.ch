@@ -33,7 +33,8 @@
         duration: el.style.animationDuration,
         left: el.style.left,
         top: el.style.top,
-        blur: el.classList.contains('soft') ? 14 : 2
+        // Flares lift opacity to full, which the compositor handles without repainting
+        base: el.classList.contains('soft') ? 0.7 : 0.75
       };
     });
     // Switch to absolute positioning in the same frame, or each disc flashes at the top-left corner
@@ -54,7 +55,7 @@
       d.el.style.left = d.left;
       d.el.style.top = d.top;
       d.el.style.transform = '';
-      d.el.style.filter = '';
+      d.el.style.opacity = '';
     });
     dots = [];
     mode = null;
@@ -103,7 +104,7 @@
 
     dots.forEach(function(d) {
       d.el.style.transform = 'translate(' + d.x + 'px, ' + d.y + 'px) scale(' + (1 + d.flash * 0.15) + ')';
-      d.el.style.filter = d.flash ? 'blur(' + d.blur + 'px) brightness(' + (1 + d.flash * 1.2) + ')' : '';
+      d.el.style.opacity = d.flash ? d.base + (1 - d.base) * d.flash : '';
     });
     raf = requestAnimationFrame(step);
   }

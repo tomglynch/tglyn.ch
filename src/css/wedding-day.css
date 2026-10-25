@@ -69,9 +69,11 @@
 }
 
 /* ===== Cards ===== */
+/* The cards are nearly opaque, so the shared stylesheet's backdrop blur isn't worth its cost on phones */
 .day-page .rsvp-info-box {
     background: var(--day-card-bg);
     border-color: var(--day-card-border);
+    backdrop-filter: none;
 }
 
 .day-page .rsvp-info-box p {
@@ -110,7 +112,6 @@
     background-repeat: no-repeat;
     border: 1px solid var(--day-card-border);
     border-radius: 4px;
-    backdrop-filter: blur(4px);
 }
 
 .day-timeline li {
@@ -419,31 +420,35 @@
     opacity: var(--bokeh-opacity, 0);
 }
 
-/* Flat discs with a faint bright rim, like a lens out of focus. Soft ones sit further back */
+/* Flat discs with a faint bright rim, like a lens out of focus. Soft ones sit further back.
+   The softness is drawn into the gradients rather than using blur filters or blend modes:
+   22 large blurred, blended, moving layers crashed a phone's browser */
 .day-bokeh i {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(var(--c), 0.55) 0 62%, rgba(var(--c), 0.8) 67%, rgba(var(--c), 0) 71%);
-    filter: blur(2px);
-    mix-blend-mode: screen;
+    background: radial-gradient(circle, rgba(var(--c), 0.73) 0 60%, rgba(var(--c), 1) 66%, rgba(var(--c), 0) 71%);
+    opacity: 0.75;
     animation: day-bokeh-drift 20s ease-in-out infinite alternate;
 }
 
 .day-bokeh i.soft {
-    filter: blur(14px);
+    background: radial-gradient(circle, rgba(var(--c), 0.55) 0 35%, rgba(var(--c), 0.4) 55%, rgba(var(--c), 0) 71%);
     opacity: 0.7;
 }
 
-/* Bright blurry glow along the bottom, like the lights nearest the lens */
+/* Bright glow along the bottom, like the lights nearest the lens */
 .day-bokeh::after {
     content: '';
     position: absolute;
-    left: -10%;
-    right: -10%;
-    bottom: -12vh;
-    height: 28vh;
-    background: linear-gradient(90deg, rgba(24, 200, 216, 0.35), rgba(255, 230, 200, 0.55) 40%, rgba(255, 200, 50, 0.4) 65%, rgba(122, 60, 255, 0.35));
-    filter: blur(40px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30vh;
+    background:
+        radial-gradient(ellipse 45% 70% at 10% 100%, rgba(24, 200, 216, 0.4), transparent),
+        radial-gradient(ellipse 45% 70% at 40% 100%, rgba(255, 230, 200, 0.5), transparent),
+        radial-gradient(ellipse 45% 70% at 68% 100%, rgba(255, 200, 50, 0.45), transparent),
+        radial-gradient(ellipse 45% 70% at 95% 100%, rgba(122, 60, 255, 0.4), transparent);
 }
 
 @keyframes day-bokeh-drift {
