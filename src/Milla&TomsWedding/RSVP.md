@@ -41,7 +41,7 @@ tags: []
   <div class="rsvp-page-body">
 
     <div class="rsvp-info-box">
-      <p class="info-detail">Arrive 12:15pm for a 12:30pm start</p>
+      <p class="info-detail">Arrive by 12:15pm. The ceremony starts at 12:30pm sharp</p>
       <div class="rsvp-info-divider"></div>
       <p>We'll begin in <strong>Royal Park</strong>, catch the train to a long lunch at <strong>Hotel Railway on Albert St in Brunswick</strong>, then before sunset stroll down to Brunswick West to continue the celebrations at our home at 133 Pearson St!</p>
       <p><a href="/Milla&TomsWedding/the-day/" id="rsvp-plan-link" class="rsvp-day-link">See the full plan for the day &#8594;</a></p>

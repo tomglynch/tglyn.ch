@@ -5,17 +5,17 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:milla-tom-wedding-2026@tglyn.ch
-SEQUENCE:1
+SEQUENCE:2
 DTSTAMP:20261025T000000Z
 DTSTART:20261128T011500Z
 DTEND:20261128T120000Z
 SUMMARY:Milla & Tom's Wedding
-DESCRIPTION:12:15pm  Arrive at Royal Park (pin: https://maps.google.com/?q
- =-37.782495\,144.948845)\n12:30pm  Ceremony\n1:20pm  Train from Royal Par
- k to Brunswick\nLong lunch at Hotel Railway\, 291-293 Albert St\, Brunswi
- ck\nBefore sunset  Walk home together\nSunset till late  Party at ours\, 
- 133 Pearson St\, Brunswick West\n\nFull details: https://tglyn.ch/Milla&T
- omsWedding/the-day/
+DESCRIPTION:12:15pm  Arrive by now at Royal Park (pin: https://maps.google
+ .com/?q=-37.782495\,144.948845)\n12:30pm  Ceremony (starts sharp)\n1:20pm
+   Train from Royal Park to Brunswick\nLong lunch at Hotel Railway\, 291-2
+ 93 Albert St\, Brunswick\nBefore sunset  Walk home together\nSunset till 
+ late  Party at ours\, 133 Pearson St\, Brunswick West\n\nFull details: ht
+ tps://tglyn.ch/Milla&TomsWedding/the-day/
 LOCATION:Royal Park\, Parkville VIC 3052
 GEO:-37.782495;144.948845
 URL:https://tglyn.ch/Milla&TomsWedding/the-day/
